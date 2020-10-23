@@ -1,0 +1,28 @@
+.Search div{
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding-top: 40px;
+}
+.Search div input {
+    box-sizing: border-box;
+    width: 90%;
+    padding: 10px 15px;
+    margin: 10px 0px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    outline: none;
+}
+.Search div input:focus {
+    background-color: #ebebeb;
+}
+.Search div button {
+    height: 43px;
+    margin: 13px;
+    background-color: #5bc0de;
+    display: inline-block;
+    width: 64px;
+    border-radius: 5px;
+    color: white;
+}

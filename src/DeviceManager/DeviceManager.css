@@ -1,0 +1,10 @@
+.DeviceManager {
+    display: block;
+    box-sizing: border-box;
+    margin-top: 60px;
+}
+
+.Authen {
+    margin: 200px auto;
+    text-align: center;
+}

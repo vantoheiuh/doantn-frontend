@@ -1,0 +1,60 @@
+.NotFound{
+    background-color: #95c2de;
+    position: fixed;
+    width: 100%;height: 100%;
+}
+  
+.NotFound .MainBox {
+    background-color: #95c2de;
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    position: relative;
+    margin-top: 60px;
+}
+
+.NotFound .MainBox div.Err {
+    color: #ffffff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position:absolute;
+    left: 20%;
+    top: 8%;
+}
+
+.NotFound .Err1 {
+    color: #ffffff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position:absolute;
+    left: 43%;
+    top: 8%;
+}
+
+.NotFound .MainBox div.Err2 {
+    color: #ffffff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position:absolute;
+    left: 68%;
+    top: 8%;
+}
+
+.Message {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+    position:absolute;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+}

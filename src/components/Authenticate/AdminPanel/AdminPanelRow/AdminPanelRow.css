@@ -1,0 +1,8 @@
+.ButtonGroup button{
+    margin: 0px 5px;
+}
+
+.AdminPanelRow{
+    display: block;
+    width: 40%;
+}

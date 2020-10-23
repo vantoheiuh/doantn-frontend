@@ -1,0 +1,49 @@
+
+.TableData table{
+    border-collapse: collapse;
+    width: 95%;
+    margin: 50px auto;
+    overflow: auto;
+
+}
+
+.TableData table td, .TableData th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.TableData table tr {
+    background-color: #ffffff;
+}
+
+.TableData table tr:hover {
+    background-color: #EEEEEE;
+}
+
+.TableData table th {
+    text-align: left;
+    background-color: #3F51B5;
+    color: white;
+    text-align: center;
+}
+/* .button-group{
+    width: 100%;
+    text-align: center;
+}
+button{
+    outline: none;
+    border: none;
+    padding: 10px 15px; 
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Edit{
+    color: #333;
+    background-color: #ffc107; 
+    border-radius: 5px 0 0 5px;
+}
+.Delete{
+    color: red;
+} */

@@ -1,0 +1,99 @@
+
+.EditForm{
+    z-index: 100;
+    position: absolute;
+    background-color: white;
+    width: 50%;
+    left: 25%;
+    top: 10%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    height: 800px;
+    overflow-y: scroll;
+    overflow-x: auto;
+
+}
+.EditForm h3{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: blue;
+    border-bottom: 1px solid #ebebeb;
+    box-shadow: 1px 3px #ccc;
+    font-weight: bolder;
+}
+
+
+.EditForm form input{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 80%;
+    padding: 10px 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    outline: none;
+    font-weight: 200;
+    margin: 12px 61px;
+}
+.EditForm form input:focus{
+    background-color: #ebebeb;
+}
+.den{
+    width: 100%;
+    height: 100%;
+    background-color:rgb(0 0 0 / 65%);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+}
+.EditForm .Cancer{
+    background-color: white;
+    color: red;
+    margin: 0 80px 0 0;
+    border-radius: 5px;
+    width: 100px;
+}
+.EditForm .Cancer:hover{
+    background-color: #ebebeb;
+    color: rgb(252, 82, 82);
+}
+.EditForm .Save{
+    color: blue;
+    background-color: white;
+    margin: 0 0 0 80px;
+    border-radius: 5px;
+    width: 100px;
+
+}
+.EditForm .Save:hover{
+    background-color: #ebebeb;
+    color: rgb(100, 100, 255);
+}
+.selectBox {
+    display: inline-block;
+    width: 80%;
+    padding: 10px 15px;
+    margin: 10px 0px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    outline: none;
+    margin: 12px 61px;
+}
+.EditForm form label {
+    margin: 12px 61px;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    font-weight: bold;
+}
+.EditForm div.buttonGroup{
+    display: block;
+    text-align: center;
+    padding: 10px;
+}

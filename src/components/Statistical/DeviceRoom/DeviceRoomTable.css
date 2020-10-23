@@ -1,0 +1,68 @@
+.DeviceRoomTable {
+    position: fixed;
+    top: 60px;
+    left: 250px;
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.DeviceRoomTable > div:first-child {
+    display: block;
+    margin-top: 60px;
+    flex: 80%;
+}
+
+.DeviceRoomTable div select {
+    display: block;
+    padding: 10px 15px;
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.DeviceRoomTable div label {
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+    font-size: 20px;
+    color: #5656bf;
+}
+
+.DeviceRoomTable div table {
+    width: 100%;
+    margin-left: 10px;
+}
+
+.DeviceRoomTable td, .DeviceRoomTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.DeviceRoomTable tr{
+    background-color: #ffffff;
+}
+
+.DeviceRoomTable tr:hover {
+    background-color: #ebebeb;
+}
+
+.DeviceRoomTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3F51B5;
+    color: white;
+    text-align: center;
+}
+.Chart{
+    flex: 20%;
+    margin-top: 100px;
+    margin-right: 250px;
+    padding: 25px;
+}

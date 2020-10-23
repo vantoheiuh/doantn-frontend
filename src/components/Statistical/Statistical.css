@@ -1,0 +1,76 @@
+
+.navLeft h3 {
+    font-size: 34px;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.list-li-item:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.list-li-item:hover{
+    background-color: #fff;
+}
+
+.list-li-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.navLeft {
+    height: 100%;
+    background: #ffffff;
+    width: 250px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+    margin-top: 60px;
+
+}
+.navLeft ul {
+    padding: 10px;
+}
+.navLeft ul li{
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 5px;
+    border-radius: 3px;
+}
+.navLeft ul li a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.navLeft ul li a:active,
+.navLeft ul li a.active{
+    color: blue;
+}
+
+.navLeft ul li:active,
+.navLeft ul li:hover{
+    background-color: #ccc;
+}
+.navLeft ul li:hover a {
+    color: blue;
+}
+.Statistical {
+    height: 100%;
+    overflow-x: hidden;
+}
+.list-li-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    border: 1px solid #ddd;
+}

@@ -1,0 +1,68 @@
+.MaintenanceTable {
+    position: fixed;
+    top: 60px;
+    left: 250px;
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.MaintenanceTable > div:first-child {
+    display: block;
+    margin-top: 60px;
+    flex: 80%;
+}
+
+.MaintenanceTable div select {
+    display: block;
+    padding: 10px 15px;
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.MaintenanceTable div label {
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+    font-size: 20px;
+    color: #5656bf;
+}
+
+.MaintenanceTable div table {
+    width: 100%;
+    margin-left: 10px;
+}
+
+.MaintenanceTable td, .MaintenanceTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.MaintenanceTable tr{
+    background-color: #ffffff;
+}
+
+.MaintenanceTable tr:hover {
+    background-color: #ebebeb;
+}
+
+.MaintenanceTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3F51B5;
+    color: white;
+    text-align: center;
+}
+.Chart{
+    flex: 20%;
+    margin-top: 100px;
+    margin-right: 250px;
+    padding: 25px;
+}
