@@ -58,7 +58,7 @@ export const auth = (username, password) => {
             username: username,
             password: password,
         }
-        const url = 'http://localhost:4444/api/users/authenticate';
+        const url = 'http://localhost:5000/api/users/authenticate';
         axios.post(url, authData)
             .then(res => {
                 ;
@@ -82,7 +82,7 @@ export const updateUser = (dataUpdate, token) => {
     return dispatch => {
         dispatch(updateStart());
         const AuthStr = 'Bearer '.concat(token);
-        const url = 'http://localhost:4444/api/users/' + dataUpdate.id;
+        const url = 'http://localhost:5000/api/users/' + dataUpdate.id;
         axios({
             method: 'put',
             url: url,
@@ -127,7 +127,7 @@ export const authCheckState = () => {
 export const deleteUserById = (token, id) => {
     return dispatch => {
         const AuthStr = 'Bearer '.concat(token);
-        const url = 'http://localhost:4444/api/users/' + id;
+        const url = 'http://localhost:5000/api/users/' + id;
         axios({
             method: 'delete',
             url: url,

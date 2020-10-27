@@ -55,9 +55,6 @@ class TableData extends Component {
               <th>Price</th>
               <th>Amount</th>
               <th>Checkin Time</th>
-              <th>Active Time</th>
-              <th>Expired Time</th>
-              <th>Quantity</th>
               <th>Source</th>
               <th>Locate</th>
               <th>Barcode</th>
