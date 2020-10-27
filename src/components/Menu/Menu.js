@@ -3,6 +3,8 @@ import classes from './Menu.css';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom'
 import Aux from '../../hoc/Aux/Aux';
+import MenuItem from '../MenuBar/MenuItem/MenuItem';
+
 class Menu extends Component {
     render() {
         return (
@@ -10,52 +12,12 @@ class Menu extends Component {
                 <nav>
                     <ul>
                         <div>
-                            {this.props.isAuthenticate ?
-                                <Aux>
-                                    {this.props.role === "admin" ? <Aux>
-                                        <li>
-                                            <NavLink to="/" exact activeClassName={classes.Active}>HOME</NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/new-device" exact activeClassName={classes.Active}>NEW DEVICE</NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/statistical/chart" exact activeClassName={classes.Active}>STATISTICAL</NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/admin" exact activeClassName={classes.Active}>ADMIN PANEL</NavLink>
-                                        </li>
-                                    </Aux> : this.props.role === "manager" ? <Aux>
-                                        <li>
-                                            <NavLink to="/" exact activeClassName={classes.Active}>HOME</NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/new-device" exact activeClassName={classes.Active}>NEW DEVICE</NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to="/statistical/chart" exact activeClassName={classes.Active}>STATISTICAL</NavLink>
-                                        </li>
-                                    </Aux> : <Aux>
-                                                <li>
-                                                    <NavLink to="/" exact activeClassName={classes.Active}>HOME</NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink to="/statistical/chart" exact activeClassName={classes.Active}>STATISTICAL</NavLink>
-                                                </li>
-                                            </Aux>}
-                                </Aux>
-                                : <li>
-                                    <NavLink to="/" exact activeClassName={classes.Active}>HOME</NavLink>
-                                </li>
-                            }
+                            <MenuItem link="/">Device Manager</MenuItem>
                         </div>
                         <div>
-                            {!this.props.isAuthenticate
-                                ? <li>
-                                    <NavLink to="/login" exact activeClassName={classes.Active}>LOGIN</NavLink>
-                                </li> : <li>
-                                    <NavLink to="/logout" exact activeClassName={classes.Active}>LOGOUT</NavLink>
-                                </li>}
+                            {this.props.isAuthenticate ?
+                                <MenuItem link="/logout">LOGOUT</MenuItem>
+                                : <MenuItem link="/login">LOGIN</MenuItem>}
                         </div>
                     </ul>
                 </nav>

@@ -5,7 +5,6 @@ import '@fortawesome/fontawesome-free';
 
 const productDetail = (props) => {
 
-    console.log(props.productInfo)
     let ModalStyle = props.show ? {
         display: "block"
     } : {
@@ -14,7 +13,7 @@ const productDetail = (props) => {
     return (
         <div className={classes.Modal} style={ModalStyle}>
             <div className={classes.ProductDetail}>
-                <span onClick={props.close} className={classes.Exit}><i class="fas fa-times"></i></span>
+                <span onClick={props.close} className={classes.Exit}><i className="fas fa-times"></i></span>
                 <div>
                     {props.productInfo ? <img src={`http://localhost:5000/${props.productInfo.image}`} /> : null}
                 </div>

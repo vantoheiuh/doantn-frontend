@@ -16,6 +16,7 @@ import Logout from './components/Authenticate/Logout/Logout';
 import { connect } from 'react-redux';
 import * as actions from './store/actions/index';
 import Aux from './hoc/Aux/Aux';
+import MenuBar from './components/MenuBar/MenuBar';
 class App extends Component {
   componentDidMount() {
     this.props.onTryAutoLogin();
@@ -23,7 +24,7 @@ class App extends Component {
   render() {
     let routes = (
       <Switch>
-        <Route path="/login" component={Login} />
+        <Route path="/login" exact component={Login} />
         <Route path="/" component={DeviceManager} />
       </Switch>
     )
@@ -54,6 +55,7 @@ class App extends Component {
       <div>
         <Router>
           <Menu />
+          <MenuBar />
           {routes}
         </Router>
       </div>

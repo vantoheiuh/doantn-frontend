@@ -9,6 +9,7 @@
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
+
 }
 
 .ProductDetail {
@@ -26,6 +27,7 @@
     flex-wrap: nowrap;
     position: relative;
     align-items: center;
+    margin-left: 300px;
 }
 .ProductDetail h1 {
     text-transform: uppercase;

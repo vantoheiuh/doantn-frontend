@@ -1,0 +1,38 @@
+
+.MenuBar {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    box-sizing: inherit;
+    width: 260px;
+    height: 100%;
+    background-color: white;
+    z-index: 999;
+}
+
+
+.MenuBar ul{
+    display: flex;
+    flex-flow: column;
+}
+
+.MenuBar ul li {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    background-color: white;
+}
+.MenuBar ul li a {
+    display: inline-block;
+    width: 100%;
+    color: Black;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+.MenuBar ul li a:hover{
+    background-color: #eee;
+    color: black;
+    text-decoration: none;
+
+}

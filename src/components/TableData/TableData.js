@@ -4,6 +4,7 @@ import TableDataRow from './TableDataRow/TableDataRow';
 import ProductDetail from './ProductDetail/ProductDetail';
 
 
+
 class TableData extends Component {
   state = {
     showProductDetail: false,

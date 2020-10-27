@@ -105,12 +105,11 @@ class DeviceManager extends Component {
         ketqua.push(item);
       }
     })
-    console.log(this.props.isAuthenticated);
     return (
       <Aux>
         {this.props.isAuthenticated ? <div className={classes.DeviceManager}>
-          <Search checkConnectProps={(dl) => this.getTextSearch(dl)}
-            check={this.check} check2={this.check2} />
+          {/* <Search checkConnectProps={(dl) => this.getTextSearch(dl)}
+            check={this.check} check2={this.check2} /> */}
           {this.state.loading ? <Spinner /> : <TableData tableData={this.state.searchnew ? ketqua : this.state.tableData}
             edit={this.edit} delete={this.delete} />}
           {this.state.edit ? <Model removeEdit={this.removeEdit}
