@@ -10,9 +10,9 @@ class MenuBar extends Component {
         return (
             <div className={classes.MenuBar}>
                 <ul>
-                    <MenuItem link="/admin">HOME HOME</MenuItem>
-                    <MenuItem link="/">HOME HOME</MenuItem>
-                    <MenuItem link="/">HOME HOME</MenuItem>
+                    <MenuItem link="/users">Manage Users</MenuItem>
+                    <MenuItem link="/products">Manage Product</MenuItem>
+                    <MenuItem link="/new-device">New Product</MenuItem>
                     <MenuItem link="/">HOME HOME</MenuItem>
                 </ul>
             </div>

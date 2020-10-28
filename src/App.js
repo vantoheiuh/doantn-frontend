@@ -35,17 +35,18 @@ class App extends Component {
           {this.props.role === "admin" ? <Aux>
             <Route path="/new-device" component={NewDevice} />
             <Route path="/statistical/chart" component={Statistical} />
-            <Route path="/admin" component={AdminPanel} />
+            <Route path="/users" component={AdminPanel} />
+            <Route path="/products" exact component={DeviceManager} />
             <Route path="/" exact component={DeviceManager} />
             <Redirect to="/" />
           </Aux> : this.props.role === "manager" ? <Aux>
             <Route path="/statistical/chart" component={Statistical} />
             <Route path="/new-device" component={NewDevice} />
-            <Route path="/" exact component={DeviceManager} />
+            <Route path="/products" exact component={DeviceManager} />
             <Redirect to="/" />
           </Aux> : <Aux>
                 <Route path="/statistical/chart" component={Statistical} />
-                <Route path="/" exact component={DeviceManager} />
+                <Route path="/products" exact component={DeviceManager} />
                 <Redirect to="/" />
               </Aux>}
         </Switch>
@@ -55,7 +56,7 @@ class App extends Component {
       <div>
         <Router>
           <Menu />
-          <MenuBar />
+          {this.props.isAuthenticated ? <MenuBar /> : null}
           {routes}
         </Router>
       </div>
