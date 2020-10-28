@@ -12,7 +12,7 @@ export const authSuccess = (authData) => {
         type: actionTypes.AUTH_SUCCESS,
         idToken: authData.token,
         userName: authData.username,
-        userid: authData.id,
+        userId: authData.id,
         role: authData.role
     }
 }
@@ -29,6 +29,7 @@ export const authLogout = () => {
     localStorage.removeItem('expirationDate');
     localStorage.removeItem('userId');
     localStorage.removeItem('role');
+    localStorage.removeItem('userName');
     return {
         type: actionTypes.AUTH_LOGOUT
     }
@@ -62,10 +63,11 @@ export const auth = (username, password) => {
         axios.post(url, authData)
             .then(res => {
                 ;
-                console.log(res);
+                console.log(res.data);
                 const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('userId', res.data.id);
+                localStorage.setItem('userName', res.data.username);
                 localStorage.setItem('expirationDate', expirationDate);
                 localStorage.setItem('role', res.data.role);
                 dispatch(authSuccess(res.data));
@@ -111,10 +113,12 @@ export const authCheckState = () => {
             } else {
                 const userId = localStorage.getItem('userId');
                 const role = localStorage.getItem('role');
+                const userName = localStorage.getItem('userName')
                 const authData = {
                     token: token,
-                    userId: userId,
-                    role: role
+                    id: userId,
+                    role: role,
+                    username: userName
                 };
                 dispatch(authSuccess(authData));
                 const timeOut = ((new Date(expirationDate).getTime() - new Date().getTime()) / 1000).toFixed(0);

@@ -3,6 +3,8 @@ import classes from './Login.css';
 import * as actions from '../../../store/actions/index';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import PersonIcon from '@material-ui/icons/Person';
 
 class Login extends Component {
     state = {
@@ -30,9 +32,11 @@ class Login extends Component {
                 <form>
                     <h2>Account Login</h2>
                     <div>
+                        <span><PersonIcon /></span>
                         <input type="text" name="username" placeholder="Username" onChange={this.inputHandler} />
                     </div>
                     <div>
+                        <span><VpnKeyIcon /></span>
                         <input type="password" name="password" placeholder="Password" autoComplete="false" onChange={this.inputHandler} />
                     </div>
                     <div>

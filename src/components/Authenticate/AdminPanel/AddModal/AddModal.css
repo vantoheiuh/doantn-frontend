@@ -19,6 +19,8 @@
     width: 40%;
     border-radius: 5px;
     background-color: #fbfbfb;
+    margin-left:  calc((100% - 260px) / 2);
+
 }
 .ModalContent h3 {
     text-transform: uppercase;

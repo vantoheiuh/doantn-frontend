@@ -20,9 +20,6 @@
     background-color: #ffffff;
 }
 
-.TableData table tr:hover {
-    background-color: #EEEEEE;
-}
 
 .TableData table th {
     text-align: left;

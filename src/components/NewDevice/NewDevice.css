@@ -1,68 +1,46 @@
 .NewDevice {
-    position: absolute;
     background-color: white;
-    width: 60%;
-    left: 22%;
-    top: 15%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    height: 900px;
-    overflow-y: scroll;
+    margin-left: 350px;
+    margin-top: 80px;
+    width: 45%;
 }
+
 .NewDevice h3 {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: blue;
     font-weight: bolder;
+    border-bottom: 1px solid gray;
+    padding-bottom: 15px;
 }
 
-.NewDevice form input {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 80%;
-    padding: 10px 15px;
+.NewDevice > form > div:not(.Button) {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+.NewDevice > form > div > input:not(.File), .NewDevice > form > div > select {
     outline: none;
-    border-radius: 5px;
-    border: 1px solid #eee;
+    padding: 5px 10px;
+    width: 65%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.NewDevice > form > div > input.File {
     outline: none;
-    margin: 12px 61px;
-    font-weight: 300;
-    font-size: 12;
-}
-.NewDevice .Button {
-    text-align: center;
-    padding: 15px;
-}
-
-.NewDevice .Cancer{
-    background-color: white;
-    color: red;
-    margin: 0 80px 0 0;
-    border-radius: 5px;
-    width: 100px;
-}
-.NewDevice .Cancer:hover{
-    background-color: #ebebeb;
-    color: rgb(252, 82, 82);
-}
-.NewDevice .Add{
-    color: blue;
-    background-color: white;
-    margin: 0 0 0 80px;
-    border-radius: 5px;
-    width: 100px;
+    width: 65%;
 
 }
-.NewDevice .Add:hover{
-    background-color: #ebebeb;
-    color: rgb(100, 100, 255);
+
+.NewDevice > form > div > label {
+    font-weight: bolder;
+}
+.Button {
+    text-align: right;
 }
 
-
-.NewDevice form label{
-    margin: 12px 61px;
-    font-size: 14px;
-    font-weight: bold;
+.Button  button:first-child{
+    margin: 10px 10px;
 }

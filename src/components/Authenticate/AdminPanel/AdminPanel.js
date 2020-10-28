@@ -8,6 +8,8 @@ import Aux from '../../../hoc/Aux/Aux';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
+import AddIcon from '@material-ui/icons/Add';
+import Spinner from '../../UI/Spinner/Spinner';
 
 class AdminPanel extends Component {
     state = {
@@ -17,7 +19,8 @@ class AdminPanel extends Component {
         deleteConfirm: false,
         rowData: null,
         userData: null,
-        forceUpdate: false
+        forceUpdate: false,
+        loading: true
     }
 
 
@@ -27,7 +30,7 @@ class AdminPanel extends Component {
         axios.get(URL, { headers: { Authorization: AuthStr } })
             .then(response => {
                 // If request is good...
-                this.setState({ rowData: response.data });
+                this.setState({ rowData: response.data, loading: false });
             })
             .catch((error) => {
                 console.log('error ' + error);
@@ -81,6 +84,11 @@ class AdminPanel extends Component {
             isDeleteModalShow: true
         })
     }
+    closeDeleteModal = () => {
+        this.setState({
+            isDeleteModalShow: false
+        })
+    }
 
     deleteUserHandler = (id) => {
         this.props.onDeleteStart(id);
@@ -92,8 +100,7 @@ class AdminPanel extends Component {
         this.setState({ isDeleteModalShow: false, forceUpdate: !this.state.forceUpdate });
     }
 
-    render() {
-        
+    render() {     
         let listRow = null;
         if (this.state.rowData) {
             listRow = this.state.rowData.map((row, index) => {
@@ -113,14 +120,14 @@ class AdminPanel extends Component {
         }
         return (
             <Aux>
-                <div className={classes.AdminPanel}>
+                {this.state.loading ? <Spinner /> :<div className={classes.AdminPanel}>
                     <div className={classes.TableTitle}>
                         <div>
                             <div>
                                 <h2>Manage Users</h2>
                             </div>
                             <div>
-                                <button className="btn btn-success" onClick={this.showAddModal} > <span>New User</span></button>
+                                <button className="btn btn-success" onClick={this.showAddModal} > <AddIcon /> New User</button>
                                 <button className="btn btn-danger"> <span>Delete</span></button>
                             </div>
                         </div>
@@ -143,10 +150,10 @@ class AdminPanel extends Component {
                             {listRow}
                         </tbody>
                     </table>
-                </div>
+                </div>}
                 <EditModal show={this.state.isEditModalShow} btnClicked={this.closeEditModal} userData={{ ...this.state.userData }} />
                 <AddModal show={this.state.isAddModalShow} btnClicked={this.closeAddModal} />
-                <DeleteModal show={this.state.isDeleteModalShow} confirm={this.confirmDeleteUser} />
+                <DeleteModal show={this.state.isDeleteModalShow} cancel={this.closeDeleteModal} confirm={this.confirmDeleteUser} />
             </Aux>
         )
     }
@@ -155,7 +162,7 @@ class AdminPanel extends Component {
 const mapStateToProps = state => {
     return {
         token: state.auth.token,
-        deleteId: state.auth.deleteId
+        deleteId: state.auth.deleteId,
     };
 };
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import classes from './AdminPanelRow.css';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const adminPanelRow = (props) => {
     return (
@@ -13,8 +15,8 @@ const adminPanelRow = (props) => {
             <td>{props.createdDate}</td>
             <td>{props.updatedDate}</td>
             <td className={classes.ButtonGroup}>
-                <button className="btn btn-primary" onClick={props.edit}>Edit</button>
-                <button type="reset" className="btn btn-danger" onClick={props.delete}>Delete</button>
+                <button onClick={props.edit}><EditIcon fontSize="small"/></button>
+                <button type="reset" onClick={props.delete}><DeleteIcon fontSize="small"/></button>
             </td>
         </tr>
     );

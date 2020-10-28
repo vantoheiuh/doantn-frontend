@@ -1,7 +1,13 @@
 .ButtonGroup button{
     margin: 0px 5px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    outline: none;
 }
-
+.ButtonGroup button:hover{
+    background-color: #f7f0f0;
+}
 .AdminPanelRow{
     display: block;
     width: 40%;

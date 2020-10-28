@@ -1,6 +1,6 @@
-.Login form{
+.Login form {
     display: flex;
-    width: 40%;
+    width: 600px;
     height: 500px;
     margin: 150px auto;
     border: 1px solid #ebebeb;
@@ -10,14 +10,17 @@
     justify-content: center;
     background-color: white;
 }
-.Login form div{
+
+.Login form div {
+    position: relative;
     display: block;
     width: 80%;
     margin: 10px auto;
     text-align: center;
 }
-.Login form div input{
-    padding: 20px 35px;
+
+.Login form div input {
+    padding: 20px 50px;
     width: 80%;
     outline: none;
     border: 1px solid #ccc;
@@ -33,7 +36,8 @@
     margin-top: 25px;
     padding: 10px 20px;
 }
-.Login form div:last-child{
+
+.Login form div:last-child {
     width: 64%;
     outline: none;
     border: 1px solid #ccc;
@@ -42,9 +46,11 @@
     margin-bottom: 50px;
     margin-top: 25px;
 }
-.Login form div:last-child:hover{
+
+.Login form div:last-child:hover {
     background-color: rgb(38, 38, 238);
 }
+
 .Login form div button {
     display: block;
     width: 100%;
@@ -56,4 +62,11 @@
     outline: none;
     color: white;
     font-weight: 100;
+}
+
+.Login form div span {
+    color: gray;
+    position: absolute;
+    top: 20px;
+    left: 63px;
 }

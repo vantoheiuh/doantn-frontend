@@ -33,45 +33,57 @@ class Model extends Component {
 
     }
     render() {
+        let ModalStyle = this.props.show ? {
+            display: "block"
+        } : {
+                display: "none"
+            }
         return (
-            <div>
-                <div className="den" onClick={this.props.removeEdit}></div>
-                <div className={classes.EditForm}
-                    style={{
-                        transform: this.props.show ? "translateY(0vh)" : "translateY(100vh)",
-                        opacity: this.props.show ? "1" : "0"
-                    }}>
-                    <h3 className="edit_form_title">EDIT DEVICE</h3>
-                    <form className="add-form-input">
-                        <label>Name: </label>
-                        <input name="name" onChange={(event) => { this.onInputHandler(event, "name") }} defaultValue={this.props.editUserObject.name} type="text" placeholder="Device name" /><br />
-                        <label>Price: </label>
-                        <input name="price" onChange={(event) => { this.onInputHandler(event, "price") }} defaultValue={this.props.editUserObject.price} type="text" placeholder="Device cost" />
-
-                        <label>Amount: </label>
-                        <input name="amount" onChange={(event) => { this.onInputHandler(event, "amount") }} defaultValue={this.props.editUserObject.amount} type="number" placeholder="Device cost" />
-
-                        <label>Warranty Period: </label>
-                        <input name="warrantyPeriod" onChange={(event) => { this.onInputHandler(event, "warrantyPeriod") }} value={this.props.editUserObject.warrantyPeriod} type="date" placeholder="Device cost" />
-
-                        <label>Active Time: </label>
-                        <input name="activeTime" onChange={(event) => { this.onInputHandler(event, "activeTime") }} defaultValue={this.props.editUserObject.activeTime} type="text" placeholder="Device cost" />
-
-                        <label>Quantity: </label>
-                        <input name="quantity" onChange={(event) => { this.onInputHandler(event, "quantity") }} defaultValue={this.props.editUserObject.quantity} type="text" placeholder="Device cost" />
-
-                        <label>Status: </label>
-                        <select className="selectBox" name="statusDevice" onChange={(event) => this.onInputHandler(event, "statusDevice")} required>
-                            <option value={'Using'}>Using</option>
-                            <option value={'Is Maintained'}>Is Maintained</option>
-                        </select>
-
-                        <label>Source: </label>
-                        <input name="source" onChange={(event) => { this.onInputHandler(event, "source") }} defaultValue={this.props.editUserObject.source} type="text" placeholder="Device cost" />
-                    </form>
-                    <div className={classes.buttonGroup}>
-                        <button className={classes.Cancer} onClick={this.props.cancel} >CANCEL</button>
-                        <button onClick={() => this.onSaveHandler(this.props.editUserObject._id)} className={classes.Save}>SAVE</button>
+            <div className={classes.Modal} style={ModalStyle}>
+                <div className={classes.ModalContent}>
+                    <div className={classes.EditForm}>
+                        <h3>EDIT DEVICE</h3>
+                        <form>
+                            <div>
+                                <label>Name: </label>
+                                <input name="name" onChange={(event) => { this.onInputHandler(event, "name") }} defaultValue={this.props.editUserObject.name} type="text" placeholder="Device name" />
+                            </div>
+                            <div>
+                                <label>Price: </label>
+                                <input name="price" onChange={(event) => { this.onInputHandler(event, "price") }} defaultValue={this.props.editUserObject.price} type="text" placeholder="Device cost" />
+                            </div>
+                            <div>
+                                <label>Amount: </label>
+                                <input name="amount" onChange={(event) => { this.onInputHandler(event, "amount") }} defaultValue={this.props.editUserObject.amount} type="number" placeholder="Device cost" />
+                            </div>
+                            <div>
+                                <label>Warranty Period: </label>
+                                <input name="warrantyPeriod" onChange={(event) => { this.onInputHandler(event, "warrantyPeriod") }} value={this.props.editUserObject.warrantyPeriod} type="date" placeholder="Device cost" />
+                            </div>
+                            <div>
+                                <label>Active Time: </label>
+                                <input name="activeTime" onChange={(event) => { this.onInputHandler(event, "activeTime") }} defaultValue={this.props.editUserObject.activeTime} type="text" placeholder="Device cost" />
+                            </div>
+                            <div>
+                                <label>Quantity: </label>
+                                <input name="quantity" onChange={(event) => { this.onInputHandler(event, "quantity") }} defaultValue={this.props.editUserObject.quantity} type="text" placeholder="Device cost" />
+                            </div>
+                            <div>
+                                <label>Status: </label>
+                                <select className="selectBox" name="statusDevice" onChange={(event) => this.onInputHandler(event, "statusDevice")} required>
+                                    <option value={'Using'}>Using</option>
+                                    <option value={'Is Maintained'}>Is Maintained</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Source: </label>
+                                <input name="source" onChange={(event) => { this.onInputHandler(event, "source") }} defaultValue={this.props.editUserObject.source} type="text" placeholder="Device cost" />
+                            </div>
+                        </form>
+                        <div className={classes.ButtonGroup}>
+                            <button className="btn btn-danger" onClick={this.props.cancel} >CANCEL</button>
+                            <button onClick={() => this.onSaveHandler(this.props.editUserObject._id)} className="btn btn-primary">SAVE</button>
+                        </div>
                     </div>
                 </div>
             </div>

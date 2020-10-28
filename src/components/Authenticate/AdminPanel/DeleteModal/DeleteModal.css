@@ -21,6 +21,7 @@
     box-shadow: 1px 2px #ccc;
     border-radius: 5px;
     background-color: #f5f2f2;
+    margin-left:  calc((100% - 260px) / 2);
 }
 .DeleteModalContent{
     text-transform: uppercase;

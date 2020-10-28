@@ -1,39 +1,57 @@
-
-.button-group{
+.button-group {
     width: 100%;
     text-align: center;
 }
-button{
+
+button {
     outline: none;
     border: none;
-    padding: 10px 15px; 
+    padding: 10px 15px;
     font-weight: bold;
     cursor: pointer;
 }
-.edit{
+
+.edit {
     color: #333;
-    background-color: #ffc107; 
+    background-color: #ffc107;
     border-radius: 5px 0 0 5px;
 }
-.delete{
+
+.delete {
     color: #ffffff;
-    background-color: #dc3545; 
+    background-color: #dc3545;
     border-radius: 0px 5px 5px 0px;
 }
-.using{
+
+.using {
     background-color: #5cb85c;
     color: white;
     border-radius: 7px;
     padding: 2px 5px;
 }
-.isMaintained{
+
+.isMaintained {
     background-color: #d9534f;
     color: white;
     border-radius: 7px;
     padding: 2px 5px;
 }
-.BtnGroup button{
+
+.BtnGroup button {
     margin: 2px auto;
+    border-radius: 50%;
+    outline: none;
+    background-color: white;
+}
+
+.TableDataRow:hover{
+    background-color: #EEEEEE;
+}
+.TableDataRow:hover .BtnGroup button {
+    background-color: #EEEEEE;
+}
+.BtnGroup button:hover {
+    background-color: #d8d0d0 !important;
 }
 .TableDataRow img {
     display: block;

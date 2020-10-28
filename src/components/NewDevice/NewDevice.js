@@ -3,6 +3,7 @@ import classes from './NewDevice.css';
 import axios from 'axios';
 import AlertAddNew from '../UI/AlertInfo/AlerAddNew/AlertAddNew';
 import Spinner from '../UI/Spinner/Spinner';
+import Aux from '../../hoc/Aux/Aux';
 
 class NewDevice extends Component {
     state = {
@@ -26,20 +27,19 @@ class NewDevice extends Component {
         const name = event.target.name;
         let value;
 
-        if(name === "image"){
+        if (name === "image") {
             value = event.target.files;
             this.setState({
                 image: value[0]
             });
         }
-        else{
+        else {
             value = event.target.value;
             this.setState({
                 [name]: value
             });
 
         }
-        console.log(this.state);
 
     }
 
@@ -58,7 +58,6 @@ class NewDevice extends Component {
         formData.append('statusDevice', this.state.statusDevice);
         formData.append('locate', this.state.locate);
         formData.append('image', this.state.image);
-        console.log(formData);
         axios({
             method: 'post',
             url: '/api/products',
@@ -86,8 +85,9 @@ class NewDevice extends Component {
             .catch(err => {
                 this.setState({ checkAlertAdd: false, loading: false });
                 this.alertOnAdd("Có lỗi của hệ thống");
+                console.log("looix")
             })
-    
+
     }
     alertOnAdd = (alert) => {
         this.setState({
@@ -103,55 +103,73 @@ class NewDevice extends Component {
     render() {
 
         return (
-            <div>
+            <Aux>
                 <AlertAddNew checkAlertAdd={this.state.checkAlertAdd} alertShowAdd={this.state.alertShowAdd} alertOffAdd={this.alertOffAdd} status={this.state.status} />
                 {this.state.loading ? <Spinner /> :
-                    <div className={classes.NewDevice}>
-                        <h3>ADD DEVICE</h3>
-                        <form>
-                            <label>Name: </label>
-                            <input type="text" placeholder="Device name"
+                <div className={classes.NewDevice}>
+                    <h3>ADD DEVICE</h3>
+                    <form>
+                        <div>
+                            <label htmlFor="image">Image: </label>
+                            <input className={classes.File} type="file" id="image" name="image" onChange={(event) => this.isChange(event)} accept=".jpg,.png,jpeg"></input>
+                        </div>
+                        <div>
+                            <label htmlFor="name">Name: </label>
+                            <input type="text" id="name" placeholder="Device name"
                                 name="name" onChange={(event) => this.isChange(event)}
-                                value={this.state.name} /><br />
-
+                                value={this.state.name} />
+                        </div>
+                        <div>
                             <label>Price: </label>
                             <input type="text" placeholder="Device cost"
                                 name="price" onChange={(event) => this.isChange(event)}
                                 value={this.state.price} />
+                        </div>
+                        <div>
                             <label>Amount: </label>
                             <input type="number" placeholder="Device amount"
                                 name="amount" onChange={(event) => this.isChange(event)}
                                 value={this.state.amount} />
-
-                            <label>checkin Time: </label>
+                        </div>
+                        <div>
+                            <label>Checkin Time: </label>
                             <input type="date" placeholder="Device checkinTime"
                                 name="checkinTime" onChange={(event) => this.isChange(event)}
                                 value={this.state.checkinTime} />
-
+                        </div>
+                        <div>
                             <label>Active Time: </label>
                             <input type="number" placeholder="Device activeTime"
                                 name="activeTime" onChange={(event) => this.isChange(event)}
                                 value={this.state.activeTime} />
-
-                            <label>expired Time: </label>
+                        </div>
+                        <div>
+                            <label>Expired Time: </label>
                             <input type="number" placeholder="Device expiredTime"
                                 name="expiredTime" onChange={(event) => this.isChange(event)}
                                 value={this.state.expiredTime} />
+                        </div>
+                        <div>
                             <label>Quantity: </label>
                             <input type="number" placeholder="Device quantity"
                                 name="quantity" onChange={(event) => this.isChange(event)}
                                 value={this.state.quantity} />
-                            <label>Quantity: </label>
-                            <select className="selectBox" name="statusDevice" onChange={(event) => this.isChange(event)} required>
-                                <option value={'Using'}>Using </option>
-                                <option value={'Maintained'}>Maintained</option>
-                            </select>
-                            <label>Image: </label>
-                            <input type="file" name="image" onChange={(event) => this.isChange(event)} accept=".jpg,.png,jpeg"></input>
+                        </div>
+                        <div>
                             <label>Source: </label>
                             <input type="text" placeholder="Device source"
                                 name="source" onChange={(event) => this.isChange(event)}
                                 value={this.state.source} />
+                        </div>
+                        <div>
+                            <label>Status: </label>
+                            <select className="selectBox" name="statusDevice" onChange={(event) => this.isChange(event)} required>
+                                <option value={'Using'}>Using </option>
+                                <option value={'Maintained'}>Maintained</option>
+                            </select>
+                        </div>
+
+                        <div>
                             <label>Locate: </label>
                             <select className="selectBox" name="locate" onChange={(event) => this.isChange(event)} required>
                                 <option value={'kho'}>Kho </option>
@@ -159,15 +177,15 @@ class NewDevice extends Component {
                                 <option value={'kế toán'}>Kế toán </option>
                                 <option value={'giám đốc'}>Kiám đốc</option>
                             </select>
-
-                            <div className={classes.Button}>
-                                <button className={classes.Cancer} >CANCEL</button>
-                                <button type="submit" onClick={(event) => this.add(event)} className={classes.Add}>ADD</button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div className={classes.Button}>
+                            <button className="btn btn-danger">CANCEL</button>
+                            <button type="reset" onClick={(event) => this.add(event)} className="btn btn-primary">ADD</button>
+                        </div>
+                    </form>
+                </div>
                 }
-            </div>
+            </Aux>
         );
     }
 }

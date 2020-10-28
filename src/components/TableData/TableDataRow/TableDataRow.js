@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import classes from './TableDataRow.css';
 import Barcode from '../../UI/Barcode/Barcode';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class TableDataRow extends Component {
 
@@ -29,8 +31,8 @@ class TableDataRow extends Component {
           </span>
         </td>
         <td className={classes.BtnGroup}>
-          <button className="btn btn-primary btn-sm" onClick={this.props.edit}>Edit</button>
-          <button className="btn btn-danger btn-sm" onClick={this.props.delete}>Delete</button>
+          <button onClick={this.props.edit}><EditIcon /> </button>
+          <button onClick={this.props.delete}><DeleteIcon /></button>
         </td>
       </tr>
     );
