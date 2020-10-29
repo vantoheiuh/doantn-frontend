@@ -78,23 +78,26 @@ class DeviceRoomTable extends Component {
             <option value={"kế toán"}>Kế toán</option>
             <option value={"giám đốc"}>Giám đốc</option>
           </select>
-          { this.state.loading ? <Spinner /> : <table>
-            <thead>
-              <tr>
-                <th>STT</th>
-                <th>Name</th>
-                <th>Amount</th>
-                <th>Quantity</th>
-                <th>Source</th>
-                <th>Locate</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {listLiquidationTable}
-            </tbody>
-          </table>}
+          {this.state.loading ? <Spinner /> :
+            <div className="table-responsive">
+              <table className="table table-striped">
+                <thead className="thead-dark">
+                  <tr >
+                    <th scope="col">STT</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Locate</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {listLiquidationTable}
+                </tbody>
+              </table>
+            </div>}
         </div>
         <div className={classes.Chart}>
           <Chart maint={sumCount} using={countUsing} mainTained={countMaintain} />

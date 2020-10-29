@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import classes from './DeviceRoomRow.css';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 class DeviceRoomRow extends Component {
   render() {
     return (
       <tr className={classes.DeviceRoomRow}>
-        <td>{this.props.stt}</td>
+        <th scope="row">{this.props.stt}</th>
         <td>{this.props.name}</td>
         <td>{this.props.amount}</td>
         <td>{this.props.quantity}</td>
@@ -16,8 +19,8 @@ class DeviceRoomRow extends Component {
           </span>
         </td>
         <td className={classes.ButtonGroup}>
-          <button className={classes.Edit} onClick={this.props.edit}>Edit</button>
-          <button className={classes.Delete} onClick={this.props.delete}>Delete</button>
+          <button className={classes.Edit} onClick={this.props.edit}><EditIcon /></button>
+          <button className={classes.Delete} onClick={this.props.delete}><DeleteIcon /></button>
         </td>
       </tr>
     );

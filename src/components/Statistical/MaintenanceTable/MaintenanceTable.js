@@ -91,23 +91,27 @@ class MaintenanceTable extends Component {
             <option value={11}>November</option>
             <option value={12}>December</option>
           </select>
-          {this.state.loading ? <Spinner /> : <table>
-            <thead>
-              <tr>
-                <th>STT</th>
-                <th>Name</th>
-                <th>Amount</th>
-                <th>Checkin Time</th>
-                <th>Active Time</th>
-                <th>Locate</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {listLiquidationTable}
-            </tbody>
-          </table>}
+          {this.state.loading ? <Spinner /> :
+            <div className="table-responsive">
+              <table className="table table-hover">
+                <caption>List Products</caption>
+                <thead className="thead-dark">
+                  <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Checkin Time</th>
+                    <th scope="col">Active Time</th>
+                    <th scope="col">Locate</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {listLiquidationTable}
+                </tbody>
+              </table>
+            </div>}
         </div>
         <div className={classes.Chart}>
           <Chart maint={sumCount} using={countUsing} mainTained={countMaintain} />

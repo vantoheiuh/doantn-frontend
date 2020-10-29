@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import classes from './LiquidationTableRow.css';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 
 class LiquidationTableRow extends Component {
   render() {
     return (
       <tr className={classes.LiquidationTableRow}>
-        <td>{this.props.stt}</td>
+        <th scope="row">{this.props.stt}</th>
         <td>{this.props.name}</td>
         <td>{this.props.price}$</td>
         <td>{this.props.checkinTime}</td>
@@ -17,8 +20,8 @@ class LiquidationTableRow extends Component {
           </span>
         </td>
         <td className={classes.ButtonGroup}>
-          <button className={classes.Edit} onClick={this.props.edit}>Edit</button>
-          <button className={classes.Delete} onClick={this.props.delete}>Delete</button>
+          <button className={classes.Edit} onClick={this.props.edit}><EditIcon /></button>
+          <button className={classes.Delete} onClick={this.props.delete}><DeleteIcon /></button>
         </td>
       </tr>
     )

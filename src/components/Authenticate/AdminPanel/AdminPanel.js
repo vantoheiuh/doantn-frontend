@@ -128,7 +128,6 @@ class AdminPanel extends Component {
                             </div>
                             <div>
                                 <button className="btn btn-success" onClick={this.showAddModal} > <AddIcon /> New User</button>
-                                <button className="btn btn-danger"> <span>Delete</span></button>
                             </div>
                         </div>
                     </div>

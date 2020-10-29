@@ -10,13 +10,18 @@ import {
 } from "react-router-dom";
 import Menu from './components/Menu/Menu';
 import NotFound from './components/NotFound/NotFound';
-import Statistical from './components/Statistical/Statistical';
+// import Statistical from './components/Statistical/Statistical';
 import Login from './components/Authenticate/Login/Login';
 import Logout from './components/Authenticate/Logout/Logout';
 import { connect } from 'react-redux';
 import * as actions from './store/actions/index';
 import Aux from './hoc/Aux/Aux';
 import MenuBar from './components/MenuBar/MenuBar';
+import DeviceRoomTable from './components/Statistical/DeviceRoom/DeviceRoomTable';
+import LiquidationTable from './components/Statistical/LiquidationTable//LiquidationTable';
+import MaintenanceTable from './components/Statistical/MaintenanceTable/MaintenanceTable';
+
+
 class App extends Component {
   componentDidMount() {
     this.props.onTryAutoLogin();
@@ -34,18 +39,19 @@ class App extends Component {
           <Route path="/logout" component={Logout} />
           {this.props.role === "admin" ? <Aux>
             <Route path="/new-device" component={NewDevice} />
-            <Route path="/statistical/chart" component={Statistical} />
+            <Route path="/thongke/room" exact component={DeviceRoomTable} />
+            <Route path="/thongke/liquid" exact component={LiquidationTable} />
+            <Route path="/thongke/baotri" exact component={MaintenanceTable} />
             <Route path="/users" component={AdminPanel} />
             <Route path="/products" exact component={DeviceManager} />
             <Route path="/" exact component={DeviceManager} />
-            <Redirect to="/" />
+            
+            {/* <Redirect to="/" /> */}
           </Aux> : this.props.role === "manager" ? <Aux>
-            <Route path="/statistical/chart" component={Statistical} />
             <Route path="/new-device" component={NewDevice} />
             <Route path="/products" exact component={DeviceManager} />
             <Redirect to="/" />
           </Aux> : <Aux>
-                <Route path="/statistical/chart" component={Statistical} />
                 <Route path="/products" exact component={DeviceManager} />
                 <Redirect to="/" />
               </Aux>}

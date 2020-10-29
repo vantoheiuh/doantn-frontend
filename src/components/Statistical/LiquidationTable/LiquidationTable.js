@@ -90,23 +90,29 @@ class LiquidationTable extends Component {
             <option value={11}>November</option>
             <option value={12}>December</option>
           </select>
-          {this.state.loading ? <Spinner /> :<table className="TableDataStatistical">
-            <thead>
-              <tr>
-                <th>STT</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Checkin Time</th>
-                <th>Expired Time</th>
-                <th>Locate</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-              <tbody>
-                 {listLiquidationTable}
-              </tbody>
-          </table>}
+          {
+            this.state.loading ? <Spinner />
+              :
+              <div className="table-responsive">
+                <table className="table table-striped">
+                  <thead className="thead-dark">
+                    <tr>
+                      <th scope="col">STT</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Checkin Time</th>
+                      <th scope="col">Expired Time</th>
+                      <th scope="col">Locate</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {listLiquidationTable}
+                  </tbody>
+                </table>
+              </div>
+          }
         </div>
         <div className={classes.Chart}>
           <Chart maint={sumCount} using={countUsing} mainTained={countMaintain} />
