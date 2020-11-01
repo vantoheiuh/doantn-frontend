@@ -95,6 +95,7 @@ class LiquidationTable extends Component {
               :
               <div className="table-responsive">
                 <table className="table table-striped">
+                  <caption>List Products</caption>
                   <thead className="thead-dark">
                     <tr>
                       <th scope="col">STT</th>
@@ -103,7 +104,7 @@ class LiquidationTable extends Component {
                       <th scope="col">Checkin Time</th>
                       <th scope="col">Expired Time</th>
                       <th scope="col">Locate</th>
-                      <th scope="col">Status</th>
+                      <th scope="col">Staltus</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>

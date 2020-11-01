@@ -27,12 +27,8 @@ class App extends Component {
     this.props.onTryAutoLogin();
   }
   render() {
-    let routes = (
-      <Switch>
-        <Route path="/login" exact component={Login} />
-        <Route path="/" component={DeviceManager} />
-      </Switch>
-    )
+    let routes = null;
+
     if (this.props.isAuthenticated) {
       routes = (
         <Switch>
@@ -42,11 +38,10 @@ class App extends Component {
             <Route path="/thongke/room" exact component={DeviceRoomTable} />
             <Route path="/thongke/liquid" exact component={LiquidationTable} />
             <Route path="/thongke/baotri" exact component={MaintenanceTable} />
-            <Route path="/users" component={AdminPanel} />
+            <Route path="/users" exact component={AdminPanel} />
             <Route path="/products" exact component={DeviceManager} />
-            <Route path="/" exact component={DeviceManager} />
-            
-            {/* <Redirect to="/" /> */}
+            <Route path="/" exact component={NotFound} />
+            <Redirect to="/" />
           </Aux> : this.props.role === "manager" ? <Aux>
             <Route path="/new-device" component={NewDevice} />
             <Route path="/products" exact component={DeviceManager} />
@@ -55,6 +50,13 @@ class App extends Component {
                 <Route path="/products" exact component={DeviceManager} />
                 <Redirect to="/" />
               </Aux>}
+        </Switch>
+      )
+    } else {
+      routes =(
+        <Switch>
+          <Route path="/login" exact component={Login} />
+          <Route path="/" component={DeviceManager} />
         </Switch>
       )
     }

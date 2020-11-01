@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import classes from './TableData.css';
 import TableDataRow from './TableDataRow/TableDataRow';
 import ProductDetail from './ProductDetail/ProductDetail';
+import AddIcon from '@material-ui/icons/Add';
+
 
 
 
@@ -47,6 +49,16 @@ class TableData extends Component {
     })
     return (
       <div className={classes.TableData}>
+        <div className={classes.TableTitle}>
+                            <div>
+                                <div>
+                                    <h2>Manage Products</h2>
+                                </div>
+                                {/* <div>
+                                    <button className="btn btn-success" onClick={this.showAddModal} > <AddIcon /> New Product</button>
+                                </div> */}
+                            </div>
+                        </div>
         <table>
           <thead>
             <tr>
@@ -67,7 +79,7 @@ class TableData extends Component {
             {listTable}
           </tbody>
         </table>
-        <ProductDetail show={this.state.showProductDetail} close={this.hideProductDetailHandler} productInfo={this.state.productInfo}/>
+        <ProductDetail show={this.state.showProductDetail} close={this.hideProductDetailHandler} productInfo={this.state.productInfo} />
       </div>
     );
   }

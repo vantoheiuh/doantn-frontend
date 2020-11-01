@@ -27,7 +27,8 @@ class MaintenanceTable extends Component {
       })
   }
   isChangeMainternance = (event, data) => {
-    const name = event.target.value;
+    const name = event.target.value
+    console.log(event.target.value)
     var today = new Date();
     const dataFil = data.filter(item => {
       const exTime = item.checkinTime.slice(0, 10).split('-');

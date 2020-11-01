@@ -8,7 +8,13 @@
 .ButtonGroup button:hover{
     background-color: #f7f0f0;
 }
-.AdminPanelRow{
-    display: block;
-    width: 40%;
+
+.AdminPanelRow:hover{
+    background-color: #EEEEEE;
+}
+.AdminPanelRow:hover .ButtonGroup button {
+    background-color: #EEEEEE;
+}
+.ButtonGroup button:hover {
+    background-color: #d8d0d0 !important;
 }

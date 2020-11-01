@@ -7,6 +7,7 @@
     border-collapse: collapse;
     width: 100%;
     margin: 50px auto;
+    margin-top: 0px !important;
     overflow: auto;
 }
 
@@ -27,23 +28,16 @@
     color: white;
     text-align: center;
 }
-/* .button-group{
-    width: 100%;
-    text-align: center;
+.TableData .TableTitle {
+    margin-top: 20px;
+    background: #3F51B5;
+    color: #fff;
+    padding: 16px 30px;
+    min-width: 100%;
+    border-radius: 3px 3px 0 0;
 }
-button{
-    outline: none;
-    border: none;
-    padding: 10px 15px; 
-    font-weight: bold;
-    cursor: pointer;
+.TableData .TableTitle > div {
+    display: flex;
+    justify-content: space-between;
 }
 
-.Edit{
-    color: #333;
-    background-color: #ffc107; 
-    border-radius: 5px 0 0 5px;
-}
-.Delete{
-    color: red;
-} */

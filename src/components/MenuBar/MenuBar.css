@@ -21,7 +21,7 @@
 .MenuBar div {
     position: relative;
 }
-.MenuBar div span {
+.MenuBar > div > span {
     position: absolute;
     top: 51px;
     right: 140px;
@@ -48,7 +48,6 @@
 
 .MenuBar ul li a:hover{
     background-color: #eee;
-    color: black;
     text-decoration: none;
 
 }
@@ -59,4 +58,18 @@
 
 .SubMenu-root{
     display: none !important;
+}
+
+.DropDownMenu {
+    display: flex;
+    justify-content: space-between;
+}
+.DropDownMenu:hover {
+    background-color: #eee;
+}
+.DropDownMenu > span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
 }

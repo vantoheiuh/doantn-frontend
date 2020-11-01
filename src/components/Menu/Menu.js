@@ -11,7 +11,7 @@ class Menu extends Component {
                 <nav>
                     <ul>
                         <div>
-                            <MenuItem link="/"><DevicesIcon fontSize="large" /> Dash board</MenuItem>
+                            <MenuItem link="/"><DevicesIcon fontSize="large" /> Device Manager</MenuItem>
                         </div>
 
                         <div>

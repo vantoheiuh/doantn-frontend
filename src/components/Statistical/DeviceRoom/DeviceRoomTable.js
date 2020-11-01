@@ -81,6 +81,7 @@ class DeviceRoomTable extends Component {
           {this.state.loading ? <Spinner /> :
             <div className="table-responsive">
               <table className="table table-striped">
+                <caption>List Products</caption>
                 <thead className="thead-dark">
                   <tr >
                     <th scope="col">STT</th>

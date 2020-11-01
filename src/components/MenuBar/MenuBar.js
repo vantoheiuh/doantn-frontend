@@ -10,18 +10,21 @@ import SettingsCellIcon from '@material-ui/icons/SettingsCell';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import PageviewIcon from '@material-ui/icons/Pageview';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 
 
 class MenuBar extends Component {
     state = {
-        classSubs: "SubMenu-root"
+        classSubs: "SubMenu-root",
+        isDown: true
     }
 
     showSubMenuHandler = () => {
         if (this.state.classSubs === "SubMenu-collapse") {
-            this.setState({ classSubs: "SubMenu-root" })
+            this.setState({ classSubs: "SubMenu-root", isDown: true })
         } else {
-            this.setState({ classSubs: "SubMenu-collapse" })
+            this.setState({ classSubs: "SubMenu-collapse", isDown: false })
         }
     }
     render() {
@@ -37,7 +40,10 @@ class MenuBar extends Component {
                     <MenuItem link="/products"><SettingsCellIcon /> Manage Product</MenuItem>
                     <MenuItem link="/new-device"><AddCircleIcon /> New Product</MenuItem>
                     <li>
-                        <NavLink onClick={this.showSubMenuHandler} to="#" ><PageviewIcon /> Thong ke san pham</NavLink>
+                        <div className={classes.DropDownMenu} onClick={this.showSubMenuHandler}>
+                            <NavLink to="#" ><PageviewIcon /> Thong ke san pham</NavLink>
+                            <span>{this.state.isDown ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}</span>
+                        </div>
                         <ul className={classes[this.state.classSubs]}>
                             <MenuItem link="/thongke/baotri">Bao Tri</MenuItem>
                             <MenuItem link="/thongke/room">Room</MenuItem>
