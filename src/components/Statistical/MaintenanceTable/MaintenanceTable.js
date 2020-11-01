@@ -28,7 +28,10 @@ class MaintenanceTable extends Component {
   }
   isChangeMainternance = (event, data) => {
     const name = event.target.value
-    console.log(event.target.value)
+    if(!name || name == 0){
+      this.setState({maintenanceTable: this.state.dataFilter});
+      return;
+    }
     var today = new Date();
     const dataFil = data.filter(item => {
       const exTime = item.checkinTime.slice(0, 10).split('-');
@@ -79,6 +82,7 @@ class MaintenanceTable extends Component {
         <div>
           <label className="lable-title-liquidation">THIẾT BỊ CẦN BẢO TRÌ TRONG THÁNG: </label> <br />
           <select className="select-Month-liquidation" name="mainternance" onChange={(event) => this.isChangeMainternance(event, this.state.dataFilter)} required>
+            <option value={0}>None</option>
             <option value={1} >January</option>
             <option value={2}>February</option>
             <option value={3}>March</option>

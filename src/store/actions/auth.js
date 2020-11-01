@@ -51,7 +51,7 @@ export const checkAuthTimeout = (expireTime) => {
 
 
 
-export const auth = (username, password) => {
+export const auth =  (username, password) => {
     return dispatch => {
         dispatch(authStart());
         //some async code

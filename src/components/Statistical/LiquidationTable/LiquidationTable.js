@@ -25,9 +25,11 @@ class LiquidationTable extends Component {
       })
   }
   isChangeLiquidation = (event, data) => {
-    this.setState({ liquidationTable: this.state.dataFilter })
     const name = event.target.value;
-
+    if(!name || name == 0){
+      this.setState({liquidationTable: this.state.dataFilter});
+      return;
+    }
     var today = new Date();
     const dataFil = data.filter(item => {
       const exTime = item.checkinTime.slice(0, 10).split('-'); //cho vào mảng
@@ -77,6 +79,7 @@ class LiquidationTable extends Component {
         <div>
           <label>THIẾT BỊ SẮP THANH LÝ THEO THÁNG: </label> <br />
           <select className="select-Month-liquidation" name="liquidation" onChange={(event) => this.isChangeLiquidation(event, this.state.dataFilter)} required>
+            <option value={0} >None</option>
             <option value={1} >January</option>
             <option value={2}>February</option>
             <option value={3}>March</option>

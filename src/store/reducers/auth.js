@@ -10,7 +10,7 @@ const initState = {
     error: null,
     loading: false,
     authRedirectPath: '/',
-    deleteId: null
+    deleteId: null,
 };
 
 const authStart = (state, action) => {
@@ -40,6 +40,7 @@ const authLogout = (state, action) => {
         userName: null,
         role: null,
         loading: false,
+        error: null
     });
 };
 

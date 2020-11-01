@@ -19,7 +19,7 @@ class Login extends Component {
         });
     }
 
-    loginHandler = (event) => {
+    loginHandler =  (event) => {
         event.preventDefault();
         this.props.onAuth(this.state.username, this.state.password);
     }
@@ -39,6 +39,9 @@ class Login extends Component {
                         <span><VpnKeyIcon /></span>
                         <input type="password" name="password" placeholder="Password" autoComplete="false" onChange={this.inputHandler} />
                     </div>
+                    {this.props.err ?<div className={classes.ErrorLogin}>
+                        <p>Wrong Username or Password. Please try again!</p>
+                    </div>: null}
                     <div>
                         <button type="button" onClick={this.loginHandler}>Sign in</button>
                     </div>
@@ -50,7 +53,8 @@ class Login extends Component {
 
 const mapStateToProps = state => {
     return {
-        isAuthenticated: state.auth.token !== null
+        isAuthenticated: state.auth.token !== null,
+        err: state.auth.error
     }
 }
 
