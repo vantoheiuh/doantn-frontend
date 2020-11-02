@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import classes from './TableData.css';
 import TableDataRow from './TableDataRow/TableDataRow';
 import ProductDetail from './ProductDetail/ProductDetail';
-import AddIcon from '@material-ui/icons/Add';
 
 
 

@@ -26,7 +26,7 @@ class LiquidationTable extends Component {
   }
   isChangeLiquidation = (event, data) => {
     const name = event.target.value;
-    if(!name || name == 0){
+    if(!name || name === 0){
       this.setState({liquidationTable: this.state.dataFilter});
       return;
     }
