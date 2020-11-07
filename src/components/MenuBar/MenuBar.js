@@ -39,6 +39,7 @@ class MenuBar extends Component {
                     <MenuItem link="/users"> <GroupIcon /> Manage Users</MenuItem>
                     <MenuItem link="/products"><SettingsCellIcon /> Manage Product</MenuItem>
                     <MenuItem link="/new-device"><AddCircleIcon /> New Product</MenuItem>
+                    <MenuItem link="/password"><AddCircleIcon /> Update Password</MenuItem>
                     <li>
                         <div className={classes.DropDownMenu} onClick={this.showSubMenuHandler}>
                             <NavLink to="#" ><PageviewIcon /> Thong ke san pham</NavLink>
