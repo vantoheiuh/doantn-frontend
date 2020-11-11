@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
 import AddIcon from '@material-ui/icons/Add';
 import Spinner from '../../UI/Spinner/Spinner';
-import UpdatePassword from '../UpdatePassword/UpdatePassword';
 
 class AdminPanel extends Component {
     state = {
@@ -151,7 +150,6 @@ class AdminPanel extends Component {
                                 {listRow}
                             </tbody>
                         </table>
-                        <UpdatePassword />
 
                     </div>}
                 <EditModal show={this.state.isEditModalShow} btnClicked={this.closeEditModal} userData={{ ...this.state.userData }} />

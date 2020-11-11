@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import classes from './DashBoard.css';
+import StatisticalDetail from './StatisticalDetail/StatisticalDetail';
 
 class DashBoard extends Component {
-    render(){
+    render() {
 
-        return(
+        return (
             <div className={classes.DashBoard}>
+                <div className="container">
+                    <StatisticalDetail />
 
-
+                </div>
             </div>
         )
     }

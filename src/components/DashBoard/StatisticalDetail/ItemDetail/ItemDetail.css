@@ -1,0 +1,23 @@
+.Content {
+    padding: 1.5rem;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.first {
+    background: linear-gradient(45deg, #6a11cb, #2575fc)!important;
+    ;
+}
+
+.second {
+    background: linear-gradient(45deg, #fc4a1a, #f7b733)!important;
+}
+
+.third {
+    background: linear-gradient(45deg, #00b09b, #96c93d)!important;
+}
+
+.fourth{
+    background: linear-gradient(45deg, #ee0979, #ff6a00)!important;;
+}

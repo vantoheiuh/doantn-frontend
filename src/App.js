@@ -21,6 +21,7 @@ import DeviceRoomTable from './components/Statistical/DeviceRoom/DeviceRoomTable
 import LiquidationTable from './components/Statistical/LiquidationTable//LiquidationTable';
 import MaintenanceTable from './components/Statistical/MaintenanceTable/MaintenanceTable';
 import UpdatePassword from './components/Authenticate/UpdatePassword/UpdatePassword';
+import DashBoard from './components/DashBoard/DashBoard';
 
 class App extends Component {
   componentDidMount() {
@@ -41,7 +42,7 @@ class App extends Component {
             <Route path="/password" exact component={UpdatePassword} />
             <Route path="/users" exact component={AdminPanel} />
             <Route path="/products" exact component={DeviceManager} />
-            <Route path="/" exact component={NotFound} />
+            <Route path="/" exact component={DashBoard} />
           </Aux> : this.props.role === "manager" ? <Aux>
             <Route path="/new-device" component={NewDevice} />
             <Route path="/products" exact component={DeviceManager} />

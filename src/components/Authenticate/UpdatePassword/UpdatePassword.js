@@ -11,7 +11,9 @@ class UpdatePassword extends Component {
             currentPassword: null,
             newPassword: null,
             confirmPassword: null
-        }
+        },
+        isSuccess: false,
+        isFailed: false
     }
 
     inputHandler = (event, inputName) => {
@@ -32,20 +34,18 @@ class UpdatePassword extends Component {
         axios.post('http://localhost:5000/api/users/authenticate', checkData)
             .then(res => {
                 localStorage.setItem("token", res.data.token);
-                if(this.state.dataForm.newPassword === this.state.dataForm.confirmPassword){
+                if (this.state.dataForm.newPassword === this.state.dataForm.confirmPassword) {
                     const dataUpdate = {
                         id: this.props.id,
                         password: this.state.dataForm.newPassword
                     }
                     this.props.onUpdateUserById(dataUpdate, this.props.token);
                 }
+                this.setState({ isSuccess: true });
             }).catch(err => {
                 console.log("Wrong password");
+                this.setState({ isFailed: true });
             })
-        // const data = { ...this.props.userData, ...this.state.dataForm };
-        // this.props.onUpdateUserById(data, this.props.token);
-        // this.props.btnClicked();
-        // this.setState({ dataForm: null });
     }
     render() {
 
@@ -59,20 +59,24 @@ class UpdatePassword extends Component {
                     </div>
                     <div>
                         <label htmlFor="currentPassword">Current Password:</label>
-                        <input onChange={(event) => this.inputHandler(event, "currentPassword")} type="text" id="currentPassword" placeholder="Current Password" />
+                        <input onChange={(event) => this.inputHandler(event, "currentPassword")} type="password" id="currentPassword" placeholder="Current Password" />
                     </div>
                     <div>
                         <label htmlFor="newPassword">New Password:</label>
-                        <input onChange={(event) => this.inputHandler(event, "newPassword")} name="newPassword" type="text" id="newPassword" placeholder="New password" />
+                        <input onChange={(event) => this.inputHandler(event, "newPassword")} name="newPassword" type="password" id="newPassword" placeholder="New password" />
                     </div>
                     <div>
                         <label htmlFor="confirmPassword">Confirm Password</label>
                         <input onChange={(event) => this.inputHandler(event, "confirmPassword")} type="password" id="confirmPassword" placeholder="Confirm Password" />
                     </div>
+                    
                     <div className={classes.BtnGroup}>
                         <button type="reset" className="btn btn-danger" onClick={this.props.btnClicked}>Cancel</button>
                         <button onClick={this.submitUpdateHandler} type="reset" className="btn btn-primary">Save</button>
                     </div>
+                    {
+                        this.state.isSuccess ? <p style={{'color': 'green'}}>Change password successfully!</p> : this.state.isFailed ? <p style={{ 'color': 'red' }}>Failed! Please try again!</p> : null
+                    }
                 </form>
             </div>
         )
