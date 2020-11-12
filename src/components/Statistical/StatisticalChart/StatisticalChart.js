@@ -122,7 +122,7 @@ class StatisticalChart extends Component {
           options={{
             title: {
               display: true,
-              text: "World population per region (in millions)"
+              text: "BIỂU ĐỒ THỐNG KÊ TÌNH TRẠNG THIẾT BỊ THEO THÁNG"
             },
             legend: {
               display: true,

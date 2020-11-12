@@ -6,18 +6,18 @@
 }
 
 .first {
-    background: linear-gradient(45deg, #6a11cb, #2575fc)!important;
+    background: #8892D6!important;
     ;
 }
 
 .second {
-    background: linear-gradient(45deg, #fc4a1a, #f7b733)!important;
+    background: #45BCE0!important;
 }
 
 .third {
-    background: linear-gradient(45deg, #00b09b, #96c93d)!important;
+    background: #F06292!important;
 }
 
 .fourth{
-    background: linear-gradient(45deg, #ee0979, #ff6a00)!important;;
+    background: #77C350!important;;
 }

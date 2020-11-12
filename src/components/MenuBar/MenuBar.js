@@ -36,19 +36,19 @@ class MenuBar extends Component {
                 </div>
                 <ul>
                     <MenuItem link="/"><DashboardIcon /> DashBoard</MenuItem>
-                    <MenuItem link="/users"> <GroupIcon /> Manage Users</MenuItem>
-                    <MenuItem link="/products"><SettingsCellIcon /> Manage Product</MenuItem>
-                    <MenuItem link="/new-device"><AddCircleIcon /> New Product</MenuItem>
-                    <MenuItem link="/password"><AddCircleIcon /> Update Password</MenuItem>
+                    <MenuItem link="/users"> <GroupIcon /> Quản lí tài khoản</MenuItem>
+                    <MenuItem link="/products"><SettingsCellIcon /> Quản lí thiết bị</MenuItem>
+                    <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
+                    <MenuItem link="/password"><AddCircleIcon /> Thay đổi mật khẩu</MenuItem>
                     <li>
                         <div className={classes.DropDownMenu} onClick={this.showSubMenuHandler}>
-                            <NavLink to="#" ><PageviewIcon /> Thong ke san pham</NavLink>
+                            <NavLink to="#" ><PageviewIcon /> Thống kê sản phẩm</NavLink>
                             <span>{this.state.isDown ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}</span>
                         </div>
                         <ul className={classes[this.state.classSubs]}>
-                            <MenuItem link="/thongke/baotri">Bao Tri</MenuItem>
-                            <MenuItem link="/thongke/room">Room</MenuItem>
-                            <MenuItem link="/thongke/liquid">Thanh li</MenuItem>
+                            <MenuItem link="/thongke/baotri">Cần bảo trì</MenuItem>
+                            <MenuItem link="/thongke/liquid">Cần thanh lí</MenuItem>
+                            <MenuItem link="/thongke/room">Theo phòng ban</MenuItem>
                         </ul>
                     </li>
                 </ul>

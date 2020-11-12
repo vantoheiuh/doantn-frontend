@@ -3,7 +3,6 @@ import classes from './ItemDetail.css';
 
 const itemDetail = props => {
     const classesSub = ["Content", "first"];
-    console.log(classesSub)
     return (
         <div className="col-xl-3 col-md-6">
             {classesSub ? <div className={`${classes.Content} ${classes[props.type]}`}>

@@ -22,7 +22,7 @@ class AddModal extends Component {
     }
 
     submitHandler = () => {
-        const url = 'http://localhost:4444/api/users/register'
+        const url = 'http://localhost:5000/api/users/register'
         axios.post(url, this.state)
         .then(res => {
             console.log(res.data)

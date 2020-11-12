@@ -1,8 +1,3 @@
 .StatisticalChart {
-    display: block;
-    position: fixed;
-    top: 60px;
-    left: 250px;
-    width: 80%;
     padding: 20px;
 }
