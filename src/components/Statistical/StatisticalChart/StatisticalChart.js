@@ -122,7 +122,7 @@ class StatisticalChart extends Component {
           options={{
             title: {
               display: true,
-              text: "BIỂU ĐỒ THỐNG KÊ TÌNH TRẠNG THIẾT BỊ THEO THÁNG"
+              text: "THỐNG KÊ TÌNH TRẠNG THIẾT BỊ THEO THÁNG"
             },
             legend: {
               display: true,

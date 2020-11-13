@@ -43,10 +43,10 @@ button {
     outline: none;
     background-color: white;
 }
-
+/* 
 .TableDataRow:hover{
     background-color: #EEEEEE;
-}
+} */
 .TableDataRow:hover .BtnGroup button {
     background-color: #EEEEEE;
 }

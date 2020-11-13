@@ -4,6 +4,9 @@ import DeviceRoomRow from './DeviceRoomRow/DeviceRoomRow';
 import axios from 'axios';
 import Chart from '../../UI/Chart/Chart';
 import Spinner from '../../UI/Spinner/Spinner';
+import Footer from '../../UI/Footer/Footer';
+
+
 class DeviceRoomTable extends Component {
   state = {
     deviceRoom: [],
@@ -70,8 +73,8 @@ class DeviceRoomTable extends Component {
     }, 0)
     return (
       <div className={classes.DeviceRoomTable}>
-        <div>
-          <label>THIẾT BỊ TRONG PHÒNG BAN: </label> <br />
+        <div className="container">
+          <h3>Thiết bị trong phòng ban</h3>
           <select name="deviceRoom" onChange={(event) => this.isChangeRoom(event, this.state.dataFilter)} required>
             <option value={"All"}>All</option>
             <option value={"kho"}>Kho</option>
@@ -79,10 +82,10 @@ class DeviceRoomTable extends Component {
             <option value={"giám đốc"}>Giám đốc</option>
           </select>
           {this.state.loading ? <Spinner /> :
-            <div className="table-responsive">
-              <table className="table table-striped">
+            <div className={classes.Table}>
+              <table className="table table-hover">
                 <caption>List Products</caption>
-                <thead className="thead-dark">
+                <thead className="thead">
                   <tr >
                     <th scope="col">STT</th>
                     <th scope="col">Name</th>
@@ -100,9 +103,11 @@ class DeviceRoomTable extends Component {
               </table>
             </div>}
         </div>
-        <div className={classes.Chart}>
+        {/* <div className={classes.Chart}>
           <Chart maint={sumCount} using={countUsing} mainTained={countMaintain} />
-        </div>
+        </div> */}
+        <Footer />
+
       </div>
     );
   }

@@ -1,0 +1,14 @@
+.Footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #EEEEEE;
+    margin-top: 100px;
+}
+.Footer >  span {
+    display: block;
+    width: 100%;
+    line-height: 50px;
+    margin-left: 10px;
+    text-align: center;
+    margin-right: 10px;
+}

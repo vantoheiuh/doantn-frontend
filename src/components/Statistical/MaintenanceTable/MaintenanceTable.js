@@ -4,6 +4,7 @@ import MaintenanceRow from './MaintenanceRow/MaintenanceRow';
 import axios from 'axios';
 import Chart from '../../UI/Chart/Chart';
 import Spinner from '../../UI/Spinner/Spinner';
+import Footer from '../../UI/Footer/Footer';
 
 
 class MaintenanceTable extends Component {
@@ -79,8 +80,8 @@ class MaintenanceTable extends Component {
 
     return (
       <div className={classes.MaintenanceTable}>
-        <div>
-          <label className="lable-title-liquidation">THIẾT BỊ CẦN BẢO TRÌ TRONG THÁNG: </label> <br />
+        <div className="container">
+          <h3 className="lable-title-liquidation">THIẾT BỊ CẦN BẢO TRÌ TRONG THÁNG: </h3>
           <select className="select-Month-liquidation" name="mainternance" onChange={(event) => this.isChangeMainternance(event, this.state.dataFilter)} required>
             <option value={0}>None</option>
             <option value={1} >January</option>
@@ -97,10 +98,10 @@ class MaintenanceTable extends Component {
             <option value={12}>December</option>
           </select>
           {this.state.loading ? <Spinner /> :
-            <div className="table-responsive">
+            <div className={classes.Table}>
               <table className="table table-hover">
                 <caption>List Products</caption>
-                <thead className="thead-dark">
+                <thead className="thead">
                   <tr>
                     <th scope="col">STT</th>
                     <th scope="col">Name</th>
@@ -118,9 +119,10 @@ class MaintenanceTable extends Component {
               </table>
             </div>}
         </div>
-        <div className={classes.Chart}>
+        {/* <div className={classes.Chart}>
           <Chart maint={sumCount} using={countUsing} mainTained={countMaintain} />
-        </div>
+        </div> */}
+        <Footer />
       </div>
     );
   }

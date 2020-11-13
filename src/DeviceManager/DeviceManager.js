@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import TableData from '../components/TableData/TableData';
 import axios from 'axios';
 import Model from '../components/UI/Model/Model';
-import Search from '../components/Search/Search';
 import AlertInfo from '../components/UI/AlertInfo/AlertInfo';
 import Spinner from '../components/UI/Spinner/Spinner';
 import classes from './DeviceManager.css';
 import { connect } from 'react-redux';
 import Aux from '../hoc/Aux/Aux';
+import Footer from '../components/UI/Footer/Footer';
 
 
 class DeviceManager extends Component {

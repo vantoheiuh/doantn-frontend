@@ -4,6 +4,8 @@ import LiquidationTableRow from './LiquidationTableRow/LiquidationTableRow';
 import axios from 'axios';
 import Chart from '../../UI/Chart/Chart';
 import Spinner from '../../UI/Spinner/Spinner';
+import Footer from '../../UI/Footer/Footer';
+
 class LiquidationTable extends Component {
   state = {
     liquidationTable: [],
@@ -76,8 +78,8 @@ class LiquidationTable extends Component {
     }, 0)
     return (
       <div className={classes.LiquidationTable}>
-        <div>
-          <label>THIẾT BỊ SẮP THANH LÝ THEO THÁNG: </label> <br />
+        <div className="container">
+          <h3>THIẾT BỊ SẮP THANH LÝ THEO THÁNG: </h3>
           <select className="select-Month-liquidation" name="liquidation" onChange={(event) => this.isChangeLiquidation(event, this.state.dataFilter)} required>
             <option value={0} >None</option>
             <option value={1} >January</option>
@@ -96,10 +98,10 @@ class LiquidationTable extends Component {
           {
             this.state.loading ? <Spinner />
               :
-              <div className="table-responsive">
-                <table className="table table-striped">
+              <div className={classes.Table}>
+                <table className="table table-hover">
                   <caption>List Products</caption>
-                  <thead className="thead-dark">
+                  <thead className="thead">
                     <tr>
                       <th scope="col">STT</th>
                       <th scope="col">Name</th>
@@ -118,9 +120,10 @@ class LiquidationTable extends Component {
               </div>
           }
         </div>
-        <div className={classes.Chart}>
+        {/* <div className={classes.Chart}>
           <Chart maint={sumCount} using={countUsing} mainTained={countMaintain} />
-        </div>
+        </div> */}
+        <Footer />
       </div>
     );
   }

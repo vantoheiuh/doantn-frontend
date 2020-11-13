@@ -1,4 +1,6 @@
-
+.DeviceRoomRow td, .DeviceRoomRow th{
+    background-color: white;
+}
 .ButtonGroup button {
     margin: 0px 2px;
     border-radius: 50%;

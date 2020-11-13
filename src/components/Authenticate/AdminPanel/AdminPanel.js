@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
 import AddIcon from '@material-ui/icons/Add';
 import Spinner from '../../UI/Spinner/Spinner';
+import Footer from '../../UI/Footer/Footer';
 
 class AdminPanel extends Component {
     state = {
@@ -122,34 +123,37 @@ class AdminPanel extends Component {
             <Aux>
                 {this.state.loading ? <Spinner /> :
                     <div className={classes.TableData}>
-                        <div className={classes.TableTitle}>
-                            <div>
+                        <div className="container">
+                            <div className={classes.TableTitle}>
                                 <div>
-                                    <h2>Manage Users</h2>
-                                </div>
-                                <div>
-                                    <button className="btn btn-success" onClick={this.showAddModal} > <AddIcon /> New User</button>
+                                    <div>
+                                        <h2>Manage Users</h2>
+                                    </div>
+                                    <div>
+                                        <button className="btn btn-success" onClick={this.showAddModal} > <AddIcon /> New User</button>
+                                    </div>
                                 </div>
                             </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Username</th>
+                                        <th>Fist name</th>
+                                        <th>Last name</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Date Created</th>
+                                        <th>Date Updated</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {listRow}
+                                </tbody>
+                            </table>
                         </div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Username</th>
-                                    <th>Fist name</th>
-                                    <th>Last name</th>
-                                    <th>Role</th>
-                                    <th>Status</th>
-                                    <th>Date Created</th>
-                                    <th>Date Updated</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {listRow}
-                            </tbody>
-                        </table>
+                        <Footer />
 
                     </div>}
                 <EditModal show={this.state.isEditModalShow} btnClicked={this.closeEditModal} userData={{ ...this.state.userData }} />

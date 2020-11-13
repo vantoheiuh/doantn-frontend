@@ -12,6 +12,7 @@ import PageviewIcon from '@material-ui/icons/Pageview';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 
 class MenuBar extends Component {
@@ -39,7 +40,7 @@ class MenuBar extends Component {
                     <MenuItem link="/users"> <GroupIcon /> Quản lí tài khoản</MenuItem>
                     <MenuItem link="/products"><SettingsCellIcon /> Quản lí thiết bị</MenuItem>
                     <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
-                    <MenuItem link="/password"><AddCircleIcon /> Thay đổi mật khẩu</MenuItem>
+                    <MenuItem link="/password"><VpnKeyIcon /> Thay đổi mật khẩu</MenuItem>
                     <li>
                         <div className={classes.DropDownMenu} onClick={this.showSubMenuHandler}>
                             <NavLink to="#" ><PageviewIcon /> Thống kê sản phẩm</NavLink>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './TableData.css';
 import TableDataRow from './TableDataRow/TableDataRow';
 import ProductDetail from './ProductDetail/ProductDetail';
+import Footer from '../UI/Footer/Footer';
 
 
 
@@ -48,37 +49,37 @@ class TableData extends Component {
     })
     return (
       <div className={classes.TableData}>
-        <div className={classes.TableTitle}>
-                            <div>
-                                <div>
-                                    <h2>Manage Products</h2>
-                                </div>
-                                {/* <div>
-                                    <button className="btn btn-success" onClick={this.showAddModal} > <AddIcon /> New Product</button>
-                                </div> */}
-                            </div>
-                        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>STT</th>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Amount</th>
-              <th>Checkin Time</th>
-              <th>Source</th>
-              <th>Locate</th>
-              <th>Barcode</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {listTable}
-          </tbody>
-        </table>
-        <ProductDetail show={this.state.showProductDetail} close={this.hideProductDetailHandler} productInfo={this.state.productInfo} />
+        <div className="container">
+          <div className={classes.TableTitle}>
+            <div>
+              <div>
+                <h2>Manage Products</h2>
+              </div>
+            </div>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>Checkin Time</th>
+                <th>Source</th>
+                <th>Locate</th>
+                <th>Barcode</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {listTable}
+            </tbody>
+          </table>
+          <ProductDetail show={this.state.showProductDetail} close={this.hideProductDetailHandler} productInfo={this.state.productInfo} />
+        </div>
+        <Footer />
       </div>
     );
   }

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import Spinner from '../UI/Spinner/Spinner';
 import StatisticalChart from '../Statistical/StatisticalChart/StatisticalChart';
+import Footer from '../UI/Footer/Footer';
 
 class DashBoard extends Component {
 
@@ -25,7 +26,7 @@ class DashBoard extends Component {
                     total.total++;
                     if (item.role === "admin") {
                         total.admin++;
-                    } else if (item.role == "manager") {
+                    } else if (item.role === "manager") {
                         total.manager++;
                     } else {
                         total.employee++;
@@ -85,13 +86,16 @@ class DashBoard extends Component {
 
         return (
             <div className={classes.DashBoard}>
-                <div className="container">
+                <div className="container" >
                     {this.state.usersData ? <StatisticalDetail title="Thống kê tài khoản" data={this.state.usersData} /> : <Spinner />}
                     {this.state.productsData ? <StatisticalDetail title="Thống kê thiết bị" data={this.state.productsData} /> : <Spinner />}
+                    <div className={`"row" ${classes.Chart}`} >
+                        <div className="col-12">
+                            <StatisticalChart />
+                        </div>
+                    </div>
                 </div>
-                <div className="container">
-                    <StatisticalChart />
-                </div>
+                <Footer />
             </div>
         )
     }
