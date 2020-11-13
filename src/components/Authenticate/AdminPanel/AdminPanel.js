@@ -4,7 +4,7 @@ import AdminPanelRow from './AdminPanelRow/AdminPanelRow';
 import EditModal from './EditModal/EditModal';
 import DeleteModal from './DeleteModal/DeleteModal';
 import AddModal from './AddModal/AddModal';
-import Aux from '../../../hoc/Aux/Aux';
+import Aux from '../../../hoc/Auxi/Auxi';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
@@ -127,10 +127,10 @@ class AdminPanel extends Component {
                             <div className={classes.TableTitle}>
                                 <div>
                                     <div>
-                                        <h2>Manage Users</h2>
+                                        <h2 style={{ 'fontWeight': 'bolder' }}>QUẢN LÍ TÀI KHOẢN</h2>
                                     </div>
                                     <div>
-                                        <button className="btn btn-success" onClick={this.showAddModal} > <AddIcon /> New User</button>
+                                        <button className="btn btn-success" onClick={this.showAddModal} > <AddIcon /> Thêm tài khoản</button>
                                     </div>
                                 </div>
                             </div>

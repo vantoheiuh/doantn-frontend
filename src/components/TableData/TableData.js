@@ -53,7 +53,7 @@ class TableData extends Component {
           <div className={classes.TableTitle}>
             <div>
               <div>
-                <h2>Manage Products</h2>
+                <h2 style={{'fontWeight': 'bolder'}}>QUẢN LÍ THIẾT BỊ</h2>
               </div>
             </div>
           </div>
