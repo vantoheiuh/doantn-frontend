@@ -137,7 +137,7 @@ class AdminPanel extends Component {
             }).map((row, index) => {
                 return <AdminPanelRow
                     key={row.id}
-                    stt={index + 1}
+                    stt={index + 1 + this.state.range}
                     username={row.username}
                     firstName={row.firstName}
                     lastName={row.lastName}
@@ -188,7 +188,7 @@ class AdminPanel extends Component {
                                     {
                                         this.state.rowData.length < 10 ? 
                                         <span>1-{this.state.rowData.length} of { this.state.rowData.length }</span>:
-                                        <span>1-10 of { this.state.rowData.length }</span>
+                                    <span>{this.state.range + 1}-{this.state.range + listRow.length} of { this.state.rowData.length }</span>
                                     }
                                     
                                 </div>

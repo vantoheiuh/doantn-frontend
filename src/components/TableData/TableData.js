@@ -16,13 +16,15 @@ class TableData extends Component {
     range: 0
   }
 
-
+  //show product detail modal
   showProductDetailHanlder = (productInfo) => {
     this.setState({
       showProductDetail: true,
       productInfo: { ...productInfo }
     })
   };
+
+  //hide show product detail modal
   hideProductDetailHandler = () => {
     this.setState({
       showProductDetail: false,
@@ -51,13 +53,14 @@ class TableData extends Component {
 
   render() {
     let listTable = this.props.tableData.filter((item, index) => {
+      //filter 10 item from range to range + 10
       if (this.state.range == 0) {
         return index < 10;
       }
       return index >= this.state.range && index < this.state.range + 10;
     }).map((item, index) => {
       return (
-        <TableDataRow key={index} stt={index + 1}
+        <TableDataRow key={index} stt={index + 1 + this.state.range}
           id={item._id.slice(3, item._id.length)}
           name={item.name}
           price={item.price}
@@ -110,7 +113,7 @@ class TableData extends Component {
               {
                 this.props.tableData.length < 10 ?
                   <span>1-{this.props.tableData.length} of {this.props.tableData.length}</span> :
-                  <span>1-10 of {this.props.tableData.length}</span>
+                  <span>{this.state.range + 1}-{this.state.range + listTable.length} of {this.props.tableData.length}</span>
               }
 
             </div>

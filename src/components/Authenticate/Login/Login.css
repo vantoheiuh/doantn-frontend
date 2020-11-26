@@ -74,3 +74,9 @@
 .ErrorLogin p {
     color: red;
 }
+
+.Footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}

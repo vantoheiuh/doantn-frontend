@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import PersonIcon from '@material-ui/icons/Person';
+import Aux from '../../../hoc/Auxi/Auxi';
+import Footer from '../../UI/Footer/Footer';
 
 class Login extends Component {
     state = {
@@ -19,7 +21,7 @@ class Login extends Component {
         });
     }
 
-    loginHandler =  (event) => {
+    loginHandler = (event) => {
         event.preventDefault();
         this.props.onAuth(this.state.username, this.state.password);
     }
@@ -27,26 +29,32 @@ class Login extends Component {
     render() {
         const authRedirect = this.props.isAuthenticated ? <Redirect to="/" /> : null;
         return (
-            <div className={classes.Login}>
-                {authRedirect}
-                <form>
-                    <h2>Account Login</h2>
-                    <div>
-                        <span><PersonIcon /></span>
-                        <input type="text" name="username" placeholder="Username" onChange={this.inputHandler} />
-                    </div>
-                    <div>
-                        <span><VpnKeyIcon /></span>
-                        <input type="password" name="password" placeholder="Password" autoComplete="false" onChange={this.inputHandler} />
-                    </div>
-                    {this.props.err ?<div className={classes.ErrorLogin}>
-                        <p>Wrong Username or Password. Please try again!</p>
-                    </div>: null}
-                    <div>
-                        <button type="button" onClick={this.loginHandler}>Sign in</button>
-                    </div>
-                </form>
-            </div>
+            <Aux>
+                <div className={classes.Login}>
+                    {authRedirect}
+                    <form>
+                        <h2>Account Login</h2>
+                        <div>
+                            <span><PersonIcon /></span>
+                            <input type="text" name="username" placeholder="Username" onChange={this.inputHandler} />
+                        </div>
+                        <div>
+                            <span><VpnKeyIcon /></span>
+                            <input type="password" name="password" placeholder="Password" autoComplete="false" onChange={this.inputHandler} />
+                        </div>
+                        {this.props.err ? <div className={classes.ErrorLogin}>
+                            <p>Wrong Username or Password. Please try again!</p>
+                        </div> : null}
+                        <div>
+                            <button type="button" onClick={this.loginHandler}>Sign in</button>
+                        </div>
+                    </form>
+                </div>
+                <div className={classes.Footer}>
+                    <Footer />
+                </div>
+            </Aux>
+
         )
     }
 }

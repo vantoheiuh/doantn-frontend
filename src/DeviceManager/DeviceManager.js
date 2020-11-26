@@ -120,6 +120,9 @@ class DeviceManager extends Component {
           /> : null}
           <AlertInfo checkAlert={this.state.checkAlert} alertShow={this.state.alertShow} alertOff={this.alertOff} status={this.state.status} />
         </div> : <div className={classes.Authen}><h1 >LOGIN REQUIRED</h1></div>}
+        <div className={classes.Footer}>
+          <Footer />
+        </div>
       </Aux>
     );
   }
@@ -131,4 +134,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps) (DeviceManager);
+export default connect(mapStateToProps)(DeviceManager);

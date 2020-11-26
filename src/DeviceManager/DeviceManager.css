@@ -8,3 +8,9 @@
     margin: 200px auto;
     text-align: center;
 }
+
+.Footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
