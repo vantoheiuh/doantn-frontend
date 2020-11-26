@@ -6,7 +6,7 @@ import AlertInfo from '../components/UI/AlertInfo/AlertInfo';
 import Spinner from '../components/UI/Spinner/Spinner';
 import classes from './DeviceManager.css';
 import { connect } from 'react-redux';
-import Aux from '../hoc/Aux/Aux';
+import Aux from '../hoc/Auxi/Auxi';
 import Footer from '../components/UI/Footer/Footer';
 
 

@@ -3,7 +3,7 @@ import classes from './NewDevice.css';
 import axios from 'axios';
 import AlertAddNew from '../UI/AlertInfo/AlerAddNew/AlertAddNew';
 import Spinner from '../UI/Spinner/Spinner';
-import Aux from '../../hoc/Aux/Aux';
+import Aux from '../../hoc/Auxi/Auxi';
 
 class NewDevice extends Component {
     state = {

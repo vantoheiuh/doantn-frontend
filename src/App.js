@@ -14,7 +14,7 @@ import Login from './components/Authenticate/Login/Login';
 import Logout from './components/Authenticate/Logout/Logout';
 import { connect } from 'react-redux';
 import * as actions from './store/actions/index';
-import Aux from './hoc/Aux/Aux';
+import Aux from './hoc/Auxi/Auxi';
 import MenuBar from './components/MenuBar/MenuBar';
 import DeviceRoomTable from './components/Statistical/DeviceRoom/DeviceRoomTable';
 import LiquidationTable from './components/Statistical/LiquidationTable//LiquidationTable';

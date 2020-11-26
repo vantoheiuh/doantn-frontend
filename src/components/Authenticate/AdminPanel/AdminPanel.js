@@ -11,6 +11,9 @@ import * as actions from '../../../store/actions/index';
 import AddIcon from '@material-ui/icons/Add';
 import Spinner from '../../UI/Spinner/Spinner';
 import Footer from '../../UI/Footer/Footer';
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+
 
 class AdminPanel extends Component {
     state = {
@@ -21,6 +24,7 @@ class AdminPanel extends Component {
         rowData: null,
         userData: null,
         forceUpdate: false,
+        range: 0,
         loading: true
     }
 
@@ -101,10 +105,36 @@ class AdminPanel extends Component {
         this.setState({ isDeleteModalShow: false, forceUpdate: !this.state.forceUpdate });
     }
 
+    // next 10 row
+
+    onNextRowHandler = () => {
+        if (this.state.range <= this.state.rowData.length && this.state.rowData.length > 10) {
+            this.setState({ range: this.state.range + 10 });
+        }
+        console.log(this.state.range)
+    }
+
+
+    // back 10 row
+    onPrevRowHandler = () => {
+        if (this.state.range > 0) {
+            this.setState({ range: this.state.range - 10 });
+        }
+        console.log(this.state.range)
+
+    }
+
+
     render() {
         let listRow = null;
         if (this.state.rowData) {
-            listRow = this.state.rowData.map((row, index) => {
+            listRow = this.state.rowData.filter((item, index) => {
+                if (this.state.range == 0) {
+                    return index < 10;
+                }
+                return index >= this.state.range && index < this.state.range + 10;
+
+            }).map((row, index) => {
                 return <AdminPanelRow
                     key={row.id}
                     stt={index + 1}
@@ -117,6 +147,7 @@ class AdminPanel extends Component {
                     status={row.status}
                     edit={() => this.showEditModal(row)}
                     delete={() => this.deleteUserHandler(row.id)} />
+
             })
         }
         return (
@@ -152,6 +183,20 @@ class AdminPanel extends Component {
                                     {listRow}
                                 </tbody>
                             </table>
+                            <div className={classes.FilterRow}>
+                                <div>
+                                    {
+                                        this.state.rowData.length < 10 ? 
+                                        <span>1-{this.state.rowData.length} of { this.state.rowData.length }</span>:
+                                        <span>1-10 of { this.state.rowData.length }</span>
+                                    }
+                                    
+                                </div>
+                                <div>
+                                    <span onClick={this.onPrevRowHandler}><ArrowLeftIcon fontSize="large" /></span>
+                                    <span onClick={this.onNextRowHandler}><ArrowRightIcon fontSize="large" /></span>
+                                </div>
+                            </div>
                         </div>
                         <Footer />
 

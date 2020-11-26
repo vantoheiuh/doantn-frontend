@@ -7,7 +7,7 @@ const adminPanelRow = (props) => {
     return (
         <tr className={classes.AdminPanelRow}>
             <td>{props.stt}</td>
-            <td>{props.username}</td>
+            <td>{props.username.length > 15 ? props.username.slice(0, 14) + " ..." : props.username}</td>
             <td>{props.firstName}</td>
             <td>{props.lastName}</td>
             <td>{props.roleType}</td>

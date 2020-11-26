@@ -6,7 +6,7 @@
 .TableData table{
     border-collapse: collapse;
     width: 100%;
-    margin: 50px auto;
+    margin: 10px auto;
     margin-top: 0px !important;
     overflow: auto;
 }
@@ -39,5 +39,35 @@
 .TableData .TableTitle > div {
     display: flex;
     justify-content: space-between;
+}
+
+.FilterRow {
+    display: flex;
+    padding: 0px 20px;
+    text-align: right;
+}
+.FilterRow div{
+    height: 40px;
+    line-height: 40px;
+}
+.FilterRow div:first-child{
+    flex-grow: 25;
+    align-items: right;
+}
+.FilterRow div:last-child{
+    flex-grow: 1;
+    align-items: right;
+}
+.FilterRow div:last-child span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    color: gray;
+}
+.FilterRow div:last-child span:hover{
+    background-color: #ccc;
 }
 
