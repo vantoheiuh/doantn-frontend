@@ -109,7 +109,7 @@ class LiquidationTable extends Component {
                       <th scope="col">Checkin Time</th>
                       <th scope="col">Expired Time</th>
                       <th scope="col">Locate</th>
-                      <th scope="col">Staltus</th>
+                      <th scope="col">Status</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>

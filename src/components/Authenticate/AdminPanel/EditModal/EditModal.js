@@ -20,7 +20,9 @@ class EditModal extends Component {
     }
 
     submitUpdateHandler = () => {
+        console.log(this.props.userData)
         const data = { ...this.props.userData, ...this.state.dataForm };
+        console.log(data)
         this.props.onUpdateUserById(data, this.props.token);
         this.props.btnClicked();
         this.setState( { dataForm: null});

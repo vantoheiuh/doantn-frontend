@@ -21,6 +21,7 @@ import LiquidationTable from './components/Statistical/LiquidationTable//Liquida
 import MaintenanceTable from './components/Statistical/MaintenanceTable/MaintenanceTable';
 import UpdatePassword from './components/Authenticate/UpdatePassword/UpdatePassword';
 import DashBoard from './components/DashBoard/DashBoard';
+import UserDetail from './components/Authenticate/UserDetail/UserDetail';
 
 class App extends Component {
   componentDidMount() {
@@ -38,7 +39,8 @@ class App extends Component {
             <Route path="/thongke/room" exact component={DeviceRoomTable} />
             <Route path="/thongke/liquid" exact component={LiquidationTable} />
             <Route path="/thongke/baotri" exact component={MaintenanceTable} />
-            <Route path="/password" exact component={UpdatePassword} />
+            <Route path="/update-password" exact component={UpdatePassword} />
+            <Route path="/update-user-detail" exact component={UserDetail} />
             <Route path="/users" exact component={AdminPanel} />
             <Route path="/products" exact component={DeviceManager} />
             <Route path="/" exact component={DashBoard} />
