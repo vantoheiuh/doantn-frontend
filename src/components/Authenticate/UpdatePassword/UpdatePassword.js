@@ -31,7 +31,7 @@ class UpdatePassword extends Component {
             username: this.props.username,
             password: this.state.dataForm.currentPassword,
         }
-        axios.post('http://localhost:5000/api/users/authenticate', checkData)
+        axios.post('/api/users/authenticate', checkData)
             .then(res => {
                 localStorage.setItem("token", res.data.token);
                 if (this.state.dataForm.newPassword === this.state.dataForm.confirmPassword) {

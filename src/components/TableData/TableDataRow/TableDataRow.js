@@ -12,7 +12,7 @@ class TableDataRow extends Component {
       <tr className={classes.TableDataRow}>
         <td>{this.props.stt}</td>
         <td>
-          <img src={`http://localhost:5000/${this.props.imageURL}`} alt="Product" />
+          <img src={`/${this.props.imageURL}`} alt="Product" />
           <span onClick={this.props.showDetail} className={classes.ImageDetail}>View Details</span>
         </td>
         <td>{this.props.name}</td>

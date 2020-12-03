@@ -31,7 +31,7 @@ class AdminPanel extends Component {
 
     componentDidMount() {
         const AuthStr = 'Bearer '.concat(this.props.token);
-        const URL = 'http://localhost:5000/api/users';
+        const URL = '/api/users';
         axios.get(URL, { headers: { Authorization: AuthStr } })
             .then(response => {
                 // If request is good...
@@ -44,7 +44,7 @@ class AdminPanel extends Component {
 
     componentDidUpdate(prevProps, prevState) {
         const AuthStr = 'Bearer '.concat(this.props.token);
-        const URL = 'http://localhost:5000/api/users';
+        const URL = '/api/users';
         if (this.state.forceUpdate !== prevState.forceUpdate) {
 
             axios.get(URL, { headers: { Authorization: AuthStr } })
