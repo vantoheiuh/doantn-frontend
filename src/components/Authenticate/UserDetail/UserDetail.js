@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classes from './UserDetail.css';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
-import axios from 'axios';
+import axios from '../../../axios-auth';
 
 
 class UserDetail extends Component {

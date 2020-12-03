@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classes from './UpdatePassword.css';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
-import axios from 'axios';
+import axios from '../../../axios-auth';
 
 class UpdatePassword extends Component {
 

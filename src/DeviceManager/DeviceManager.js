@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TableData from '../components/TableData/TableData';
-import axios from 'axios';
+import axios from '../axios-auth';
 import Model from '../components/UI/Model/Model';
 import AlertInfo from '../components/UI/AlertInfo/AlertInfo';
 import Spinner from '../components/UI/Spinner/Spinner';

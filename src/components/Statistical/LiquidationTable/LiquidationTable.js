@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './LiquidationTable.css';
 import LiquidationTableRow from './LiquidationTableRow/LiquidationTableRow';
-import axios from 'axios';
+import axios from '../../../axios-auth';
 import Chart from '../../UI/Chart/Chart';
 import Spinner from '../../UI/Spinner/Spinner';
 import Footer from '../../UI/Footer/Footer';

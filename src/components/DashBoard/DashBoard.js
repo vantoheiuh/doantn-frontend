@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './DashBoard.css';
 import StatisticalDetail from './StatisticalDetail/StatisticalDetail';
-import axios from 'axios';
+import axios from '../../axios-auth';
 import { connect } from 'react-redux';
 import Spinner from '../UI/Spinner/Spinner';
 import StatisticalChart from '../Statistical/StatisticalChart/StatisticalChart';

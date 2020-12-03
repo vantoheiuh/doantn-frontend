@@ -47,9 +47,14 @@ class App extends Component {
           </Aux> : this.props.role === "manager" ? <Aux>
             <Route path="/new-device" component={NewDevice} />
             <Route path="/products" component={DeviceManager} />
+            <Route path="/update-password" component={UpdatePassword} />
+            <Route path="/update-user-detail" component={UserDetail} />
             <Redirect to="/" />
           </Aux> : <Aux>
-                <Route path="/products" component={DeviceManager} />
+                <Route path="/products" exact component={DeviceManager} />
+                <Route path="/update-password" exact component={UpdatePassword} />
+                <Route path="/update-user-detail" exact component={UserDetail} />
+                <Route path="/" exact component={DashBoard} />
                 <Redirect to="/" />
               </Aux>}
         </Switch>
@@ -58,7 +63,7 @@ class App extends Component {
       routes = (
         <Switch>
           <Route path="/login" exact component={Login} />
-          <Redirect to="/" />
+          <Redirect to="/login" />
         </Switch>
       )
     }

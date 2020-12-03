@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classes from './DeviceRoomTable.css';
 import DeviceRoomRow from './DeviceRoomRow/DeviceRoomRow';
-import axios from 'axios';
+import axios from '../../../axios-auth';
 import Chart from '../../UI/Chart/Chart';
 import Spinner from '../../UI/Spinner/Spinner';
 import Footer from '../../UI/Footer/Footer';

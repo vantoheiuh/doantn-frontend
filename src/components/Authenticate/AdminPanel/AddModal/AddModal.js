@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './AddModal.css';
-import axios from 'axios';
+import axios from '../../../../axios-auth';
 class AddModal extends Component {
 
     state = {
