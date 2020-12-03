@@ -44,6 +44,7 @@ class App extends Component {
             <Route path="/users" component={AdminPanel} />
             <Route path="/products" exact component={DeviceManager} />
             <Route path="/" exact component={DashBoard} />
+            <Redirect to="/" />
           </Aux> : this.props.role === "manager" ? <Aux>
             <Route path="/new-device" component={NewDevice} />
             <Route path="/products" component={DeviceManager} />
