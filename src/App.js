@@ -36,29 +36,29 @@ class App extends Component {
           <Route path="/logout" component={Logout} />
           {this.props.role === "admin" ? <Aux>
             <Route path="/new-device" component={NewDevice} />
-            <Route path="/thongke/room" exact component={DeviceRoomTable} />
-            <Route path="/thongke/liquid" exact component={LiquidationTable} />
-            <Route path="/thongke/baotri" exact component={MaintenanceTable} />
-            <Route path="/update-password" exact component={UpdatePassword} />
-            <Route path="/update-user-detail" exact component={UserDetail} />
-            <Route path="/users" exact component={AdminPanel} />
+            <Route path="/thongke/room" component={DeviceRoomTable} />
+            <Route path="/thongke/liquid" component={LiquidationTable} />
+            <Route path="/thongke/baotri" component={MaintenanceTable} />
+            <Route path="/update-password" component={UpdatePassword} />
+            <Route path="/update-user-detail" component={UserDetail} />
+            <Route path="/users" component={AdminPanel} />
             <Route path="/products" exact component={DeviceManager} />
             <Route path="/" exact component={DashBoard} />
           </Aux> : this.props.role === "manager" ? <Aux>
             <Route path="/new-device" component={NewDevice} />
-            <Route path="/products" exact component={DeviceManager} />
+            <Route path="/products" component={DeviceManager} />
             <Redirect to="/" />
           </Aux> : <Aux>
-                <Route path="/products" exact component={DeviceManager} />
+                <Route path="/products" component={DeviceManager} />
                 <Redirect to="/" />
               </Aux>}
         </Switch>
       )
     } else {
-      routes =(
+      routes = (
         <Switch>
           <Route path="/login" exact component={Login} />
-          <Route path="/" component={DeviceManager} />
+          <Redirect to="/" />
         </Switch>
       )
     }

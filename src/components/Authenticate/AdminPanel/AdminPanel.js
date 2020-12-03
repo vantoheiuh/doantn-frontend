@@ -5,7 +5,7 @@ import EditModal from './EditModal/EditModal';
 import DeleteModal from './DeleteModal/DeleteModal';
 import AddModal from './AddModal/AddModal';
 import Aux from '../../../hoc/Auxi/Auxi';
-import axios from 'axios';
+import axios from '../../../axios-auth';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions/index';
 import AddIcon from '@material-ui/icons/Add';

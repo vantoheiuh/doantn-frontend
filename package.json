@@ -81,7 +81,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://54.151.134.255:5000/",
+
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
