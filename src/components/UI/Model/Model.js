@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Model.css';
-import axios from 'axios';
+import axios from '../../../axios-auth';
 
 class Model extends Component {
     state = {

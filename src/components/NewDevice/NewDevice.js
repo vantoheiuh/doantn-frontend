@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import classes from './NewDevice.css';
-import axios from 'axios';
+import axios from '../../axios-auth';
 import AlertAddNew from '../UI/AlertInfo/AlerAddNew/AlertAddNew';
 import Spinner from '../UI/Spinner/Spinner';
 import Aux from '../../hoc/Auxi/Auxi';
