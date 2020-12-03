@@ -17,7 +17,7 @@ class Menu extends Component {
                         <div>
                             {this.props.isAuthenticate ?
                                 <MenuItem link="/logout">LOGOUT</MenuItem>
-                                : <MenuItem link="/doantn-frontend/login">LOGIN</MenuItem>}
+                                : <MenuItem link="/login">LOGIN</MenuItem>}
                         </div>
 
                     </ul>

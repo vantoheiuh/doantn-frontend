@@ -65,9 +65,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test": "node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -123,6 +121,5 @@
     "presets": [
       "react-app"
     ]
-  },
-  "homepage": "http://vantoheiuh.github.io/doantn-frontend"
+  }
 }

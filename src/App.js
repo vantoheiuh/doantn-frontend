@@ -35,15 +35,15 @@ class App extends Component {
         <Switch>
           <Route path="/logout" component={Logout} />
           {this.props.role === "admin" ? <Aux>
-            <Route path="doantn-frontend/new-device" component={NewDevice} />
-            <Route path="doantn-frontend/thongke/room" exact component={DeviceRoomTable} />
-            <Route path="doantn-frontend/thongke/liquid" exact component={LiquidationTable} />
-            <Route path="doantn-frontend/thongke/baotri" exact component={MaintenanceTable} />
-            <Route path="doantn-frontend/update-password" exact component={UpdatePassword} />
-            <Route path="doantn-frontend/update-user-detail" exact component={UserDetail} />
-            <Route path="doantn-frontend/users" exact component={AdminPanel} />
-            <Route path="doantn-frontend/products" exact component={DeviceManager} />
-            <Route path="doantn-frontend/" exact component={DashBoard} />
+            <Route path="/new-device" component={NewDevice} />
+            <Route path="/thongke/room" exact component={DeviceRoomTable} />
+            <Route path="/thongke/liquid" exact component={LiquidationTable} />
+            <Route path="/thongke/baotri" exact component={MaintenanceTable} />
+            <Route path="/update-password" exact component={UpdatePassword} />
+            <Route path="/update-user-detail" exact component={UserDetail} />
+            <Route path="/users" exact component={AdminPanel} />
+            <Route path="/products" exact component={DeviceManager} />
+            <Route path="/" exact component={DashBoard} />
           </Aux> : this.props.role === "manager" ? <Aux>
             <Route path="/new-device" component={NewDevice} />
             <Route path="/products" exact component={DeviceManager} />
@@ -57,8 +57,8 @@ class App extends Component {
     } else {
       routes =(
         <Switch>
-          <Route path="/doantn-frontend/login" exact component={Login} />
-          <Route path="/doantn-frontend/" component={DeviceManager} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/" component={DeviceManager} />
         </Switch>
       )
     }
