@@ -58,7 +58,7 @@ class App extends Component {
       routes =(
         <Switch>
           <Route path="/doantn-frontend/login" exact component={Login} />
-          <Route path="/" component={DeviceManager} />
+          <Route path="/doantn-frontend/" component={DeviceManager} />
         </Switch>
       )
     }
