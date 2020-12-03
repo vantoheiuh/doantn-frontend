@@ -59,7 +59,7 @@ export const auth =  (username, password) => {
             username: username,
             password: password,
         }
-        const url = '/api/users/authenticate';
+        const url = 'http://54.151.134.255:5000/api/users/authenticate';
         axios.post(url, authData)
             .then(res => {
                 ;
