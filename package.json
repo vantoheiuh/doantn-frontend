@@ -83,6 +83,7 @@
       "last 1 safari version"
     ]
   },
+ 
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
