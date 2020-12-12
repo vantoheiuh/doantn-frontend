@@ -51,7 +51,7 @@ export const checkAuthTimeout = (expireTime) => {
 
 
 
-export const auth =  (username, password) => {
+export const auth = (username, password) => {
     return dispatch => {
         dispatch(authStart());
         //some async code
@@ -62,7 +62,6 @@ export const auth =  (username, password) => {
         const url = '/api/users/authenticate';
         axios.post(url, authData)
             .then(res => {
-                ;
                 console.log(res.data);
                 const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
                 localStorage.setItem('token', res.data.token);

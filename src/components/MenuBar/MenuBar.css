@@ -44,6 +44,9 @@
     color: Black;
     text-decoration: none;
     padding-left: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    
 }
 
 .MenuBar ul li a:hover{

@@ -21,7 +21,6 @@ class DashBoard extends Component {
         axios.get(URL, { headers: { Authorization: AuthStr } })
             .then(response => {
                 // If request is good...
-                console.log(response.data)
                 let result = response.data.reduce((total, item) => {
                     total.total++;
                     if (item.role === "admin") {
@@ -51,7 +50,6 @@ class DashBoard extends Component {
 
         axios.get('/api/products')
             .then(res => {
-                console.log(res.data)
                 let result = res.data.reduce((total, item) => {
                     total.total += item.amount;
                     if (item.statusDevice === "Using") {

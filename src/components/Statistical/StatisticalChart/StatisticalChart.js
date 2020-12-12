@@ -72,7 +72,6 @@ class StatisticalChart extends Component {
         const exTime = item.checkinTime.slice(0, 10).split('-');
         const expiredActiveTime = new Date(Number(exTime[0]) + item.activeTime, Number(exTime[1]), Number(exTime[2]));
         const lastMonth = new Date(today.getFullYear(), month, 0);
-        console.log(expiredActiveTime);
         return lastMonth.getTime() < expiredActiveTime.getTime();
       });
       return validData;
@@ -89,7 +88,6 @@ class StatisticalChart extends Component {
 
   render() {
     if (this.state.dataChart) {
-      console.log(this.countLiquidation(this.state.dataChart));
     }
     return (
       <div className={classes.StatisticalChart}>

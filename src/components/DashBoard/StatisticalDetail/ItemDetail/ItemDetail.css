@@ -2,7 +2,8 @@
     padding: 1.5rem;
     border-radius: 5px;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    height: 100%;
 }
 
 .first {
@@ -20,4 +21,7 @@
 
 .fourth{
     background: #77C350!important;;
+}
+.Item {
+    margin-bottom: 20px;
 }
