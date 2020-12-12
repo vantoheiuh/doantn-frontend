@@ -129,7 +129,7 @@ class AdminPanel extends Component {
         let listRow = null;
         if (this.state.rowData) {
             listRow = this.state.rowData.filter((item, index) => {
-                if (this.state.range == 0) {
+                if (this.state.range === 0) {
                     return index < 10;
                 }
                 return index >= this.state.range && index < this.state.range + 10;

@@ -47,14 +47,22 @@ class App extends Component {
             <Redirect to="/" />
           </Aux> : this.props.role === "manager" ? <Aux>
             <Route path="/new-device" component={NewDevice} />
-            <Route path="/products" component={DeviceManager} />
+            <Route path="/thongke/room" component={DeviceRoomTable} />
+            <Route path="/thongke/liquid" component={LiquidationTable} />
+            <Route path="/thongke/baotri" component={MaintenanceTable} />
             <Route path="/update-password" component={UpdatePassword} />
             <Route path="/update-user-detail" component={UserDetail} />
+            <Route path="/users" component={AdminPanel} />
+            <Route path="/products" exact component={DeviceManager} />
+            <Route path="/" exact component={DashBoard} />
             <Redirect to="/" />
           </Aux> : <Aux>
-                <Route path="/products" exact component={DeviceManager} />
                 <Route path="/update-password" exact component={UpdatePassword} />
                 <Route path="/update-user-detail" exact component={UserDetail} />
+                <Route path="/new-device" component={NewDevice} />
+                <Route path="/thongke/room" component={DeviceRoomTable} />
+                <Route path="/thongke/liquid" component={LiquidationTable} />
+                <Route path="/thongke/baotri" component={MaintenanceTable} />
                 <Route path="/" exact component={DashBoard} />
                 <Redirect to="/" />
               </Aux>}

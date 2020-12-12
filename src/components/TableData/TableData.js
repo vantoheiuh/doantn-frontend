@@ -55,7 +55,7 @@ class TableData extends Component {
     console.log(this.props.tableData)
     let listTable = this.props.tableData.filter((item, index) => {
       //filter 10 item from range to range + 10
-      if (this.state.range == 0) {
+      if (this.state.range === 0) {
         return index < 10;
       }
       return index >= this.state.range && index < this.state.range + 10;

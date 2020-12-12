@@ -3,6 +3,7 @@ import classes from './EditModal.css';
 import { connect } from 'react-redux';
 import * as actions from '../../../../store/actions/index';
 import Spinner from '../../../UI/Spinner/Spinner';
+import Aux from '../../../../hoc/Auxi/Auxi';
 
 class EditModal extends Component {
     state = {
@@ -10,7 +11,7 @@ class EditModal extends Component {
     }
 
     inputHandler = (event, inputName) => {
-        const updatedDataForm = {...this.state.dataForm};
+        const updatedDataForm = { ...this.state.dataForm };
         let updatedDataEmelent = { ...updatedDataForm[inputName] };
         updatedDataEmelent = event.target.value;
         updatedDataForm[inputName] = updatedDataEmelent;
@@ -25,7 +26,7 @@ class EditModal extends Component {
         console.log(data)
         this.props.onUpdateUserById(data, this.props.token);
         this.props.btnClicked();
-        this.setState( { dataForm: null});
+        this.setState({ dataForm: null });
     }
 
     render() {
@@ -63,9 +64,13 @@ class EditModal extends Component {
                         <div className={classes.SelectBox}>
                             <label>User type</label>
                             <select onChange={(event) => this.inputHandler(event, "role")} defaultValue={this.props.userData.role} className="custom-select">
-                                <option value="admin">Admin</option>
-                                <option value="manager">Manager</option>
-                                <option value="employee">Employee</option>
+                                {this.props.role === "admin" ? <Aux>
+
+                                    <option value="admin">Admin</option>
+                                    <option value="manager">Manager</option>
+                                    <option value="employee">Employee</option>
+                                </Aux> : <option value="employee">Employee</option>
+                                }
                             </select>
                         </div>
                         <div name="status" className={classes.SelectBox}>
@@ -89,7 +94,8 @@ class EditModal extends Component {
 
 const mapStateToProps = state => {
     return {
-        token: state.auth.token
+        token: state.auth.token,
+        role: state.auth.role
     }
 }
 

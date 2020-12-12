@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import classes from './AddModal.css';
 import axios from '../../../../axios-auth';
+import { connect } from 'react-redux';
+import Aux from '../../../../hoc/Auxi/Auxi';
+
 class AddModal extends Component {
 
     state = {
@@ -18,15 +21,14 @@ class AddModal extends Component {
         this.setState({
             [name]: value
         });
-        console.log(this.state);
     }
 
     submitHandler = () => {
         const url = '/api/users/register'
         axios.post(url, this.state)
-        .then(res => {
-            console.log(res.data)
-        })
+            .then(res => {
+                console.log(res.data)
+            })
         this.props.btnClicked();
     }
 
@@ -44,9 +46,16 @@ class AddModal extends Component {
                         <div className={classes.SelectBox}>
                             <label >User type</label>
                             <select onChange={this.inputHandler} className="custom-select" name="role">
-                                <option value="admin">Admin</option>
-                                <option value="manager">Manager</option>
-                                <option value="employee">Employee</option>
+                                {this.props.role === "admin" ?
+                                    <Aux>
+                                        <option value="admin">Admin</option>
+                                        <option value="manager">Manager</option>
+                                        <option value="employee">Employee</option>
+                                    </Aux>: 
+                                    <Aux>
+                                    <option value="employee">Employee</option>
+                                </Aux>
+                                }
                             </select>
                         </div>
                         <div className={classes.SelectBox}>
@@ -66,10 +75,12 @@ class AddModal extends Component {
             </div>
         )
     }
-
-
-
-
 }
 
-export default AddModal;
+const mapStateToProps = state => {
+    return {
+        role: state.auth.role
+    }
+}
+
+export default connect(mapStateToProps)(AddModal);

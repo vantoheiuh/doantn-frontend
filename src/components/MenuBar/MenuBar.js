@@ -14,6 +14,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import PersonIcon from '@material-ui/icons/Person';
+import Aux from '../../hoc/Auxi/Auxi';
 
 
 class MenuBar extends Component {
@@ -37,12 +38,29 @@ class MenuBar extends Component {
                     <span> <FiberManualRecordIcon fontSize="small" htmlColor="green" /> Online</span>
                 </div>
                 <ul>
-                    <MenuItem link="/"><DashboardIcon /> DashBoard</MenuItem>
-                    <MenuItem link="/users"> <GroupIcon /> Quản lí tài khoản</MenuItem>
-                    <MenuItem link="/products"><SettingsCellIcon /> Quản lí thiết bị</MenuItem>
-                    <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
-                    <MenuItem link="/update-password"><VpnKeyIcon /> Thay đổi mật khẩu</MenuItem>
-                    <MenuItem link="/update-user-detail"><PersonIcon /> Thông tin cá nhân</MenuItem>
+                    {
+                        this.props.role === "admin" ?
+                            <Aux>
+                                <MenuItem link="/"><DashboardIcon /> DashBoard</MenuItem>
+                                <MenuItem link="/users"> <GroupIcon /> Quản lí tài khoản</MenuItem>
+                                <MenuItem link="/products"><SettingsCellIcon /> Quản lí thiết bị</MenuItem>
+                                <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
+                                <MenuItem link="/update-password"><VpnKeyIcon /> Thay đổi mật khẩu</MenuItem>
+                            </Aux>
+                            : this.props.role === "manager" ?
+                                <Aux>
+                                    <MenuItem link="/"><DashboardIcon /> DashBoard</MenuItem>
+                                    <MenuItem link="/users"> <GroupIcon /> Quản lí tài khoản</MenuItem>
+                                    <MenuItem link="/products"><SettingsCellIcon /> Quản lí thiết bị</MenuItem>
+                                    <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
+                                    <MenuItem link="/update-password"><VpnKeyIcon /> Thay đổi mật khẩu</MenuItem>
+                                </Aux> :
+                                <Aux>
+                                    <MenuItem link="/"><DashboardIcon /> DashBoard</MenuItem>
+                                    <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
+                                    <MenuItem link="/update-password"><VpnKeyIcon /> Thay đổi mật khẩu</MenuItem>
+                                </Aux>
+                    }
 
                     <li>
                         <div className={classes.DropDownMenu} onClick={this.showSubMenuHandler}>
@@ -63,7 +81,8 @@ class MenuBar extends Component {
 
 const mapStateToProps = state => {
     return {
-        userName: state.auth.userName
+        userName: state.auth.userName,
+        role: state.auth.role
     }
 }
 
