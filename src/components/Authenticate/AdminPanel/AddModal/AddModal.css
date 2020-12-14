@@ -18,7 +18,7 @@
     border: 1px solid #888;
     width: 40%;
     border-radius: 5px;
-    background-color: #fbfbfb;
+    background-color: #f5f2f2;
     margin-left:  calc((100% - 260px) / 2);
 
 }
@@ -37,7 +37,6 @@
     padding: 40px 20px;
     padding-bottom: 15px;
     margin-bottom: 30px;
-    box-shadow: 1px 2px #ccc;
     border-radius: 5px;
     background-color: #f5f2f2;
     
