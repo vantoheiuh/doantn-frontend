@@ -28,8 +28,8 @@ class MaintenanceTable extends Component {
       })
   }
   isChangeMainternance = (event, data) => {
-    const name = event.target.value
-    if(!name || name === 0){
+    const name = event.target.value;
+    if(!name || name === "0"){
       this.setState({maintenanceTable: this.state.dataFilter});
       return;
     }

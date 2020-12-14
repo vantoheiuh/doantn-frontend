@@ -15,7 +15,6 @@ class LiquidationTable extends Component {
   componentDidMount() {
     axios.get('/api/products')
       .then(res => {
-        //console.log(res.data)
         this.setState({
           liquidationTable: res.data,
           dataFilter: res.data,
@@ -28,7 +27,7 @@ class LiquidationTable extends Component {
   }
   isChangeLiquidation = (event, data) => {
     const name = event.target.value;
-    if(!name || name === 0){
+    if(!name || name === "0"){
       this.setState({liquidationTable: this.state.dataFilter});
       return;
     }
