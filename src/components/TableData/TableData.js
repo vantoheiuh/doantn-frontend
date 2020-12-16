@@ -5,6 +5,7 @@ import ProductDetail from './ProductDetail/ProductDetail';
 import Footer from '../UI/Footer/Footer';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import ExportData from '../ExportData/ExportData';
 
 
 
@@ -86,6 +87,7 @@ class TableData extends Component {
             <div>
               <div>
                 <h2 style={{ 'fontWeight': 'bolder' }}>QUẢN LÍ THIẾT BỊ</h2>
+                <ExportData dataset={this.props.tableData}/>
               </div>
             </div>
           </div>

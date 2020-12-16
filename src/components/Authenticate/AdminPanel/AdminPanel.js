@@ -13,6 +13,7 @@ import Spinner from '../../UI/Spinner/Spinner';
 import Footer from '../../UI/Footer/Footer';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import ExportData from '../../ExportData/ExportData';
 
 
 class AdminPanel extends Component {
@@ -157,6 +158,7 @@ class AdminPanel extends Component {
                         <div className="container">
                             <div className={classes.TableTitle}>
                                 <div>
+                                    <ExportData sheetName="Users" filename={new Date().toString()} dataset={this.state.rowData}/>
                                     <div>
                                         <h2 style={{ 'fontWeight': 'bolder' }}>QUẢN LÍ TÀI KHOẢN</h2>
                                     </div>
