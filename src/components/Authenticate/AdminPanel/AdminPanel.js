@@ -13,6 +13,7 @@ import Spinner from '../../UI/Spinner/Spinner';
 import Footer from '../../UI/Footer/Footer';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import ExportData from '../../ExportData/ExportData';
 
 
 class AdminPanel extends Component {
@@ -160,8 +161,9 @@ class AdminPanel extends Component {
                                     <div>
                                         <h2 style={{ 'fontWeight': 'bolder' }}>QUẢN LÍ TÀI KHOẢN</h2>
                                     </div>
-                                    <div>
-                                        <button className="btn btn-success" onClick={this.showAddModal} > <AddIcon /> Thêm tài khoản</button>
+                                    <div className={classes.ButtonGroup}>
+                                        <button className="btn btn-primary" onClick={this.showAddModal} > <AddIcon /> Thêm tài khoản</button>
+                                        <ExportData sheetName="Users" filename={new Date().toString()} dataset={this.state.rowData} />
                                     </div>
                                 </div>
                             </div>
@@ -186,11 +188,11 @@ class AdminPanel extends Component {
                             <div className={classes.FilterRow}>
                                 <div>
                                     {
-                                        this.state.rowData.length < 10 ? 
-                                        <span>1-{this.state.rowData.length} of { this.state.rowData.length }</span>:
-                                    <span>{this.state.range + 1}-{this.state.range + listRow.length} of { this.state.rowData.length }</span>
+                                        this.state.rowData.length < 10 ?
+                                            <span>1-{this.state.rowData.length} of {this.state.rowData.length}</span> :
+                                            <span>{this.state.range + 1}-{this.state.range + listRow.length} of {this.state.rowData.length}</span>
                                     }
-                                    
+
                                 </div>
                                 <div>
                                     <span onClick={this.onPrevRowHandler}><ArrowLeftIcon fontSize="large" /></span>

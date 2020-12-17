@@ -72,3 +72,9 @@
 .FilterRow div:last-child span:hover{
     background-color: #ccc;
 }
+
+.ButtonGroup span{
+    display: inline-block;
+    height: 100%;
+    margin-left: 10px;
+}
