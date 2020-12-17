@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@alckor127/react-button-export-excel": "^1.0.5",
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@material-ui/core": "^4.11.0",
     "@material-ui/data-grid": "^4.0.0-alpha.8",
@@ -46,16 +47,18 @@
     "react-barcode": "^1.4.0",
     "react-bs-notifier": "^6.0.0",
     "react-chartjs-2": "^2.10.0",
+    "react-data-export": "^0.6.0",
     "react-dev-utils": "^5.0.2",
     "react-dom": "^16.13.1",
-    "react-export-excel": "^0.5.3",
     "react-redux": "^7.2.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "react-scripts": "2.0.0-next.3e165448",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",
+    "styled-components": "^5.2.1",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
@@ -73,8 +76,9 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not op_mini all"
+      ">0.25%",
+      "not op_mini all",
+      "ie 11"
     ],
     "development": [
       "last 1 chrome version",
@@ -121,5 +125,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "terser": "^3.14.1"
   }
 }

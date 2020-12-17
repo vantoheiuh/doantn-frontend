@@ -78,3 +78,16 @@
     height: 100%;
     margin-left: 10px;
 }
+
+.Buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.Buttons div:last-child {
+    margin-left: 10px;
+    height: 100%;
+
+}
+.Buttons div button{
+    height: 100%;
+}

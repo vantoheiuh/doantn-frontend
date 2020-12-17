@@ -161,8 +161,10 @@ class AdminPanel extends Component {
                                     <div>
                                         <h2 style={{ 'fontWeight': 'bolder' }}>QUẢN LÍ TÀI KHOẢN</h2>
                                     </div>
-                                    <div className={classes.ButtonGroup}>
-                                        <button className="btn btn-primary" onClick={this.showAddModal} > <AddIcon /> Thêm tài khoản</button>
+                                    <div className={classes.Buttons}>
+                                        <div className={classes.ButtonGroup}>
+                                            <button className="btn btn-primary" onClick={this.showAddModal} > <AddIcon /> Thêm tài khoản</button>
+                                        </div>
                                         <ExportData sheetName="Users" filename={new Date().toString()} dataset={this.state.rowData} />
                                     </div>
                                 </div>

@@ -87,9 +87,7 @@ class TableData extends Component {
               <div>
                 <h2 style={{ 'fontWeight': 'bolder' }}>QUẢN LÍ THIẾT BỊ</h2>
               </div>
-              <div>
-                <ExportData dataset={this.props.tableData} />
-              </div>
+              <ExportData dataset={this.props.tableData} />
             </div>
           </div>
           <table>
