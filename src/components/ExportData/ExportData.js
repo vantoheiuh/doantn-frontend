@@ -7,7 +7,6 @@ class ExportData extends React.Component {
     render() {
         const d = new Date();
         const str = 'export_' + d.getFullYear() + '' + (d.getMonth() + 1) + '' + d.getDate() + '_' + d.getTime();
-        console.log(str)
         return (
             <div className={classes.ExportData}>
                 <ButtonExportExcel dark outline data={this.props.dataset} filename={str}>

@@ -6,6 +6,7 @@ import Footer from '../UI/Footer/Footer';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import ExportData from '../ExportData/ExportData';
+import DeleteModal from '../Authenticate/AdminPanel/DeleteModal/DeleteModal';
 
 
 
@@ -13,7 +14,10 @@ class TableData extends Component {
   state = {
     showProductDetail: false,
     productInfo: null,
-    range: 0
+    range: 0,
+    isDeleteModalShow: false,
+    name: null,
+    id: null
   }
 
   //show product detail modal
@@ -38,7 +42,6 @@ class TableData extends Component {
     if (this.state.range <= this.props.tableData.length && this.props.tableData.length > 10) {
       this.setState({ range: this.state.range + 10 });
     }
-    console.log(this.state.range)
   }
 
 
@@ -47,12 +50,15 @@ class TableData extends Component {
     if (this.state.range > 0) {
       this.setState({ range: this.state.range - 10 });
     }
-    console.log(this.state.range)
 
   }
-
+  showDeleteModal = (id, name) => {
+    this.setState({isDeleteModalShow: true, name: name, id: id});
+  }
+  closeDeleteModal = () => {
+    this.setState({isDeleteModalShow: false});
+  }
   render() {
-    console.log(this.props.tableData)
     let listTable = this.props.tableData.filter((item, index) => {
       //filter 10 item from range to range + 10
       if (this.state.range === 0) {
@@ -75,7 +81,7 @@ class TableData extends Component {
           imageURL={item.image}
           locate={item.locate}
           edit={() => this.props.edit(item)}
-          delete={() => this.props.delete(item._id, item.name)}
+          delete={() => this.showDeleteModal(item._id, item.name)}
           showDetail={() => this.showProductDetailHanlder(item)} />
       )
     })
@@ -125,6 +131,8 @@ class TableData extends Component {
             </div>
           </div>
           <ProductDetail show={this.state.showProductDetail} close={this.hideProductDetailHandler} productInfo={this.state.productInfo} />
+          <DeleteModal show={this.state.isDeleteModalShow} cancel={this.closeDeleteModal} confirm={() => this.props.delete(this.state.id, this.state.name)} />
+
         </div>
         <Footer />
       </div>
