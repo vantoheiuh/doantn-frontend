@@ -15,6 +15,7 @@ class UserDetail extends Component {
             phone: null,
             address: null,
             birthDay: null,
+            email: null
         },
         isSuccess: false,
         isFailed: false,
@@ -39,6 +40,7 @@ class UserDetail extends Component {
                         phone: res.data.phone,
                         birthDay: res.data.birthDay,
                         address: res.data.address,
+                        email: res.data.email
                     }
                 })
             })
@@ -75,6 +77,7 @@ class UserDetail extends Component {
             phone: this.state.dataForm.phone,
             address: this.state.dataForm.address,
             birthDay: this.state.dataForm.birthDay,
+            email: this.state.dataForm.email
         }
         this.props.onUpdateUserById(dataUpdate, this.props.token);
         // }
@@ -115,6 +118,10 @@ class UserDetail extends Component {
                         <input onChange={(event) => this.inputHandler(event, "phone")} type="text" id="phone" placeholder="Số điện thoại đang sử dụng" />
                     </div>
                     <div>
+                        <label htmlFor="email">Email: </label>
+                        <input onChange={(event) => this.inputHandler(event, "email")} type="text" id="email" placeholder="example@gmail.com" />
+                    </div>
+                    <div>
                         <label htmlFor="address">Địa chỉ: </label>
                         <input onChange={(event) => this.inputHandler(event, "address")} type="text" id="address" placeholder="Địa chỉ hiện tại" />
                     </div>
@@ -128,7 +135,7 @@ class UserDetail extends Component {
                         <button onClick={this.submitUpdateHandler} type="reset" className="btn btn-primary">Save</button>
                     </div>
                     {
-                        this.state.isSuccess ? <p style={{ 'color': 'green' }}>Change password successfully!</p> : this.state.isFailed ? <p style={{ 'color': 'red' }}>Failed! Please try again!</p> : null
+                        this.state.isSuccess ? <p style={{ 'color': 'green' }}>Change Successfully!</p> : this.state.isFailed ? <p style={{ 'color': 'red' }}>Failed! Please try again!</p> : null
                     }
                 </form>
             </div>

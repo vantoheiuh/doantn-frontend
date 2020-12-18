@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import axios from '../../axios-auth';
 import classes from './EmailSend.css';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 class EmailSend extends Component {
     state = {
         subject: null,
         message: null,
-        userdata: null
+        userdata: null,
+        bccMails: null
     }
-    componentDidMount(){
+    componentDidMount() {
         const AuthStr = 'Bearer '.concat(this.props.token);
         const URL = '/api/users';
         axios.get(URL, { headers: { Authorization: AuthStr } })
@@ -17,6 +18,12 @@ class EmailSend extends Component {
                 // If request is good...
                 this.setState({ userdata: response.data, loading: false });
                 console.log(response.data)
+                let bccMails = response.data.map(item => {
+                    if (item.email) {
+                        return item.email;
+                    }
+                }).filter(item => item? item:null);
+                this.setState({ bccMails: bccMails.join(',') });
             })
             .catch((error) => {
                 console.log('error ' + error);
@@ -32,7 +39,7 @@ class EmailSend extends Component {
                 subject: this.state.subject,
                 email: "bachducnguyenvan9a5@gmail.com",
                 message: this.state.message,
-                emails: "vantoheiuh@gmail.com,october15th98@gmail.com"
+                emails: this.state.bccMails
             }
         }
         console.log(this.state.subject, this.state.message)
