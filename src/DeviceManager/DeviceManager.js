@@ -20,7 +20,7 @@ class DeviceManager extends Component {
     alertShow: false,
     status: '',
     checkAlert: true,
-    loading: false
+    loading: false,
   }
 
   componentDidMount() {
