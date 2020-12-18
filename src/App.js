@@ -22,6 +22,7 @@ import MaintenanceTable from './components/Statistical/MaintenanceTable/Maintena
 import UpdatePassword from './components/Authenticate/UpdatePassword/UpdatePassword';
 import DashBoard from './components/DashBoard/DashBoard';
 import UserDetail from './components/Authenticate/UserDetail/UserDetail';
+import EmailSend from './components/EmailSend/EmailSend';
 
 class App extends Component {
   componentDidMount() {
@@ -43,6 +44,7 @@ class App extends Component {
             <Route path="/update-user-detail" component={UserDetail} />
             <Route path="/users" component={AdminPanel} />
             <Route path="/products" exact component={DeviceManager} />
+            <Route path="/send-mail" exact component={EmailSend} />
             <Route path="/" exact component={DashBoard} />
             <Redirect to="/" />
           </Aux> : this.props.role === "manager" ? <Aux>
