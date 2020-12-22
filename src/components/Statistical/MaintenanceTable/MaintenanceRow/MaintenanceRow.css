@@ -1,4 +1,8 @@
-
+.ButtonGroup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .ButtonGroup button {
     margin: 0px 2px;
     border-radius: 50%;
@@ -6,5 +10,6 @@
     background-color: white;
 }
 .ButtonGroup button:hover {
-    background-color: #d8d0d0 !important;
+    color: #7b7878;
 }
+

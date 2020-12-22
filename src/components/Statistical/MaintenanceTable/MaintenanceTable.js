@@ -11,7 +11,8 @@ class MaintenanceTable extends Component {
   state = {
     maintenanceTable: [],
     dataFilter: [],
-    loading: true
+    loading: true,
+    reload: false
   }
   componentDidMount() {
     axios.get('/api/products')
@@ -27,10 +28,34 @@ class MaintenanceTable extends Component {
         console.log(err);
       })
   }
+
+  reloadHandler = () => {
+    this.setState({ reload: !this.state.reload });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.state.reload !== prevState.reload)
+    if (this.state.reload !== prevState.reload) {
+      axios.get('/api/products')
+        .then(res => {
+          //console.log(res.data)
+          this.setState({
+            maintenanceTable: res.data,
+            dataFilter: res.data,
+            loading: false
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }
+  }
+
+
   isChangeMainternance = (event, data) => {
     const name = event.target.value;
-    if(!name || name === "0"){
-      this.setState({maintenanceTable: this.state.dataFilter});
+    if (!name || name === "0") {
+      this.setState({ maintenanceTable: this.state.dataFilter });
       return;
     }
     var today = new Date();
@@ -57,6 +82,9 @@ class MaintenanceTable extends Component {
           source={item.source}
           statusDevice={item.statusDevice}
           locate={item.locate}
+          item={item}
+          id={item._id}
+          reloading={this.reloadHandler}
           edit={(user) => this.props.edit(item)}
           delete={() => this.props.delete(item._id, item.name)} />
       )
@@ -82,7 +110,7 @@ class MaintenanceTable extends Component {
       <div className={classes.MaintenanceTable}>
         <div className="container">
           <h3 className="lable-title-liquidation">THIẾT BỊ CẦN BẢO TRÌ TRONG THÁNG: </h3>
-          <select className="select-Month-liquidation" name="mainternance" onChange={(event) => this.isChangeMainternance(event, this.state.dataFilter)} required>
+          <select name="mainternance" onChange={(event) => this.isChangeMainternance(event, this.state.dataFilter)} required>
             <option value={0}>None</option>
             <option value={1} >January</option>
             <option value={2}>February</option>
@@ -99,7 +127,7 @@ class MaintenanceTable extends Component {
           </select>
           {this.state.loading ? <Spinner /> :
             <div className={classes.Table}>
-              <table className="table table-hover">
+              <table className="table">
                 <caption>List Products</caption>
                 <thead className="thead">
                   <tr>

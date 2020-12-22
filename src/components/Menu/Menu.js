@@ -44,7 +44,6 @@ class Menu extends Component {
                                             <MenuItem clicked={this.closeSubHandler} link="/logout">Đăng xuất</MenuItem>
                                         </ul>
                                     </div>
-                                    {/* <MenuItem link="/logout">LOGOUT</MenuItem> */}
                                 </div>
                                 : <MenuItem link="/login">LOGIN</MenuItem>}
                         </div>

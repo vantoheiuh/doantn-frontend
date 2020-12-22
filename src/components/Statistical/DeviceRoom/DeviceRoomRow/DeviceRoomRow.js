@@ -62,7 +62,6 @@ class DeviceRoomRow extends Component {
             <option value={"lab 2"}>Lab 2</option>
           </select>
           <button onClick={() => this.changeRoomHandler(this.props.id)}>{this.state.loading ? <CircularProgress><CheckCircleIcon /></CircularProgress> : <CheckCircleIcon />}</button>
-
         </td>
       </tr>
     );

@@ -1,8 +1,44 @@
 import React, { Component } from 'react';
 import classes from './MaintenanceRow.css';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import axios from '../../../../axios-auth';
+import CircularProgress from '@material-ui/core/CircularProgress';
 class MaintenanceRow extends Component {
+  state = {
+    loading: false,
+    dataUpdate: this.props.item,
+    newStatus: null,
+    isChange: false
+  }
+
+  isChangeStatus = (event) => {
+    let cloneData = { ...this.props.item };
+    cloneData["statusDevice"] = event.target.value;
+    console.log(cloneData["statusDevice"]);
+    this.setState({ dataUpdate: cloneData, newStatus: event.target.value, isChange: true});
+  }
+
+  changeStatusHandler = (id) => {
+    this.setState({ loading: true });
+    // if (this.state.dataUpdate["statusDevice"] === "Using") {
+    //   this.setState({ loading: true });
+    //   return;
+    // }
+    const data = {...this.state.dataUpdate};
+    if(!this.state.isChange){
+      data["statusDevice"] = "Using";
+    }
+    axios.put('/api/products/' + id, data)
+      .then(res => {
+        //console.log(res.data)
+        this.setState({ loading: false, reload: !this.state.reload });
+        this.props.reloading();
+      })
+      .catch(err => {
+        this.setState({ loading: false });
+      })
+
+  }
   render() {
     return (
       <tr className={classes.MaintenanceRow}>
@@ -18,11 +54,15 @@ class MaintenanceRow extends Component {
           </span>
         </td>
         <td className={classes.ButtonGroup}>
-          <button className={classes.Edit} onClick={this.props.edit}><EditIcon /></button>
-          <button className={classes.Delete} onClick={this.props.delete}><DeleteIcon /></button>
+          <select name="status" onChange={(event) => this.isChangeStatus(event)} required>
+            <option value={"Using"}>Using</option>
+            <option value={"Maintained"}>Maintained</option>
+          </select>
+          <button onClick={() => this.changeStatusHandler(this.props.id)}>{this.state.loading ? <CircularProgress><CheckCircleIcon /></CircularProgress> : <CheckCircleIcon />}</button>
+
         </td>
       </tr>
-      
+
     );
   }
 }
