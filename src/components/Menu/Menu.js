@@ -45,7 +45,8 @@ class Menu extends Component {
                                         </ul>
                                     </div>
                                 </div>
-                                : <MenuItem link="/login">LOGIN</MenuItem>}
+                                : <div className={classes.Login}><MenuItem link="/login">LOGIN</MenuItem></div>
+                            }
                         </div>
 
                     </ul>

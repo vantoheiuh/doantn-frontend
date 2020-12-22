@@ -92,3 +92,10 @@
     background-color: #707fdc;
     cursor: pointer;
 }
+.Login a{
+    color: white !important;
+    margin-right: 15px;
+}
+.Login a:hover{
+    color: rgb(175, 174, 174) !important;
+}
