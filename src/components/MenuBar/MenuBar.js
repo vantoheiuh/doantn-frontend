@@ -45,7 +45,6 @@ class MenuBar extends Component {
                                 <MenuItem link="/users"> <GroupIcon /> Quản lí tài khoản</MenuItem>
                                 <MenuItem link="/products"><SettingsCellIcon /> Quản lí thiết bị</MenuItem>
                                 <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
-                                <MenuItem link="/update-password"><VpnKeyIcon /> Thay đổi mật khẩu</MenuItem>
                                 <MenuItem link="/send-mail"><MailIcon /> Mail Box</MenuItem>
                             </Aux>
                             : this.props.role === "manager" ?
@@ -54,13 +53,11 @@ class MenuBar extends Component {
                                     <MenuItem link="/users"> <GroupIcon /> Quản lí tài khoản</MenuItem>
                                     <MenuItem link="/products"><SettingsCellIcon /> Quản lí thiết bị</MenuItem>
                                     <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
-                                    <MenuItem link="/update-password"><VpnKeyIcon /> Thay đổi mật khẩu</MenuItem>
                                     <MenuItem link="/send-mail"><MailIcon /> Mail Box</MenuItem>
                                 </Aux> :
                                 <Aux>
                                     <MenuItem link="/"><DashboardIcon /> DashBoard</MenuItem>
                                     <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
-                                    <MenuItem link="/update-password"><VpnKeyIcon /> Thay đổi mật khẩu</MenuItem>
                                 </Aux>
                     }
 

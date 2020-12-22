@@ -40,6 +40,7 @@ class Menu extends Component {
                                     }}>
                                         <ul>
                                             <MenuItem clicked={this.closeSubHandler} link="/update-user-detail">Thay đổi thông tin</MenuItem>
+                                            <MenuItem clicked={this.closeSubHandler} link="/update-password">Đổi mật khẩu</MenuItem>
                                             <MenuItem clicked={this.closeSubHandler} link="/logout">Đăng xuất</MenuItem>
                                         </ul>
                                     </div>
