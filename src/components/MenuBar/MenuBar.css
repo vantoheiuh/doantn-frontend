@@ -9,6 +9,7 @@
     background-color: white;
     z-index: 999;
     border-right: 1px solid #eee;
+    overflow: scroll;
 }
 .MenuBar h5 {
     text-align: left;

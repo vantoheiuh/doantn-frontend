@@ -11,7 +11,8 @@ class DeviceRoomTable extends Component {
   state = {
     deviceRoom: [],
     dataFilter: [],
-    loading: true
+    loading: true,
+    reload: false
   }
   componentDidMount() {
     axios.get('/api/products')
@@ -36,11 +37,30 @@ class DeviceRoomTable extends Component {
     });
     this.setState({ deviceRoom: dataFil });
   }
+  reloadHandler = () => {
+    this.setState({ reload: !this.state.reload });
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.state.reload !== prevState.reload)
+    if (this.state.reload !== prevState.reload) {
+      axios.get('/api/products')
+        .then(res => {
+          this.setState({
+            deviceRoom: res.data,
+            dataFilter: res.data,
+            loading: false
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }
+  }
   render() {
-    //console.log(this.state.deviceRoom);
     let listLiquidationTable = this.state.deviceRoom.map((item, index) => {
       return (
         <DeviceRoomRow key={index} stt={index + 1}
+          id={item._id}
           name={item.name}
           price={item.price}
           amount={item.amount}
@@ -51,6 +71,8 @@ class DeviceRoomTable extends Component {
           source={item.source}
           statusDevice={item.statusDevice}
           locate={item.locate}
+          item={item}
+          reloadding={this.reloadHandler}
           edit={(user) => this.props.edit(item)}
           delete={() => this.props.delete(item._id, item.name)} />
       )
@@ -89,7 +111,7 @@ class DeviceRoomTable extends Component {
                 <caption>List Products</caption>
                 <thead className="thead">
                   <tr >
-                  <th scope="col">STT</th>
+                    <th scope="col">STT</th>
                     <th scope="col">Tên</th>
                     <th scope="col">Số lượng</th>
                     <th scope="col">Vị trí</th>

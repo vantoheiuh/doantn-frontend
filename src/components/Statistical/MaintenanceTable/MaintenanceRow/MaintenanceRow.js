@@ -7,7 +7,7 @@ class MaintenanceRow extends Component {
     return (
       <tr className={classes.MaintenanceRow}>
         <th scope="row">{this.props.stt}</th>
-        <td>{this.props.name}</td>
+        <td>{this.props.name.length > 35 ? this.props.name.slice(0, 35) + ' ...' : this.props.name}</td>
         <td>{this.props.quantity}</td>
         <td>{this.props.checkinTime}</td>
         <td>{this.props.activeTime}</td>
@@ -22,6 +22,7 @@ class MaintenanceRow extends Component {
           <button className={classes.Delete} onClick={this.props.delete}><DeleteIcon /></button>
         </td>
       </tr>
+      
     );
   }
 }

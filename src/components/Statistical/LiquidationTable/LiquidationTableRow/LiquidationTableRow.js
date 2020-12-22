@@ -6,10 +6,11 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 class LiquidationTableRow extends Component {
   render() {
+    console.log(this.props.name.length)
     return (
       <tr className={classes.LiquidationTableRow}>
         <th scope="row">{this.props.stt}</th>
-        <td>{this.props.name}</td>
+        <td>{this.props.name.length > 35 ? this.props.name.slice(0, 35) + ' ...' : this.props.name} </td>
         <td>{this.props.quantity}</td>
         <td>{this.props.checkinTime}</td>
         <td>{this.props.expiredTime}</td>

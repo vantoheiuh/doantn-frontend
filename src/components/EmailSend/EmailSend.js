@@ -54,13 +54,6 @@ class EmailSend extends Component {
             [name]: value
         });
     }
-    shouldComponentUpdate(nextProps, nextState) {
-        if (this.state.isSent !== nextState.isSent) {
-            console.log("updated");
-            return true;
-        }
-        return false;
-    }
     render() {
         return (
             <div className={classes.EmailSend}>
