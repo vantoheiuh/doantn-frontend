@@ -4,3 +4,44 @@
     padding-right: 10px;
     box-sizing: border-box;
 }
+
+.EmailSend > div{
+    width: 60%;
+    min-width: 500px;
+    margin: 200px auto;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+.EmailSend h3 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: blue;
+    font-weight: 600;
+}
+.EmailSend > div form > div:last-child{
+    display: block;
+    text-align: right;
+}
+
+.EmailSend > div >form > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.EmailSend > div div input{
+    width: 70%;
+    outline: none;
+    padding: 5px 10px;
+}
+.EmailSend > div div textarea{
+    width: 70%;
+    outline: none;
+    padding: 5px 10px;
+}
+.EmailSend > div form >div label{
+    width: 120px;
+    font-weight: 600;
+}

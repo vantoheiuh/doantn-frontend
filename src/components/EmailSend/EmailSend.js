@@ -8,7 +8,8 @@ class EmailSend extends Component {
         subject: null,
         message: null,
         userdata: null,
-        bccMails: null
+        bccMails: null,
+        isSent: false
     }
     componentDidMount() {
         const AuthStr = 'Bearer '.concat(this.props.token);
@@ -22,7 +23,7 @@ class EmailSend extends Component {
                     if (item.email) {
                         return item.email;
                     }
-                }).filter(item => item? item:null);
+                }).filter(item => item ? item : null);
                 this.setState({ bccMails: bccMails.join(',') });
             })
             .catch((error) => {
@@ -43,7 +44,8 @@ class EmailSend extends Component {
             }
         }
         console.log(this.state.subject, this.state.message)
-        axios.post('https://api.emailjs.com/api/v1.0/email/send', data)
+        axios.post('https://api.emailjs.com/api/v1.0/email/send', data);
+        this.setState({ isSent: true });
     }
     inputHandler = (event) => {
         const name = event.target.name;
@@ -52,14 +54,32 @@ class EmailSend extends Component {
             [name]: value
         });
     }
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.state.isSent !== nextState.isSent) {
+            console.log("updated");
+            return true;
+        }
+        return false;
+    }
     render() {
         return (
             <div className={classes.EmailSend}>
-                <label>Subject</label>
-                <input type="text" name="subject" onChange={this.inputHandler}></input>
-                <label>Input message</label>
-                <input type="textarea" name="message" onChange={this.inputHandler}></input>
-                <button onClick={this.sendMailHandler}>Send</button>
+                <div>
+                    <h3>Gửi thông báo cho nhân viên</h3>
+                    <form>
+                        <div>
+                            <label>Subject</label>
+                            <input type="text" name="subject" onChange={this.inputHandler}></input>
+                        </div>
+                        <div><label>Input message</label>
+                            <textarea rows="4" name="message" onChange={this.inputHandler}></textarea>
+                        </div>
+                        <div>
+                            <button type="reset" className="btn btn-primary" onClick={this.sendMailHandler}>Xác nhận gửi</button>
+                        </div>
+                    </form>
+                    {this.state.isSent ? <p style={{color: 'green'}}>Gửi thành công!</p>: <p></p>}
+                </div>
             </div>
         )
     }
