@@ -104,12 +104,12 @@ class MaintenanceTable extends Component {
                 <thead className="thead">
                   <tr>
                     <th scope="col">STT</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Checkin Time</th>
-                    <th scope="col">Active Time</th>
-                    <th scope="col">Locate</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Ngày checkin</th>
+                    <th scope="col">Hạn bảo trì</th>
+                    <th scope="col">Vị trí</th>
+                    <th scope="col">Trạng thái</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>

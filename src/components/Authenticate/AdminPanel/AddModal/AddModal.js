@@ -11,8 +11,8 @@ class AddModal extends Component {
         lastName: null,
         username: null,
         password: null,
-        role: null,
-        status: null
+        role: this.props.role === "admin" ? "admin" : "employee",
+        status: "active"
     }
 
     inputHandler = (event) => {
@@ -37,14 +37,14 @@ class AddModal extends Component {
         return (
             <div className={classes.Modal} style={ModalStyle}>
                 <div className={classes.ModalContent}>
-                    <h3>Add new user</h3>
+                    <h3>Thêm tài khoản mới</h3>
                     <form>
-                        <input onChange={this.inputHandler} type="text" name="firstName" placeholder="First name" />
-                        <input onChange={this.inputHandler} type="text" name="lastName" placeholder="Last name" />
-                        <input onChange={this.inputHandler} type="text" name="username" placeholder="User name" />
-                        <input onChange={this.inputHandler} type="password" name="password" placeholder="Password" />
+                        <input onChange={this.inputHandler} type="text" name="firstName" placeholder="Họ và tên đệm" />
+                        <input onChange={this.inputHandler} type="text" name="lastName" placeholder="Tên" />
+                        <input onChange={this.inputHandler} type="text" name="username" placeholder="Tên tài khoản" />
+                        <input onChange={this.inputHandler} type="password" name="password" placeholder="Mật khẩu" />
                         <div className={classes.SelectBox}>
-                            <label >User type</label>
+                            <label >Loại tài khoản</label>
                             <select onChange={this.inputHandler} className="custom-select" name="role">
                                 {this.props.role === "admin" ?
                                     <Aux>
@@ -59,16 +59,15 @@ class AddModal extends Component {
                             </select>
                         </div>
                         <div className={classes.SelectBox}>
-                            <label>Status</label>
+                            <label>Trạng thái</label>
                             <select onChange={this.inputHandler} className="custom-select" name="status">
                                 <option value="active">Active</option>
                                 <option value="disabled">Disable</option>
-                                <option value="blocked">Block</option>
                             </select>
                         </div>
                         <div className={classes.BtnGroup}>
-                            <button type="button" className="btn btn-danger" onClick={this.props.btnClicked}>Cancel</button>
-                            <button onClick={this.submitHandler} type="button" className="btn btn-primary">Save</button>
+                            <button type="button" className="btn btn-danger" onClick={this.props.btnClicked}>Huỷ</button>
+                            <button onClick={this.submitHandler} type="button" className="btn btn-primary">Thêm</button>
                         </div>
                     </form>
                 </div>

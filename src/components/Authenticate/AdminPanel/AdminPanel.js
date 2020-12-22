@@ -130,6 +130,12 @@ class AdminPanel extends Component {
         let listRow = null;
         if (this.state.rowData) {
             listRow = this.state.rowData.filter((item, index) => {
+                if(this.props.role !== "admin"){
+                    if (this.state.range === 0) {
+                        return index < 10 && item.role !== "admin";
+                    }
+                    return index >= this.state.range && index < this.state.range + 10 && item.role !== "admin";
+                }
                 if (this.state.range === 0) {
                     return index < 10;
                 }
@@ -173,13 +179,13 @@ class AdminPanel extends Component {
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Username</th>
-                                        <th>Fist name</th>
-                                        <th>Last name</th>
-                                        <th>Role</th>
-                                        <th>Status</th>
-                                        <th>Date Created</th>
-                                        <th>Date Updated</th>
+                                        <th>Tên tài khoản</th>
+                                        <th>Họ và tên đệm</th>
+                                        <th>Tên</th>
+                                        <th>Vị trí</th>
+                                        <th>Trạng thái</th>
+                                        <th>Ngày tạo</th>
+                                        <th>Ngày cập nhật</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -217,6 +223,7 @@ const mapStateToProps = state => {
     return {
         token: state.auth.token,
         deleteId: state.auth.deleteId,
+        role: state.auth.role
     };
 };
 

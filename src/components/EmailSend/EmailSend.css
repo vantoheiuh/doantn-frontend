@@ -15,10 +15,11 @@
     background-color: #fff;
 }
 .EmailSend h3 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     text-transform: uppercase;
     color: blue;
     font-weight: 600;
+    text-align: center;
 }
 .EmailSend > div form > div:last-child{
     display: block;

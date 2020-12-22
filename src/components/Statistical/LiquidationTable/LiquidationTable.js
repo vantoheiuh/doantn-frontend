@@ -102,14 +102,14 @@ class LiquidationTable extends Component {
                   <caption>List Products</caption>
                   <thead className="thead">
                     <tr>
-                      <th scope="col">STT</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Price</th>
-                      <th scope="col">Checkin Time</th>
-                      <th scope="col">Expired Time</th>
-                      <th scope="col">Locate</th>
-                      <th scope="col">Status</th>
-                      <th scope="col">Action</th>
+                    <th scope="col">STT</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Ngày checkin</th>
+                    <th scope="col">Hạn thanh lí</th>
+                    <th scope="col">Vị trí</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>

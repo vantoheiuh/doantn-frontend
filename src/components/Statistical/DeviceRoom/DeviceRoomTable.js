@@ -80,6 +80,8 @@ class DeviceRoomTable extends Component {
             <option value={"kho"}>Kho</option>
             <option value={"kế toán"}>Kế toán</option>
             <option value={"giám đốc"}>Giám đốc</option>
+            <option value={"lab 1"}>Lab 1</option>
+            <option value={"lab 2"}>Lab 2</option>
           </select>
           {this.state.loading ? <Spinner /> :
             <div className={classes.Table}>
@@ -87,14 +89,13 @@ class DeviceRoomTable extends Component {
                 <caption>List Products</caption>
                 <thead className="thead">
                   <tr >
-                    <th scope="col">STT</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Quantity</th>
+                  <th scope="col">STT</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Vị trí</th>
+                    <th scope="col">Trạng thái</th>
                     <th scope="col">Source</th>
-                    <th scope="col">Locate</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Chuyển đến</th>
                   </tr>
                 </thead>
                 <tbody>

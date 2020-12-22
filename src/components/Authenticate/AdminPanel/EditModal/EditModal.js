@@ -43,26 +43,26 @@ class EditModal extends Component {
         return (
             <div className={classes.Modal} style={ModalStyle}>
                 <div className={classes.ModalContent}>
-                    <h3>Edit user</h3>
+                    <h3>Sửa thông tin tài khoản</h3>
                     {userData ? <form>
                         <div>
-                            <label htmlFor="username">Username:</label>
+                            <label htmlFor="username">Tên tài khoản:</label>
                             <input type="text" id="username" placeholder="user1" defaultValue={this.props.userData.username} disabled />
                         </div>
                         <div>
-                            <label htmlFor="firstName">First name:</label>
+                            <label htmlFor="firstName">Họ đệm:</label>
                             <input onChange={(event) => this.inputHandler(event, "firstName")} defaultValue={userData.firstName} type="text" id="firstName" />
                         </div>
                         <div>
-                            <label htmlFor="lastName">Last name:</label>
+                            <label htmlFor="lastName">Tên:</label>
                             <input onChange={(event) => this.inputHandler(event, "lastName")} defaultValue={this.props.userData.lastName} name="lastName" type="text" id="lastName" />
                         </div>
                         <div>
-                            <label htmlFor="password">Password:</label>
+                            <label htmlFor="password">Mật khẩu:</label>
                             <input onChange={(event) => this.inputHandler(event, "password")} defaultValue={this.props.userData.password} type="password" id="password" placeholder="Input new password" />
                         </div>
                         <div className={classes.SelectBox}>
-                            <label>User type</label>
+                            <label>Loại tài khoản</label>
                             <select onChange={(event) => this.inputHandler(event, "role")} defaultValue={this.props.userData.role} className="custom-select">
                                 {this.props.role === "admin" ? <Aux>
 
@@ -74,16 +74,15 @@ class EditModal extends Component {
                             </select>
                         </div>
                         <div name="status" className={classes.SelectBox}>
-                            <label>Status</label>
+                            <label>Trạng thái</label>
                             <select onChange={(event) => this.inputHandler(event, "status")} defaultValue={this.props.userData.status} className="custom-select">
                                 <option value="active">Active</option>
                                 <option value="disabled">Disable</option>
-                                <option value="blocked">Block</option>
                             </select>
                         </div>
                         <div className={classes.BtnGroup}>
-                            <button type="reset" className="btn btn-danger" onClick={this.props.btnClicked}>Cancel</button>
-                            <button onClick={this.submitUpdateHandler} type="reset" className="btn btn-primary">Save</button>
+                            <button type="reset" className="btn btn-danger" onClick={this.props.btnClicked}>Huỷ</button>
+                            <button onClick={this.submitUpdateHandler} type="reset" className="btn btn-primary">Lưu thay đổi</button>
                         </div>
                     </form> : <Spinner />}
                 </div>

@@ -5,6 +5,9 @@
     margin-bottom: 30px;
     height: 100%;
 }
+.ContentLeft p:first-child{
+    font-weight: 600;
+}
 
 .first {
     background: #8892D6!important;

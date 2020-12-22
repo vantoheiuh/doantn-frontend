@@ -55,6 +55,7 @@ class App extends Component {
             <Route path="/update-password" component={UpdatePassword} />
             <Route path="/update-user-detail" component={UserDetail} />
             <Route path="/users" component={AdminPanel} />
+            <Route path="/send-mail" exact component={EmailSend} />
             <Route path="/products" exact component={DeviceManager} />
             <Route path="/" exact component={DashBoard} />
             <Redirect to="/" />

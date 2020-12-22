@@ -17,7 +17,7 @@ class TableDataRow extends Component {
         </td>
         <td>{this.props.name}</td>
         <td>{this.props.price}$</td>
-        <td>{this.props.amount}</td>
+        <td>{this.props.quantity}</td>
         <td>{this.props.checkinTime}</td>
         {/* <td>{this.props.activeTime}</td> */}
         {/* <td>{this.props.expiredTime}</td> */}

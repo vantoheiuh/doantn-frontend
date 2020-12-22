@@ -8,7 +8,6 @@ class Search extends Component {
         this.setState({
             tempValue: event.target.value
         })
-        console.log(event.target.value.length);
         this.props.checkConnectProps(this.state.tempValue)
         if (event.target.value.length === 0) {
             this.props.check()
@@ -21,8 +20,7 @@ class Search extends Component {
         return (
             <div className={classes.Search}>
                 <div>
-                    <input onChange={(event) => this.search(event)} type="text" placeholder="Search By Name" />
-                    <button><i className="header-search-btn-icon fas fa-search"></i></button>
+                    <input onChange={(event) => this.search(event)} type="text" placeholder="Tìm theo tên" />
                 </div>
             </div>
         );

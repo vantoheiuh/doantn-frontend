@@ -68,10 +68,10 @@ class EmailSend extends Component {
                     <h3>Gửi thông báo cho nhân viên</h3>
                     <form>
                         <div>
-                            <label>Subject</label>
+                            <label>Chủ đề:</label>
                             <input type="text" name="subject" onChange={this.inputHandler}></input>
                         </div>
-                        <div><label>Input message</label>
+                        <div><label>Nội dung:</label>
                             <textarea rows="4" name="message" onChange={this.inputHandler}></textarea>
                         </div>
                         <div>

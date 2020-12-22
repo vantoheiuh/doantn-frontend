@@ -8,6 +8,7 @@ import classes from './DeviceManager.css';
 import { connect } from 'react-redux';
 import Aux from '../hoc/Auxi/Auxi';
 import Footer from '../components/UI/Footer/Footer';
+import Search from '../components/Search/Search';
 
 
 class DeviceManager extends Component {
@@ -108,8 +109,8 @@ class DeviceManager extends Component {
     return (
       <Aux>
         {this.props.isAuthenticated ? <div className={classes.DeviceManager}>
-          {/* <Search checkConnectProps={(dl) => this.getTextSearch(dl)}
-            check={this.check} check2={this.check2} /> */}
+          <Search checkConnectProps={(dl) => this.getTextSearch(dl)}
+            check={this.check} check2={this.check2} />
           {this.state.loading ? <Spinner /> : <TableData tableData={this.state.searchnew ? ketqua : this.state.tableData}
             edit={this.edit} delete={this.delete} />}
           {this.state.edit ? <Model removeEdit={this.removeEdit}

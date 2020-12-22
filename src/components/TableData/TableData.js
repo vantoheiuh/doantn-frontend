@@ -100,15 +100,15 @@ class TableData extends Component {
             <thead>
               <tr>
                 <th>STT</th>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Amount</th>
-                <th>Checkin Time</th>
-                <th>Source</th>
-                <th>Locate</th>
-                <th>Barcode</th>
-                <th>Status</th>
+                <th>Ảnh</th>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Số Lượng</th>
+                <th>Thời gian checkin</th>
+                <th>Nguồn</th>
+                <th>Vị trí</th>
+                <th>Mã vạch</th>
+                <th>Trạng thái</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -132,9 +132,7 @@ class TableData extends Component {
           </div>
           <ProductDetail show={this.state.showProductDetail} close={this.hideProductDetailHandler} productInfo={this.state.productInfo} />
           <DeleteModal show={this.state.isDeleteModalShow} cancel={this.closeDeleteModal} confirm={() => this.props.delete(this.state.id, this.state.name)} />
-
         </div>
-        <Footer />
       </div>
     );
   }

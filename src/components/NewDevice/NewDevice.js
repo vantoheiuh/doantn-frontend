@@ -9,7 +9,7 @@ class NewDevice extends Component {
     state = {
         name: "",
         price: "",
-        amount: "",
+        amount: 0,
         checkinTime: "",
         expiredTime: "",
         activeTime: "",
@@ -107,62 +107,62 @@ class NewDevice extends Component {
                 <AlertAddNew checkAlertAdd={this.state.checkAlertAdd} alertShowAdd={this.state.alertShowAdd} alertOffAdd={this.alertOffAdd} status={this.state.status} />
                 {this.state.loading ? <Spinner /> :
                 <div className={classes.NewDevice}>
-                    <h3>ADD DEVICE</h3>
+                    <h3>Thêm mới thiết bị</h3>
                     <form>
                         <div>
-                            <label htmlFor="image">Image: </label>
+                            <label htmlFor="image">Ảnh thiết bị: </label>
                             <input className={classes.File} type="file" id="image" name="image" onChange={(event) => this.isChange(event)} accept=".jpg,.png,jpeg"></input>
                         </div>
                         <div>
-                            <label htmlFor="name">Name: </label>
-                            <input type="text" id="name" placeholder="Device name"
+                            <label htmlFor="name">Tên: </label>
+                            <input type="text" id="name" placeholder="Tên thiết bị"
                                 name="name" onChange={(event) => this.isChange(event)}
                                 value={this.state.name} />
                         </div>
                         <div>
-                            <label>Price: </label>
-                            <input type="text" placeholder="Device cost"
+                            <label>Giá: </label>
+                            <input type="text" placeholder="Giá thiết bị"
                                 name="price" onChange={(event) => this.isChange(event)}
                                 value={this.state.price} />
                         </div>
                         <div>
-                            <label>Amount: </label>
-                            <input type="number" placeholder="Device amount"
-                                name="amount" onChange={(event) => this.isChange(event)}
-                                value={this.state.amount} />
-                        </div>
-                        <div>
-                            <label>Checkin Time: </label>
-                            <input type="date" placeholder="Device checkinTime"
-                                name="checkinTime" onChange={(event) => this.isChange(event)}
-                                value={this.state.checkinTime} />
-                        </div>
-                        <div>
-                            <label>Active Time: </label>
-                            <input type="number" placeholder="Device activeTime"
-                                name="activeTime" onChange={(event) => this.isChange(event)}
-                                value={this.state.activeTime} />
-                        </div>
-                        <div>
-                            <label>Expired Time: </label>
-                            <input type="number" placeholder="Device expiredTime"
-                                name="expiredTime" onChange={(event) => this.isChange(event)}
-                                value={this.state.expiredTime} />
-                        </div>
-                        <div>
-                            <label>Quantity: </label>
-                            <input type="number" placeholder="Device quantity"
+                            <label>Số lượng: </label>
+                            <input type="number" placeholder="Số lượng"
                                 name="quantity" onChange={(event) => this.isChange(event)}
                                 value={this.state.quantity} />
                         </div>
                         <div>
-                            <label>Source: </label>
-                            <input type="text" placeholder="Device source"
+                            <label>Thời gian checkin: </label>
+                            <input type="date" placeholder="Thời gian checkin"
+                                name="checkinTime" onChange={(event) => this.isChange(event)}
+                                value={this.state.checkinTime} />
+                        </div>
+                        <div>
+                            <label>Hạn bảo trì: </label>
+                            <input type="number" placeholder="Hạn bảo trì"
+                                name="activeTime" onChange={(event) => this.isChange(event)}
+                                value={this.state.activeTime} />
+                        </div>
+                        <div>
+                            <label>Hạn thanh lí: </label>
+                            <input type="number" placeholder="Hạn thanh lí"
+                                name="expiredTime" onChange={(event) => this.isChange(event)}
+                                value={this.state.expiredTime} />
+                        </div>
+                        {/* <div>
+                            <label>Quantity: </label>
+                            <input type="number" placeholder="Device quantity"
+                                name="quantity" onChange={(event) => this.isChange(event)}
+                                value={this.state.quantity} />
+                        </div> */}
+                        <div>
+                            <label>Nguồn: </label>
+                            <input type="text" placeholder="Nguồn"
                                 name="source" onChange={(event) => this.isChange(event)}
                                 value={this.state.source} />
                         </div>
                         <div>
-                            <label>Status: </label>
+                            <label>Trạng thái: </label>
                             <select className="selectBox" name="statusDevice" onChange={(event) => this.isChange(event)} required>
                                 <option value={'Using'}>Using </option>
                                 <option value={'Maintained'}>Maintained</option>
@@ -170,17 +170,18 @@ class NewDevice extends Component {
                         </div>
 
                         <div>
-                            <label>Locate: </label>
+                            <label>Vị trí: </label>
                             <select className="selectBox" name="locate" onChange={(event) => this.isChange(event)} required>
                                 <option value={'kho'}>Kho </option>
-
                                 <option value={'kế toán'}>Kế toán </option>
                                 <option value={'giám đốc'}>Kiám đốc</option>
+                                <option value={'lab 1'}>Lab 1 </option>
+                                <option value={'lab 2'}>Lab 2</option>
                             </select>
                         </div>
                         <div className={classes.Button}>
-                            <button className="btn btn-danger">CANCEL</button>
-                            <button type="reset" onClick={(event) => this.add(event)} className="btn btn-primary">ADD</button>
+                            <button className="btn btn-danger">Huỷ bỏ</button>
+                            <button type="reset" onClick={(event) => this.add(event)} className="btn btn-primary">Thêm</button>
                         </div>
                     </form>
                 </div>

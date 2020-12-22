@@ -10,10 +10,10 @@ const deleteModal = props => {
     return (
         <div className={classes.DeleteModal} style={ModalStyle}>
             <div className={classes.DeleteModalContent}>
-                    <h3>Confirm Delete?</h3>
+                    <h3>Xác nhận xoá?</h3>
                     <div>
-                        <button className="btn btn-danger" onClick={props.cancel}>Cancel</button>
-                        <button className="btn btn-primary" onClick={props.confirm}>Confirm</button>
+                        <button className="btn btn-danger" onClick={props.cancel}>Huỷ</button>
+                        <button className="btn btn-primary" onClick={props.confirm}>Xác nhận</button>
                     </div>
             </div>
         </div>

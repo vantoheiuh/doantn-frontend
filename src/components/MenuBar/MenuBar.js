@@ -55,6 +55,7 @@ class MenuBar extends Component {
                                     <MenuItem link="/products"><SettingsCellIcon /> Quản lí thiết bị</MenuItem>
                                     <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
                                     <MenuItem link="/update-password"><VpnKeyIcon /> Thay đổi mật khẩu</MenuItem>
+                                    <MenuItem link="/send-mail"><MailIcon /> Mail Box</MenuItem>
                                 </Aux> :
                                 <Aux>
                                     <MenuItem link="/"><DashboardIcon /> DashBoard</MenuItem>

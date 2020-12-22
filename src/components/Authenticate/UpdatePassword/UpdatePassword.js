@@ -52,30 +52,30 @@ class UpdatePassword extends Component {
         return (
             <div className={classes.UpdatePassword}>
                 <form className={classes.FormUpdate}>
-                    <h3>Update Password</h3>
+                    <h3>Đổi mật khẩu</h3>
                     <div>
-                        <label htmlFor="username">Username:</label>
+                        <label htmlFor="username">Tên tài khoản:</label>
                         <input type="text" id="username" placeholder={this.props.username} disabled />
                     </div>
                     <div>
-                        <label htmlFor="currentPassword">Current Password:</label>
-                        <input onChange={(event) => this.inputHandler(event, "currentPassword")} type="password" id="currentPassword" placeholder="Current Password" />
+                        <label htmlFor="currentPassword">Mật khẩu hiện tại:</label>
+                        <input onChange={(event) => this.inputHandler(event, "currentPassword")} type="password" id="currentPassword" placeholder="Mật khẩu hiện tại" />
                     </div>
                     <div>
-                        <label htmlFor="newPassword">New Password:</label>
-                        <input onChange={(event) => this.inputHandler(event, "newPassword")} name="newPassword" type="password" id="newPassword" placeholder="New password" />
+                        <label htmlFor="newPassword">Mật khẩu mới:</label>
+                        <input onChange={(event) => this.inputHandler(event, "newPassword")} name="newPassword" type="password" id="newPassword" placeholder="Mật khẩu mới" />
                     </div>
                     <div>
-                        <label htmlFor="confirmPassword">Confirm Password</label>
-                        <input onChange={(event) => this.inputHandler(event, "confirmPassword")} type="password" id="confirmPassword" placeholder="Confirm Password" />
+                        <label htmlFor="confirmPassword">Nhập lại mật khẩu</label>
+                        <input onChange={(event) => this.inputHandler(event, "confirmPassword")} type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu" />
                     </div>
                     
                     <div className={classes.BtnGroup}>
-                        <button type="reset" className="btn btn-danger" onClick={this.props.btnClicked}>Cancel</button>
-                        <button onClick={this.submitUpdateHandler} type="reset" className="btn btn-primary">Save</button>
+                        <button type="reset" className="btn btn-danger" onClick={this.props.btnClicked}>Huỷ bỏ</button>
+                        <button onClick={this.submitUpdateHandler} type="reset" className="btn btn-primary">Cập nhật</button>
                     </div>
                     {
-                        this.state.isSuccess ? <p style={{'color': 'green'}}>Change password successfully!</p> : this.state.isFailed ? <p style={{ 'color': 'red' }}>Failed! Please try again!</p> : null
+                        this.state.isSuccess ? <p style={{'color': 'green'}}>Thay đổi thành công!</p> : this.state.isFailed ? <p style={{ 'color': 'red' }}>Thất bại! Vui lòng thử lại.</p> : null
                     }
                 </form>
             </div>

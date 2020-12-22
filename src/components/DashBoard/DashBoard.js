@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Spinner from '../UI/Spinner/Spinner';
 import StatisticalChart from '../Statistical/StatisticalChart/StatisticalChart';
 import Footer from '../UI/Footer/Footer';
+import Aux from '../../hoc/Auxi/Auxi';
 
 class DashBoard extends Component {
 
@@ -83,18 +84,22 @@ class DashBoard extends Component {
     render() {
 
         return (
-            <div className={classes.DashBoard}>
-                <div className="container" >
-                    {this.state.usersData ? <StatisticalDetail title="Thống kê tài khoản" data={this.state.usersData} /> : <Spinner />}
-                    {this.state.productsData ? <StatisticalDetail title="Thống kê thiết bị" data={this.state.productsData} /> : <Spinner />}
-                    <div className={`"row" ${classes.Chart}`} >
-                        <div className="col-12">
-                            <StatisticalChart />
+            <Aux>
+                <div className={classes.DashBoard}>
+                    <div className="container" >
+                        {this.state.usersData ? <StatisticalDetail title="Thống kê tài khoản" data={this.state.usersData} /> : <Spinner />}
+                        {this.state.productsData ? <StatisticalDetail title="Thống kê thiết bị" data={this.state.productsData} /> : <Spinner />}
+                        <div className={`"row" ${classes.Chart}`} >
+                            <div className="col-12">
+                                <StatisticalChart />
+                            </div>
                         </div>
                     </div>
                 </div>
                 <Footer />
-            </div>
+            </Aux>
+
+
         )
     }
 }

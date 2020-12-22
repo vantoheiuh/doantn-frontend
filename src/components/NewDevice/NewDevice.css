@@ -9,9 +9,10 @@
 .NewDevice h3 {
     margin-bottom: 15px;
     color: blue;
-    font-weight: bolder;
+    font-weight: 600;
     border-bottom: 1px solid gray;
     padding-bottom: 15px;
+    text-transform: uppercase;
 }
 
 .NewDevice > form > div:not(.Button) {

@@ -8,7 +8,7 @@ class MaintenanceRow extends Component {
       <tr className={classes.MaintenanceRow}>
         <th scope="row">{this.props.stt}</th>
         <td>{this.props.name}</td>
-        <td>{this.props.amount}</td>
+        <td>{this.props.quantity}</td>
         <td>{this.props.checkinTime}</td>
         <td>{this.props.activeTime}</td>
         <td>{this.props.locate}</td>

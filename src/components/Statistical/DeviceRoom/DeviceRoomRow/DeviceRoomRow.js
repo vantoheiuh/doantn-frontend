@@ -9,15 +9,14 @@ class DeviceRoomRow extends Component {
       <tr className={classes.DeviceRoomRow}>
         <th scope="row">{this.props.stt}</th>
         <td>{this.props.name}</td>
-        <td>{this.props.amount}</td>
         <td>{this.props.quantity}</td>
-        <td>{this.props.source}</td>
         <td>{this.props.locate}</td>
         <td>
           <span className={this.props.statusDevice === 'Using' ? "using" : "isMaintained"}>
             {this.props.statusDevice}
           </span>
         </td>
+        <td>{this.props.source}</td>
         <td className={classes.ButtonGroup}>
           <button className={classes.Edit} onClick={this.props.edit}><EditIcon /></button>
           <button className={classes.Delete} onClick={this.props.delete}><DeleteIcon /></button>
