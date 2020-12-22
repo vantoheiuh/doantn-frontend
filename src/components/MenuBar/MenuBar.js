@@ -14,6 +14,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import Aux from '../../hoc/Auxi/Auxi';
+import MailIcon from '@material-ui/icons/Mail';
 
 
 class MenuBar extends Component {
@@ -45,7 +46,7 @@ class MenuBar extends Component {
                                 <MenuItem link="/products"><SettingsCellIcon /> Quản lí thiết bị</MenuItem>
                                 <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
                                 <MenuItem link="/update-password"><VpnKeyIcon /> Thay đổi mật khẩu</MenuItem>
-                                <MenuItem link="/send-mail">Mail Box</MenuItem>
+                                <MenuItem link="/send-mail"><MailIcon /> Mail Box</MenuItem>
                             </Aux>
                             : this.props.role === "manager" ?
                                 <Aux>
