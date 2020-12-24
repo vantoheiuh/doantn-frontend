@@ -28,7 +28,7 @@ class Menu extends Component {
                 <nav>
                     <ul>
                         <div>
-                            <MenuItem link="/"><DevicesIcon fontSize="large" /> Device Manager</MenuItem>
+                            <MenuItem logo="true" link="/"><DevicesIcon fontSize="large" /> Device Manager</MenuItem>
                         </div>
 
                         <div className={classes.SubMenu}>
@@ -45,7 +45,7 @@ class Menu extends Component {
                                         </ul>
                                     </div>
                                 </div>
-                                : <div className={classes.Login}><MenuItem link="/login">LOGIN</MenuItem></div>
+                                : <div className={classes.Login}><MenuItem link="/login">Đăng nhập</MenuItem></div>
                             }
                         </div>
 

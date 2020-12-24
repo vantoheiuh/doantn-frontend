@@ -33,20 +33,20 @@ class Login extends Component {
                 <div className={classes.Login}>
                     {authRedirect}
                     <form>
-                        <h2>Account Login</h2>
+                        <h2>Đăng nhập tài khoản</h2>
                         <div>
                             <span><PersonIcon /></span>
-                            <input type="text" name="username" placeholder="Username" onChange={this.inputHandler} />
+                            <input type="text" name="username" placeholder="Tên đăng nhập" onChange={this.inputHandler} />
                         </div>
                         <div>
                             <span><VpnKeyIcon /></span>
-                            <input type="password" name="password" placeholder="Password" autoComplete="false" onChange={this.inputHandler} />
+                            <input type="password" name="password" placeholder="Mật khẩu" autoComplete="false" onChange={this.inputHandler} />
                         </div>
                         {this.props.err ? <div className={classes.ErrorLogin}>
-                            <p>Wrong Username or Password. Please try again!</p>
+                            <p>Tên đăng nhập hoặc mật khẩu không đÚng. Vui lòng thử lại!</p>
                         </div> : null}
                         <div>
-                            <button type="button" onClick={this.loginHandler}>Sign in</button>
+                            <button type="button" onClick={this.loginHandler}>Đăng nhập</button>
                         </div>
                     </form>
                 </div>
