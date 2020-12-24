@@ -57,7 +57,6 @@ class MenuBar extends Component {
                                 </Aux> :
                                 <Aux>
                                     <MenuItem link="/"><DashboardIcon /> DashBoard</MenuItem>
-                                    <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
                                 </Aux>
                     }
 

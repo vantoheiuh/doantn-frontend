@@ -14,13 +14,11 @@
 
 .EditForm{
     z-index: 10000;
-    position: absolute;
     background-color: white;
-    width: 40%;
-    left: calc((100% - 260px) / 2) ;
-    top: 10%;
     border-radius: 5px;
+    margin: auto;
     padding: 15px 30px;
+    width: 50%;
 
 }
 .EditForm h3{

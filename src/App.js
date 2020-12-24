@@ -62,7 +62,6 @@ class App extends Component {
           </Aux> : <Aux>
                 <Route path="/update-password" exact component={UpdatePassword} />
                 <Route path="/update-user-detail" exact component={UserDetail} />
-                <Route path="/new-device" component={NewDevice} />
                 <Route path="/thongke/room" component={DeviceRoomTable} />
                 <Route path="/thongke/liquid" component={LiquidationTable} />
                 <Route path="/thongke/baotri" component={MaintenanceTable} />

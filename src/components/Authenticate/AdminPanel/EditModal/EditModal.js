@@ -21,15 +21,26 @@ class EditModal extends Component {
     }
 
     submitUpdateHandler = () => {
-        console.log(this.props.userData)
+        if (this.props.role === "manager") {
+            console.log("1")
+            const updatedDataForm = { ...this.state.dataForm };
+            let updatedDataEmelent = { ...updatedDataForm["role"] };
+            updatedDataEmelent = "employee";
+            updatedDataForm["role"] = updatedDataEmelent;
+            const data = { ...this.props.userData, ...updatedDataForm };
+            this.props.onUpdateUserById(data, this.props.token);
+            this.props.btnClicked();
+            this.setState({ dataForm: null });
+            return;
+        }
         const data = { ...this.props.userData, ...this.state.dataForm };
-        console.log(data)
         this.props.onUpdateUserById(data, this.props.token);
         this.props.btnClicked();
         this.setState({ dataForm: null });
     }
 
     render() {
+        console.log(this.state.dataForm)
         let ModalStyle = this.props.show ? {
             display: "block"
         } : {
@@ -69,7 +80,7 @@ class EditModal extends Component {
                                     <option value="admin">Admin</option>
                                     <option value="manager">Manager</option>
                                     <option value="employee">Employee</option>
-                                </Aux> : <option value="employee">Employee</option>
+                                </Aux> : <option defaultValue="employee">Employee</option>
                                 }
                             </select>
                         </div>

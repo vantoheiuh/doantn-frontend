@@ -21,43 +21,39 @@ const productDetail = (props) => {
                     <h1>{props.productInfo.name}</h1>
                     <ul>
                         <li>
-                            <span>Price </span>
-                            <span>{props.productInfo.price}$</span>
+                            <span>Giá (vnd)</span>
+                            <span>{props.productInfo.price}</span>
                         </li>
                         <li>
-                            <span>Amount </span>
+                            <span>Số lượng </span>
                             <span>{props.productInfo.amount}</span>
                         </li>
                         <li>
-                            <span>Checkin Time </span>
+                            <span>Thời gian checkin </span>
                             <span>{props.productInfo.checkinTime.slice(0, 10)}</span>
                         </li>
                         <li>
-                            <span>Expired Time </span>
+                            <span>hạn thanh lí </span>
                             <span>{props.productInfo.expiredTime}</span>
                         </li>
                         <li>
-                            <span>Active Time </span>
+                            <span>Hạn Bảo trì </span>
                             <span>{props.productInfo.activeTime}</span>
                         </li>
                         <li>
-                            <span>Quantity </span>
-                            <span>{props.productInfo.quantity}</span>
-                        </li>
-                        <li>
-                            <span>Source </span>
+                            <span>Nguồn </span>
                             <span>{props.productInfo.source}</span>
                         </li>
                         <li>
-                            <span>Status Device </span>
+                            <span>Trạng thái </span>
                             <span>{props.productInfo.statusDevice}</span>
                         </li>
                         <li>
-                            <span>Locate </span>
-                            <span>{props.productInfo.locate}</span>
+                            <span>Vị trí </span>
+                            <span>Phòng {props.productInfo.locate}</span>
                         </li>
                         <li>
-                            <span>Added by </span>
+                            <span>Thêm bởi </span>
                             <span>Nguyen Van</span>
                         </li>
                         <li>

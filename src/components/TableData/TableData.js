@@ -102,7 +102,7 @@ class TableData extends Component {
                 <th>STT</th>
                 <th>Ảnh</th>
                 <th>Tên</th>
-                <th>Giá</th>
+                <th>Giá(vnd)</th>
                 <th>Số Lượng</th>
                 <th>Thời gian checkin</th>
                 <th>Nguồn</th>
