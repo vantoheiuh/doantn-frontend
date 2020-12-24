@@ -131,9 +131,9 @@ class AdminPanel extends Component {
             listRow = this.state.rowData.filter((item, index) => {
                 if(this.props.role !== "admin"){
                     if (this.state.range === 0) {
-                        return index < 10 && item.role !== "admin";
+                        return index < 10 && item.role === "employee";
                     }
-                    return index >= this.state.range && index < this.state.range + 10 && item.role !== "admin";
+                    return index >= this.state.range && index < this.state.range + 10 && item.role === "employee";
                 }
                 if (this.state.range === 0) {
                     return index < 10;

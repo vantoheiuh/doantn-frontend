@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classes from './MaintenanceTable.css';
 import MaintenanceRow from './MaintenanceRow/MaintenanceRow';
 import axios from '../../../axios-auth';
-import Chart from '../../UI/Chart/Chart';
+// import Chart from '../../UI/Chart/Chart';
 import Spinner from '../../UI/Spinner/Spinner';
 import Footer from '../../UI/Footer/Footer';
 
@@ -90,21 +90,21 @@ class MaintenanceTable extends Component {
       )
     })
 
-    let sumCount = this.state.maintenanceTable.reduce((total, item) => {
-      return total + item.amount;
-    }, 0);
+    // let sumCount = this.state.maintenanceTable.reduce((total, item) => {
+    //   return total + item.amount;
+    // }, 0);
 
-    let countUsing = this.state.maintenanceTable.filter(item => {
-      return item.statusDevice === "Using";
-    }).reduce((total, item) => {
-      return total + item.amount;
-    }, 0)
+    // let countUsing = this.state.maintenanceTable.filter(item => {
+    //   return item.statusDevice === "Using";
+    // }).reduce((total, item) => {
+    //   return total + item.amount;
+    // }, 0)
 
-    let countMaintain = this.state.maintenanceTable.filter(item => {
-      return item.statusDevice === "Maintained";
-    }).reduce((total, item) => {
-      return total + item.amount;
-    }, 0)
+    // let countMaintain = this.state.maintenanceTable.filter(item => {
+    //   return item.statusDevice === "Maintained";
+    // }).reduce((total, item) => {
+    //   return total + item.amount;
+    // }, 0)
 
     return (
       <div className={classes.MaintenanceTable}>

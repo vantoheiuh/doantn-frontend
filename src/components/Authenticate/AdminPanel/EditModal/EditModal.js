@@ -70,19 +70,19 @@ class EditModal extends Component {
                         </div>
                         <div>
                             <label htmlFor="password">Mật khẩu:</label>
-                            <input onChange={(event) => this.inputHandler(event, "password")} defaultValue={this.props.userData.password} type="password" id="password" placeholder="Input new password" />
+                            <input onChange={(event) => this.inputHandler(event, "password")} defaultValue={this.props.userData.password} type="password" id="password" placeholder="Để trống nếu không đổi mật khẩu" />
                         </div>
                         <div className={classes.SelectBox}>
                             <label>Loại tài khoản</label>
-                            <select onChange={(event) => this.inputHandler(event, "role")} defaultValue={this.props.userData.role} className="custom-select">
                                 {this.props.role === "admin" ? <Aux>
 
+                            <select onChange={(event) => this.inputHandler(event, "role")} defaultValue={this.props.userData.role} className="custom-select">
                                     <option value="admin">Admin</option>
                                     <option value="manager">Manager</option>
                                     <option value="employee">Employee</option>
-                                </Aux> : <option defaultValue="employee">Employee</option>
-                                }
                             </select>
+                                </Aux> : <input onChange={(event) => this.inputHandler(event, "role")} defaultValue={this.props.userData.role} disabled type="text" id="role" />
+                                }
                         </div>
                         <div name="status" className={classes.SelectBox}>
                             <label>Trạng thái</label>
