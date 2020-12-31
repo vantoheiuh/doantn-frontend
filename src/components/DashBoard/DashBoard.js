@@ -52,17 +52,17 @@ class DashBoard extends Component {
         axios.get('/api/products')
             .then(res => {
                 let result = res.data.reduce((total, item) => {
-                    total.total += item.amount;
+                    total.total += item.quantity;
                     if (item.statusDevice === "Using") {
-                        total.using += item.amount;
+                        total.using += item.quantity;
                     } else {
-                        total.maintenance += item.amount;
+                        total.maintenance += item.quantity;
                     }
                     const exTime = item.checkinTime.slice(0, 10).split('-');
                     const exDate = new Date(Number(exTime[0]) + item.activeTime + item.expiredTime, Number(exTime[1]), Number(exTime[2]));
                     const today = new Date();
                     if (today.getTime() >= exDate.getTime()) {
-                        total.liquidation += item.amount;
+                        total.liquidation += item.quantity;
                     }
                     return total;
                 }, { total: 0, using: 0, maintenance: 0, liquidation: 0 });
