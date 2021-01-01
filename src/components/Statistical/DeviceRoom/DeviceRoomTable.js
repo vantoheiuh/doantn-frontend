@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import classes from './DeviceRoomTable.css';
 import DeviceRoomRow from './DeviceRoomRow/DeviceRoomRow';
 import axios from '../../../axios-auth';
-import Chart from '../../UI/Chart/Chart';
 import Spinner from '../../UI/Spinner/Spinner';
 import Footer from '../../UI/Footer/Footer';
 
@@ -78,21 +77,21 @@ class DeviceRoomTable extends Component {
       )
     })
 
-    let sumCount = this.state.deviceRoom.reduce((total, item) => {
-      return total + item.amount;
-    }, 0);
+    // let sumCount = this.state.deviceRoom.reduce((total, item) => {
+    //   return total + item.amount;
+    // }, 0);
 
-    let countUsing = this.state.deviceRoom.filter(item => {
-      return item.statusDevice === "Using";
-    }).reduce((total, item) => {
-      return total + item.amount;
-    }, 0)
+    // let countUsing = this.state.deviceRoom.filter(item => {
+    //   return item.statusDevice === "Using";
+    // }).reduce((total, item) => {
+    //   return total + item.amount;
+    // }, 0)
 
-    let countMaintain = this.state.deviceRoom.filter(item => {
-      return item.statusDevice === "Maintained";
-    }).reduce((total, item) => {
-      return total + item.amount;
-    }, 0)
+    // let countMaintain = this.state.deviceRoom.filter(item => {
+    //   return item.statusDevice === "Maintained";
+    // }).reduce((total, item) => {
+    //   return total + item.amount;
+    // }, 0)
     return (
       <div className={classes.DeviceRoomTable}>
         <div className="container">

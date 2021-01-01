@@ -21,7 +21,6 @@ class Model extends Component {
         this.setState({ loading: true });
         axios.put('/api/products/' + id, this.state.formData)
             .then(res => {
-                //console.log(res.data)
                 this.props.hiddenModel()
                 this.props.alertOn("Sửa thành công");
                 this.setState({ loading: false });

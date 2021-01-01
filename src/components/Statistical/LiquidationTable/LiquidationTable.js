@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import classes from './LiquidationTable.css';
 import LiquidationTableRow from './LiquidationTableRow/LiquidationTableRow';
 import axios from '../../../axios-auth';
-import Chart from '../../UI/Chart/Chart';
 import Spinner from '../../UI/Spinner/Spinner';
 import Footer from '../../UI/Footer/Footer';
 
@@ -58,23 +57,20 @@ class LiquidationTable extends Component {
           delete={() => this.props.delete(item._id, item.name)} />
       )
     })
-    let sumCount = this.state.liquidationTable.reduce((total, item) => {
-      return total + item.amount;
-    }, 0);
-    console.log(sumCount);
+    // let sumCount = this.state.liquidationTable.reduce((total, item) => {
+    //   return total + item.amount;
+    // }, 0);
+    // let countUsing = this.state.liquidationTable.filter(item => {
+    //   return item.statusDevice === "Using";
+    // }).reduce((total, item) => {
+    //   return total + item.amount;
+    // }, 0)
 
-
-    let countUsing = this.state.liquidationTable.filter(item => {
-      return item.statusDevice === "Using";
-    }).reduce((total, item) => {
-      return total + item.amount;
-    }, 0)
-
-    let countMaintain = this.state.liquidationTable.filter(item => {
-      return item.statusDevice === "Maintained";
-    }).reduce((total, item) => {
-      return total + item.amount;
-    }, 0)
+    // let countMaintain = this.state.liquidationTable.filter(item => {
+    //   return item.statusDevice === "Maintained";
+    // }).reduce((total, item) => {
+    //   return total + item.amount;
+    // }, 0)
     return (
       <div className={classes.LiquidationTable}>
         <div className="container">

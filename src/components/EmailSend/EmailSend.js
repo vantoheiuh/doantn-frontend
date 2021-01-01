@@ -18,7 +18,6 @@ class EmailSend extends Component {
             .then(response => {
                 // If request is good...
                 this.setState({ userdata: response.data, loading: false });
-                console.log(response.data)
                 let bccMails = response.data.map(item => {
                     if (item.email) {
                         return item.email;
@@ -29,6 +28,7 @@ class EmailSend extends Component {
             .catch((error) => {
                 console.log('error ' + error);
             });
+        
     }
 
     sendMailHandler = () => {
@@ -43,7 +43,6 @@ class EmailSend extends Component {
                 emails: this.state.bccMails
             }
         }
-        console.log(this.state.subject, this.state.message)
         axios.post('https://api.emailjs.com/api/v1.0/email/send', data);
         this.setState({ isSent: true });
     }
@@ -71,7 +70,7 @@ class EmailSend extends Component {
                             <button type="reset" className="btn btn-primary" onClick={this.sendMailHandler}>Xác nhận gửi</button>
                         </div>
                     </form>
-                    {this.state.isSent ? <p style={{color: 'green'}}>Gửi thành công!</p>: <p></p>}
+                    {this.state.isSent ? <p style={{color: 'green'}}>Gửi thành công.</p>: <p></p>}
                 </div>
             </div>
         )

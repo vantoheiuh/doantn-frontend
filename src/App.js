@@ -9,7 +9,6 @@ import {
   Redirect,
 } from "react-router-dom";
 import Menu from './components/Menu/Menu';
-import NotFound from './components/NotFound/NotFound';
 import Login from './components/Authenticate/Login/Login';
 import Logout from './components/Authenticate/Logout/Logout';
 import { connect } from 'react-redux';

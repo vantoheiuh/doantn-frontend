@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import classes from './TableData.css';
 import TableDataRow from './TableDataRow/TableDataRow';
 import ProductDetail from './ProductDetail/ProductDetail';
-import Footer from '../UI/Footer/Footer';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import ExportData from '../ExportData/ExportData';

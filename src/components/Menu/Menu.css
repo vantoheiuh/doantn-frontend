@@ -37,10 +37,8 @@
     text-align: center;
     width: 100%;
     height: 100%;
-}
-
-.Menu > nav > ul > div:first-child li a:hover{
     color: white;
+
 }
 
 .Menu > nav > ul > div:last-child li a{

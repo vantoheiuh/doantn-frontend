@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import classes from './DeviceRoomRow.css';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import axios from '../../../../axios-auth';
-import LinearProgress from '@material-ui/core/LinearProgress';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Aux from '../../../../hoc/Auxi/Auxi';
 
 class DeviceRoomRow extends Component {
 
@@ -17,7 +15,6 @@ class DeviceRoomRow extends Component {
   isChangeRoom = (event) => {
     let cloneData = { ...this.props.item };
     cloneData["locate"] = event.target.value;
-    console.log(cloneData["locate"]);
     this.setState({ dataUpdate: cloneData });
   }
 
@@ -29,7 +26,6 @@ class DeviceRoomRow extends Component {
     }
     axios.put('/api/products/' + id, this.state.dataUpdate)
       .then(res => {
-        //console.log(res.data)
         this.setState({ loading: false, reload: !this.state.reload });
         this.props.reloadding();
       })
@@ -39,7 +35,6 @@ class DeviceRoomRow extends Component {
 
   }
   render() {
-    console.log(this.props.id)
     return (
       <tr className={classes.DeviceRoomRow}>
         <th scope="row">{this.props.stt}</th>

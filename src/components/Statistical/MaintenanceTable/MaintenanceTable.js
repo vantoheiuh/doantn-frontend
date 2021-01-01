@@ -34,7 +34,6 @@ class MaintenanceTable extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(this.state.reload !== prevState.reload)
     if (this.state.reload !== prevState.reload) {
       axios.get('/api/products')
         .then(res => {

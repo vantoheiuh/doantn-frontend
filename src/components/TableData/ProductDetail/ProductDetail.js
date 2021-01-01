@@ -22,23 +22,23 @@ const productDetail = (props) => {
                     <ul>
                         <li>
                             <span>Giá (vnd)</span>
-                            <span>{props.productInfo.price}</span>
+                            <span>{props.productInfo.price.toLocaleString('vi', {style : 'currency', currency : 'VND'})}</span>
                         </li>
                         <li>
                             <span>Số lượng </span>
-                            <span>{props.productInfo.amount}</span>
+                            <span>{props.productInfo.quantity}</span>
                         </li>
                         <li>
                             <span>Thời gian checkin </span>
                             <span>{props.productInfo.checkinTime.slice(0, 10)}</span>
                         </li>
                         <li>
-                            <span>hạn thanh lí </span>
-                            <span>{props.productInfo.expiredTime}</span>
+                            <span>Hạn Bảo trì </span>
+                            <span>{props.productInfo.activeTime} năm</span>
                         </li>
                         <li>
-                            <span>Hạn Bảo trì </span>
-                            <span>{props.productInfo.activeTime}</span>
+                            <span>Hạn thanh lí </span>
+                            <span>{props.productInfo.expiredTime} năm</span>
                         </li>
                         <li>
                             <span>Nguồn </span>
