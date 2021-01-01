@@ -31,7 +31,7 @@ class MenuBar extends Component {
         }
     }
     showSubMenuHandlers = () => {
-        this.setState({isDown: true})
+        this.setState({ isDown: true })
     }
 
     render() {
@@ -42,7 +42,7 @@ class MenuBar extends Component {
                     <span> <FiberManualRecordIcon fontSize="small" htmlColor="green" /> Online</span>
                 </div>
                 <ul>
-                    {
+                    {this.props.status !== "active" ? null :
                         this.props.role === "admin" ?
                             <Aux>
                                 <MenuItem link="/"><DashboardIcon /> DashBoard</MenuItem>
@@ -50,7 +50,6 @@ class MenuBar extends Component {
                                 <MenuItem link="/products"><SettingsCellIcon /> Quản lí thiết bị</MenuItem>
                                 <MenuItem link="/new-device"><AddCircleIcon /> Thêm mới thiết bị</MenuItem>
                                 <MenuItem link="/send-mail"><MailIcon /> Mail Box</MenuItem>
-
                             </Aux>
                             : this.props.role === "manager" ?
                                 <Aux>
@@ -66,17 +65,19 @@ class MenuBar extends Component {
                                 </Aux>
                     }
 
-                    <li>
-                        <div className={classes.DropDownMenu} onClick={this.showSubMenuHandler}>
-                            <NavLink to="#"><PageviewIcon /> Thống kê thiết bị</NavLink>
-                            <span>{this.state.isDown ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}</span>
-                        </div>
-                        <ul className={classes[this.state.classSubs]}>
-                            <MenuItem link="/thongke/baotri"><ArrowRightIcon /> Cần bảo trì</MenuItem>
-                            <MenuItem link="/thongke/liquid"><ArrowRightIcon /> Cần thanh lí</MenuItem>
-                            <MenuItem link="/thongke/room"><ArrowRightIcon /> Theo phòng ban</MenuItem>
-                        </ul>
-                    </li>
+                    {
+                        this.props.status !== "active" ? null
+                            : <li>
+                                <div className={classes.DropDownMenu} onClick={this.showSubMenuHandler}>
+                                    <NavLink to="#"><PageviewIcon /> Thống kê thiết bị</NavLink>
+                                    <span>{this.state.isDown ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}</span>
+                                </div>
+                                <ul className={classes[this.state.classSubs]}>
+                                    <MenuItem link="/thongke/baotri"><ArrowRightIcon /> Cần bảo trì</MenuItem>
+                                    <MenuItem link="/thongke/liquid"><ArrowRightIcon /> Cần thanh lí</MenuItem>
+                                    <MenuItem link="/thongke/room"><ArrowRightIcon /> Theo phòng ban</MenuItem>
+                                </ul>
+                            </li>}
                 </ul>
             </div>
         )
@@ -86,7 +87,8 @@ class MenuBar extends Component {
 const mapStateToProps = state => {
     return {
         userName: state.auth.userName,
-        role: state.auth.role
+        role: state.auth.role,
+        status: state.auth.status
     }
 }
 

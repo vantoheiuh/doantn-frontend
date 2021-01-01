@@ -32,7 +32,7 @@ class Menu extends Component {
                         </div>
 
                         <div className={classes.SubMenu}>
-                            {this.props.isAuthenticate ?
+                            {this.props.status !== "active" ? null : this.props.isAuthenticate ?
                                 <div>
                                     <span onClick={this.subMenuHandler}><ArrowDropDownIcon /></span>
                                     <div style={{
@@ -58,7 +58,8 @@ class Menu extends Component {
 const mapStateToProps = state => {
     return {
         isAuthenticate: state.auth.token !== null,
-        role: state.auth.role
+        role: state.auth.role,
+        status: state.auth.status
     }
 }
 

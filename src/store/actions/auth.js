@@ -13,7 +13,8 @@ export const authSuccess = (authData) => {
         idToken: authData.token,
         userName: authData.username,
         userId: authData.id,
-        role: authData.role
+        role: authData.role,
+        status: authData.status
     }
 }
 
@@ -30,6 +31,7 @@ export const authLogout = () => {
     localStorage.removeItem('userId');
     localStorage.removeItem('role');
     localStorage.removeItem('userName');
+    localStorage.removeItem('status');
     return {
         type: actionTypes.AUTH_LOGOUT
     }
@@ -69,6 +71,7 @@ export const auth = (username, password) => {
                 localStorage.setItem('userName', res.data.username);
                 localStorage.setItem('expirationDate', expirationDate);
                 localStorage.setItem('role', res.data.role);
+                localStorage.setItem('status', res.data.status);
                 dispatch(authSuccess(res.data));
                 dispatch(checkAuthTimeout(3600)); // logout if token expired
             })

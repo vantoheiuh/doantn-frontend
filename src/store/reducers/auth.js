@@ -11,6 +11,7 @@ const initState = {
     loading: false,
     authRedirectPath: '/',
     deleteId: null,
+    status: null
 };
 
 const authStart = (state, action) => {
@@ -23,7 +24,8 @@ const authSuccess = (state, action) => {
         id: action.userId,
         userName: action.userName,
         loading: false,
-        role: action.role
+        role: action.role,
+        status: action.status
     });
 };
 const authFail = (state, action) => {
@@ -40,7 +42,8 @@ const authLogout = (state, action) => {
         userName: null,
         role: null,
         loading: false,
-        error: null
+        error: null,
+        status: null
     });
 };
 

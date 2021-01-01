@@ -22,6 +22,7 @@ import UpdatePassword from './components/Authenticate/UpdatePassword/UpdatePassw
 import DashBoard from './components/DashBoard/DashBoard';
 import UserDetail from './components/Authenticate/UserDetail/UserDetail';
 import EmailSend from './components/EmailSend/EmailSend';
+import BlockAccount from './components/BlockAccount/BlockAccount';
 
 class App extends Component {
   componentDidMount() {
@@ -30,45 +31,55 @@ class App extends Component {
   render() {
     let routes = null;
 
+
     if (this.props.isAuthenticated) {
-      routes = (
-        <Switch>
-          <Route path="/logout" component={Logout} />
-          {this.props.role === "admin" ? <Aux>
-            <Route path="/new-device" component={NewDevice} />
-            <Route path="/thongke/room" component={DeviceRoomTable} />
-            <Route path="/thongke/liquid" component={LiquidationTable} />
-            <Route path="/thongke/baotri" component={MaintenanceTable} />
-            <Route path="/update-password" component={UpdatePassword} />
-            <Route path="/update-user-detail" component={UserDetail} />
-            <Route path="/users" component={AdminPanel} />
-            <Route path="/products" exact component={DeviceManager} />
-            <Route path="/send-mail" exact component={EmailSend} />
-            <Route path="/" exact component={DashBoard} />
-            <Redirect to="/" />
-          </Aux> : this.props.role === "manager" ? <Aux>
-            <Route path="/new-device" component={NewDevice} />
-            <Route path="/thongke/room" component={DeviceRoomTable} />
-            <Route path="/thongke/liquid" component={LiquidationTable} />
-            <Route path="/thongke/baotri" component={MaintenanceTable} />
-            <Route path="/update-password" component={UpdatePassword} />
-            <Route path="/update-user-detail" component={UserDetail} />
-            <Route path="/users" component={AdminPanel} />
-            <Route path="/send-mail" exact component={EmailSend} />
-            <Route path="/products" exact component={DeviceManager} />
-            <Route path="/" exact component={DashBoard} />
-            <Redirect to="/" />
-          </Aux> : <Aux>
-                <Route path="/update-password" exact component={UpdatePassword} />
-                <Route path="/update-user-detail" exact component={UserDetail} />
-                <Route path="/thongke/room" component={DeviceRoomTable} />
-                <Route path="/thongke/liquid" component={LiquidationTable} />
-                <Route path="/thongke/baotri" component={MaintenanceTable} />
-                <Route path="/" exact component={DashBoard} />
-                <Redirect to="/" />
-              </Aux>}
-        </Switch>
-      )
+      if (this.props.status === "active") {
+        routes = (
+          <Switch>
+            <Route path="/logout" component={Logout} />
+            {this.props.role === "admin" ? <Aux>
+              <Route path="/new-device" component={NewDevice} />
+              <Route path="/thongke/room" component={DeviceRoomTable} />
+              <Route path="/thongke/liquid" component={LiquidationTable} />
+              <Route path="/thongke/baotri" component={MaintenanceTable} />
+              <Route path="/update-password" component={UpdatePassword} />
+              <Route path="/update-user-detail" component={UserDetail} />
+              <Route path="/users" component={AdminPanel} />
+              <Route path="/products" exact component={DeviceManager} />
+              <Route path="/send-mail" exact component={EmailSend} />
+              <Route path="/" exact component={DashBoard} />
+              <Redirect to="/" />
+            </Aux> : this.props.role === "manager" ? <Aux>
+              <Route path="/new-device" component={NewDevice} />
+              <Route path="/thongke/room" component={DeviceRoomTable} />
+              <Route path="/thongke/liquid" component={LiquidationTable} />
+              <Route path="/thongke/baotri" component={MaintenanceTable} />
+              <Route path="/update-password" component={UpdatePassword} />
+              <Route path="/update-user-detail" component={UserDetail} />
+              <Route path="/users" component={AdminPanel} />
+              <Route path="/send-mail" exact component={EmailSend} />
+              <Route path="/products" exact component={DeviceManager} />
+              <Route path="/" exact component={DashBoard} />
+              <Redirect to="/" />
+            </Aux> : <Aux>
+                  <Route path="/update-password" exact component={UpdatePassword} />
+                  <Route path="/update-user-detail" exact component={UserDetail} />
+                  <Route path="/thongke/room" component={DeviceRoomTable} />
+                  <Route path="/thongke/liquid" component={LiquidationTable} />
+                  <Route path="/thongke/baotri" component={MaintenanceTable} />
+                  <Route path="/" exact component={DashBoard} />
+                  <Redirect to="/" />
+                </Aux>}
+          </Switch>
+        )
+      } else {
+        routes = (
+          <Switch>
+            <Route path="/blocked" exact component={BlockAccount} />
+            <Redirect to="/blocked" />
+          </Switch>
+        )
+      }
     } else {
       routes = (
         <Switch>
@@ -77,6 +88,7 @@ class App extends Component {
         </Switch>
       )
     }
+
     return (
       <div>
         <Router>
@@ -92,7 +104,8 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     isAuthenticated: state.auth.token !== null,
-    role: state.auth.role
+    role: state.auth.role,
+    status: state.auth.status
   }
 }
 const mapDispatchToProps = dispatch => {
