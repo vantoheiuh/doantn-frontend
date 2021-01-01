@@ -43,7 +43,7 @@ class Login extends Component {
                             <input type="password" name="password" placeholder="Mật khẩu" autoComplete="false" onChange={this.inputHandler} />
                         </div>
                         {this.props.err ? <div className={classes.ErrorLogin}>
-                            <p>Tên đăng nhập hoặc mật khẩu không đÚng. Vui lòng thử lại!</p>
+                            <p>Tên đăng nhập hoặc mật khẩu không đúng. Vui lòng thử lại!</p>
                         </div> : null}
                         <div>
                             <button type="button" onClick={this.loginHandler}>Đăng nhập</button>
