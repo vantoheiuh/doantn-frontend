@@ -15,7 +15,7 @@ const productDetail = (props) => {
             <div className={classes.ProductDetail}>
                 <span onClick={props.close} className={classes.Exit}><i className="fas fa-times"></i></span>
                 <div>
-                    {props.productInfo ? <img alt="Product" src={`http://54.151.134.255:5000/${props.productInfo.image}`} /> : null}
+                    {props.productInfo ? <img alt="Product" src={`http://54.151.129.13:5000/${props.productInfo.image}`} /> : null}
                 </div>
                 {props.productInfo ? <div className={classes.Info}>
                     <h1>{props.productInfo.name}</h1>

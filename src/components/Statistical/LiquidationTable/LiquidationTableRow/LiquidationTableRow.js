@@ -6,7 +6,6 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 class LiquidationTableRow extends Component {
   render() {
-    console.log(this.props.name.length)
     return (
       <tr className={classes.LiquidationTableRow}>
         <th scope="row">{this.props.stt}</th>

@@ -35,7 +35,7 @@ class StatisticalChart extends Component {
     });
     const result = listData.map(item => {
       const nums = item.reduce((total, numItem) => {
-        return total + numItem.amount;
+        return total + numItem.quantity;
       }, 0);
       return nums;
     })
@@ -57,7 +57,7 @@ class StatisticalChart extends Component {
     });
     const result = listData.map(item => {
       const nums = item.reduce((total, numItem) => {
-        return total + numItem.amount;
+        return total + numItem.quantity;
       }, 0);
       return nums;
     })
@@ -78,7 +78,7 @@ class StatisticalChart extends Component {
     });
     const result = listData.map(item => {
       const nums = item.reduce((total, numItem) => {
-        return total + numItem.amount;
+        return total + numItem.quantity;
       }, 0);
       return nums;
     })

@@ -46,11 +46,11 @@ class Model extends Component {
                         <form>
                             <div>
                                 <label>Tên: </label>
-                                <input name="name" onChange={(event) => { this.onInputHandler(event, "name") }} defaultValue={this.props.editUserObject.name} type="text" placeholder="Device name" />
+                                <input name="name" onChange={(event) => { this.onInputHandler(event, "name") }} defaultValue={this.props.editUserObject.name} type="text" />
                             </div>
                             <div>
                                 <label>Giá: </label>
-                                <input name="price" onChange={(event) => { this.onInputHandler(event, "price") }} defaultValue={this.props.editUserObject.price} type="text" placeholder="Device cost" />
+                                <input name="price" onChange={(event) => { this.onInputHandler(event, "price") }} defaultValue={this.props.editUserObject.price} type="text" />
                             </div>
                             {/* <div>
                                 <label>Số lượng: </label>
@@ -58,15 +58,15 @@ class Model extends Component {
                             </div> */}
                             <div>
                                 <label>Hạn thanh lí: </label>
-                                <input name="expiredTime" onChange={(event) => { this.onInputHandler(event, "warrantyPeriod") }} value={this.props.editUserObject.expiredTime} type="text" placeholder="Device cost" />
+                                <input name="expiredTime" onChange={(event) => { this.onInputHandler(event, "expiredTime") }} defaultValue={this.props.editUserObject.expiredTime} type="text" />
                             </div>
                             <div>
                                 <label>Hạn bảo trì: </label>
-                                <input name="activeTime" onChange={(event) => { this.onInputHandler(event, "activeTime") }} defaultValue={this.props.editUserObject.activeTime} type="text" placeholder="Device cost" />
-                        </div>
+                                <input name="activeTime" onChange={(event) => { this.onInputHandler(event, "activeTime") }} defaultValue={this.props.editUserObject.activeTime} type="text" />
+                            </div>
                             <div>
                                 <label>Số lượng: </label>
-                                <input name="quantity" onChange={(event) => { this.onInputHandler(event, "quantity") }} defaultValue={this.props.editUserObject.quantity} type="text" placeholder="Device cost" />
+                                <input name="quantity" onChange={(event) => { this.onInputHandler(event, "quantity") }} defaultValue={this.props.editUserObject.quantity} type="text" />
                             </div>
                             <div>
                                 <label>Trạng thái: </label>
@@ -77,7 +77,7 @@ class Model extends Component {
                             </div>
                             <div>
                                 <label>Nguồn: </label>
-                                <input name="source" onChange={(event) => { this.onInputHandler(event, "source") }} defaultValue={this.props.editUserObject.source} type="text" placeholder="Device cost" />
+                                <input name="source" onChange={(event) => { this.onInputHandler(event, "source") }} defaultValue={this.props.editUserObject.source} type="text" />
                             </div>
                         </form>
                         <div className={classes.ButtonGroup}>

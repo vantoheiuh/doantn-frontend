@@ -8,7 +8,7 @@ const menuItem = (props) => {
             {props.link === "/" && props.logo !== "true" ?
                 <NavLink activeStyle={{ color: 'blue' }} exact to={props.link} >{props.children}</NavLink>
                 : props.logo === "true"
-                    ? <Link path={props.link} >{props.children}</Link>
+                    ? <Link to={props.link} >{props.children}</Link>
                     : <NavLink activeStyle={{ color: 'blue' }} to={props.link} >{props.children}</NavLink>
             }
         </li>

@@ -40,7 +40,6 @@ class EditModal extends Component {
     }
 
     render() {
-        console.log(this.state.dataForm)
         let ModalStyle = this.props.show ? {
             display: "block"
         } : {

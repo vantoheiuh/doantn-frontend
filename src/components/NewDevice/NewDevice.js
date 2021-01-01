@@ -85,7 +85,6 @@ class NewDevice extends Component {
             .catch(err => {
                 this.setState({ checkAlertAdd: false, loading: false });
                 this.alertOnAdd("Có lỗi của hệ thống");
-                console.log("looix")
             })
 
     }
