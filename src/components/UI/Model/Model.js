@@ -33,7 +33,7 @@ class Model extends Component {
     }
     render() {
         let ModalStyle = this.props.show ? {
-            display: "block"
+        display: "block"
         } : {
                 display: "none"
             }

@@ -58,7 +58,7 @@ class MaintenanceRow extends Component {
             <option value={"Using"}>Using</option>
             <option value={"Maintained"}>Maintained</option>
           </select>
-          <button onClick={() => this.changeStatusHandler(this.props.id)}>{this.state.loading ? <CircularProgress><CheckCircleIcon /></CircularProgress> : <CheckCircleIcon />}</button>
+          <button onClick={() => this.changeStatusHandler(this.props.id)}>{this.state.loading ? <CircularProgress><CheckCircleIcon/></CircularProgress> : <CheckCircleIcon />}</button>
 
         </td>
       </tr>
