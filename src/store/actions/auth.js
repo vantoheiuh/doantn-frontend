@@ -116,11 +116,13 @@ export const authCheckState = () => {
                 const userId = localStorage.getItem('userId');
                 const role = localStorage.getItem('role');
                 const userName = localStorage.getItem('userName')
+                const status = localStorage.getItem('status')
                 const authData = {
                     token: token,
                     id: userId,
                     role: role,
-                    username: userName
+                    username: userName,
+                    status
                 };
                 dispatch(authSuccess(authData));
                 const timeOut = ((new Date(expirationDate).getTime() - new Date().getTime()) / 1000).toFixed(0);
