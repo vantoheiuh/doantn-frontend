@@ -105,7 +105,6 @@ class LiquidationTable extends Component {
                     <th scope="col">Hạn thanh lí</th>
                     <th scope="col">Vị trí</th>
                     <th scope="col">Trạng thái</th>
-                    <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>

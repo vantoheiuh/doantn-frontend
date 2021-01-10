@@ -19,10 +19,10 @@ class LiquidationTableRow extends Component {
             {this.props.statusDevice}
           </span>
         </td>
-        <td className={classes.ButtonGroup}>
+        {/* <td className={classes.ButtonGroup}>
           <button className={classes.Edit} onClick={this.props.edit}><EditIcon /></button>
           <button className={classes.Delete} onClick={this.props.delete}><DeleteIcon /></button>
-        </td>
+        </td> */}
       </tr>
     )
   }
