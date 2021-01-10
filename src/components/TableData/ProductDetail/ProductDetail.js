@@ -4,7 +4,7 @@ import Barcode from '../../UI/Barcode/Barcode';
 import '@fortawesome/fontawesome-free';
 
 const productDetail = (props) => {
-
+    console.log(props)
     let ModalStyle = props.show ? {
         display: "block"
     } : {
@@ -15,7 +15,7 @@ const productDetail = (props) => {
             <div className={classes.ProductDetail}>
                 <span onClick={props.close} className={classes.Exit}><i className="fas fa-times"></i></span>
                 <div>
-                    {props.productInfo ? <img alt="Product" src={props.imageURL} /> : null}
+                    {props.productInfo ? <img alt="Product" src={props.productInfo.image} /> : null}
                 </div>
                 {props.productInfo ? <div className={classes.Info}>
                     <h1>{props.productInfo.name}</h1>
